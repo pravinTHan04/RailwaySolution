@@ -1,0 +1,26 @@
+﻿[
+    {
+        "Time": "06:00",
+        "Level": "Low"
+    },
+    {
+        "Time": "07:00",
+        "Level": "Medium"
+    },
+    {
+        "Time": "08:00",
+        "Level": "High"
+    },
+    {
+        "Time": "09:00",
+        "Level": "High"
+    },
+    {
+        "Time": "10:00",
+        "Level": "Medium"
+    },
+    {
+        "Time": "11:00",
+        "Level": "Low"
+    }
+]

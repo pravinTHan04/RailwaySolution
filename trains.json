@@ -1,0 +1,32 @@
+﻿[
+	{
+		"Id": "BLUE-T1",
+		"Type": "Local",
+		"Line": "Blue Line",
+		"Capacity": 180
+	},
+	{
+		"Id": "BLUE-T2",
+		"Type": "Local",
+		"Line": "Blue Line",
+		"Capacity": 200
+	},
+	{
+		"Id": "RED-T1",
+		"Type": "Local",
+		"Line": "Red Line",
+		"Capacity": 180
+	},
+	{
+		"Id": "RED-T2",
+		"Type": "Local",
+		"Line": "Red Line",
+		"Capacity": 220
+	},
+	{
+		"Id": "GREEN-T1",
+		"Type": "Local",
+		"Line": "Green Line",
+		"Capacity": 180
+	}
+]

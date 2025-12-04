@@ -1,0 +1,6 @@
+@Railway.Api.New_HostAddress = http://localhost:5282
+
+GET {{Railway.Api.New_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

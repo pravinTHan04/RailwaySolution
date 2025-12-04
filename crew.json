@@ -1,0 +1,9 @@
+﻿[
+  { "Id": "CREW-B1", "Line": "Blue Line" },
+  { "Id": "CREW-B2", "Line": "Blue Line" },
+
+  { "Id": "CREW-R1", "Line": "Red Line" },
+  { "Id": "CREW-R2", "Line": "Red Line" },
+
+  { "Id": "CREW-G1", "Line": "Green Line" }
+]

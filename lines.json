@@ -1,0 +1,29 @@
+﻿[
+	{
+		"Name": "Blue Line",
+		"Stations": [ "A", "B", "C", "D" ],
+		"TravelMinutesBetweenStations": [ 5, 7, 6 ],
+		"ServiceStart": "06:00",
+		"ServiceEnd": "08:00",
+		"HeadwayMinutes": 15,
+		"DwellMinutes": 2
+	},
+	{
+		"Name": "Red Line",
+		"Stations": [ "K", "L", "M", "N" ],
+		"TravelMinutesBetweenStations": [ 5, 7, 6 ],
+		"ServiceStart": "06:00",
+		"ServiceEnd": "08:00",
+		"HeadwayMinutes": 15,
+		"DwellMinutes": 2
+	},
+	{
+		"Name": "Green Line",
+		"Stations": [ "X", "Y", "Z", "W" ],
+		"TravelMinutesBetweenStations": [ 5, 7, 6 ],
+		"ServiceStart": "06:00",
+		"ServiceEnd": "08:00",
+		"HeadwayMinutes": 15,
+		"DwellMinutes": 2
+	}
+]

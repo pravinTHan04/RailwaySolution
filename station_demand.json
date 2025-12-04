@@ -1,0 +1,52 @@
+﻿[
+	{
+		"Station": "A",
+		"BoardingPerTrain": 60
+	},
+	{
+		"Station": "B",
+		"BoardingPerTrain": 90
+	},
+	{
+		"Station": "C",
+		"BoardingPerTrain": 40
+	},
+	{
+		"Station": "D",
+		"BoardingPerTrain": 10
+	},
+
+	{
+		"Station": "K",
+		"BoardingPerTrain": 60
+	},
+	{
+		"Station": "L",
+		"BoardingPerTrain": 90
+	},
+	{
+		"Station": "M",
+		"BoardingPerTrain": 40
+	},
+	{
+		"Station": "N",
+		"BoardingPerTrain": 10
+	},
+
+	{
+		"Station": "X",
+		"BoardingPerTrain": 60
+	},
+	{
+		"Station": "Y",
+		"BoardingPerTrain": 90
+	},
+	{
+		"Station": "Z",
+		"BoardingPerTrain": 40
+	},
+	{
+		"Station": "W",
+		"BoardingPerTrain": 10
+	}
+]

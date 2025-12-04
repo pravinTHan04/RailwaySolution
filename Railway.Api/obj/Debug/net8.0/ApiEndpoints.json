@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "Railway.Api.Controllers.BookingController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/Booking/cancel/{bookingId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Railway.Api.Controllers.BookingController",
+    "Method": "ConfirmBooking",
+    "RelativePath": "api/Booking/confirm/{bookingId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Railway.Api.Controllers.BookingController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/Booking/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Railway.Api.Controllers.CreateBookingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Railway.Api.Controllers.SeatsController",
+    "Method": "GetAvailableSeats",
+    "RelativePath": "api/Seats/available",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduleId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fromStop",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "toStop",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Railway.Api.Controllers.SeatsController",
+    "Method": "LockSeats",
+    "RelativePath": "api/Seats/lock",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Railway.Api.Controllers.LockSeatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

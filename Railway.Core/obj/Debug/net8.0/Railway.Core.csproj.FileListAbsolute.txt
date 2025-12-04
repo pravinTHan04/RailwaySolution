@@ -1,0 +1,14 @@
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\bin\Debug\net8.0\Railway.Core.deps.json
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\bin\Debug\net8.0\Railway.Core.runtimeconfig.json
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\bin\Debug\net8.0\Railway.Core.dll
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\bin\Debug\net8.0\Railway.Core.pdb
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.AssemblyInfo.cs
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.dll
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\refint\Railway.Core.dll
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.pdb
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\Railway.Core.genruntimeconfig.cache
+C:\Users\Asus\Desktop\RailwaySolution\Railway.Core\obj\Debug\net8.0\ref\Railway.Core.dll

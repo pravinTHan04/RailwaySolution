@@ -1,0 +1,684 @@
+[
+  {
+    "TrainId": "BLUE-T1",
+    "LineName": "Blue Line (Outbound A-\u003ED)",
+    "DepartureTime": "2025-11-12T06:00:00+00:00",
+    "CrewId": "CREW-B1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T06:00:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T06:05:00+00:00",
+        "Load": 45
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T06:14:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T06:22:00+00:00",
+        "Load": 70
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Outbound X-\u003EW)",
+    "DepartureTime": "2025-11-12T06:00:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T06:00:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T06:05:00+00:00",
+        "Load": 45
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T06:14:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T06:22:00+00:00",
+        "Load": 70
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T1",
+    "LineName": "Red Line (Outbound K-\u003EN)",
+    "DepartureTime": "2025-11-12T06:00:00+00:00",
+    "CrewId": "CREW-R1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T06:00:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T06:05:00+00:00",
+        "Load": 45
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T06:14:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T06:22:00+00:00",
+        "Load": 70
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T2",
+    "LineName": "Blue Line (Outbound A-\u003ED)",
+    "DepartureTime": "2025-11-12T06:15:00+00:00",
+    "CrewId": "CREW-B2",
+    "Capacity": 200,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T06:56:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T07:01:00+00:00",
+        "Load": 90
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T07:10:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T07:18:00+00:00",
+        "Load": 140
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T2",
+    "LineName": "Red Line (Outbound K-\u003EN)",
+    "DepartureTime": "2025-11-12T06:15:00+00:00",
+    "CrewId": "CREW-R2",
+    "Capacity": 220,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T06:56:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T07:01:00+00:00",
+        "Load": 90
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T07:10:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T07:18:00+00:00",
+        "Load": 140
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T1",
+    "LineName": "Blue Line (Return D-\u003EA)",
+    "DepartureTime": "2025-11-12T06:32:00+00:00",
+    "CrewId": "CREW-B1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T06:32:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T06:38:00+00:00",
+        "Load": 20
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T06:47:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T06:54:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Return W-\u003EX)",
+    "DepartureTime": "2025-11-12T06:32:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T06:32:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T06:38:00+00:00",
+        "Load": 20
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T06:47:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T06:54:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T1",
+    "LineName": "Red Line (Return N-\u003EK)",
+    "DepartureTime": "2025-11-12T06:32:00+00:00",
+    "CrewId": "CREW-R1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T06:32:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T06:38:00+00:00",
+        "Load": 20
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T06:47:00+00:00",
+        "Load": 65
+      },
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T06:54:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T1",
+    "LineName": "Blue Line (Outbound A-\u003ED)",
+    "DepartureTime": "2025-11-12T07:04:00+00:00",
+    "CrewId": "CREW-B1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T07:52:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T07:57:00+00:00",
+        "Load": 90
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T08:06:00+00:00",
+        "Load": 150
+      },
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T08:14:00+00:00",
+        "Load": 165
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Outbound X-\u003EW)",
+    "DepartureTime": "2025-11-12T07:04:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T07:04:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T07:09:00+00:00",
+        "Load": 90
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T07:18:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T07:26:00+00:00",
+        "Load": 140
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T1",
+    "LineName": "Red Line (Outbound K-\u003EN)",
+    "DepartureTime": "2025-11-12T07:04:00+00:00",
+    "CrewId": "CREW-R1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T07:52:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T07:57:00+00:00",
+        "Load": 90
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T08:06:00+00:00",
+        "Load": 150
+      },
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T08:14:00+00:00",
+        "Load": 165
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T2",
+    "LineName": "Blue Line (Return D-\u003EA)",
+    "DepartureTime": "2025-11-12T07:28:00+00:00",
+    "CrewId": "CREW-B2",
+    "Capacity": 200,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T07:28:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T07:34:00+00:00",
+        "Load": 40
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T07:43:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T07:50:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T2",
+    "LineName": "Red Line (Return N-\u003EK)",
+    "DepartureTime": "2025-11-12T07:28:00+00:00",
+    "CrewId": "CREW-R2",
+    "Capacity": 220,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T07:28:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T07:34:00+00:00",
+        "Load": 40
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T07:43:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T07:50:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Return W-\u003EX)",
+    "DepartureTime": "2025-11-12T07:36:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T07:36:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T07:42:00+00:00",
+        "Load": 40
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T07:51:00+00:00",
+        "Load": 130
+      },
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T07:58:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T2",
+    "LineName": "Blue Line (Outbound A-\u003ED)",
+    "DepartureTime": "2025-11-12T08:00:00+00:00",
+    "CrewId": "CREW-B2",
+    "Capacity": 200,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T08:48:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T08:53:00+00:00",
+        "Load": 135
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T09:02:00+00:00",
+        "Load": 195
+      },
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T09:10:00+00:00",
+        "Load": 200
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T2",
+    "LineName": "Red Line (Outbound K-\u003EN)",
+    "DepartureTime": "2025-11-12T08:00:00+00:00",
+    "CrewId": "CREW-R2",
+    "Capacity": 220,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T08:48:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T08:53:00+00:00",
+        "Load": 135
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T09:02:00+00:00",
+        "Load": 195
+      },
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T09:10:00+00:00",
+        "Load": 210
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Outbound X-\u003EW)",
+    "DepartureTime": "2025-11-12T08:08:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T08:08:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T08:13:00+00:00",
+        "Load": 135
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T08:22:00+00:00",
+        "Load": 180
+      },
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T08:30:00+00:00",
+        "Load": 180
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T1",
+    "LineName": "Blue Line (Return D-\u003EA)",
+    "DepartureTime": "2025-11-12T08:24:00+00:00",
+    "CrewId": "CREW-B1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T08:24:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T08:30:00+00:00",
+        "Load": 60
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T08:39:00+00:00",
+        "Load": 180
+      },
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T08:46:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T1",
+    "LineName": "Red Line (Return N-\u003EK)",
+    "DepartureTime": "2025-11-12T08:24:00+00:00",
+    "CrewId": "CREW-R1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T08:24:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T08:30:00+00:00",
+        "Load": 60
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T08:39:00+00:00",
+        "Load": 180
+      },
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T08:46:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "GREEN-T1",
+    "LineName": "Green Line (Return W-\u003EX)",
+    "DepartureTime": "2025-11-12T08:40:00+00:00",
+    "CrewId": "CREW-G1",
+    "Capacity": 180,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "W",
+        "Arrival": "2025-11-12T08:40:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "Z",
+        "Arrival": "2025-11-12T08:46:00+00:00",
+        "Load": 60
+      },
+      {
+        "Station": "Y",
+        "Arrival": "2025-11-12T08:55:00+00:00",
+        "Load": 180
+      },
+      {
+        "Station": "X",
+        "Arrival": "2025-11-12T09:02:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "BLUE-T2",
+    "LineName": "Blue Line (Return D-\u003EA)",
+    "DepartureTime": "2025-11-12T09:20:00+00:00",
+    "CrewId": "CREW-B2",
+    "Capacity": 200,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "D",
+        "Arrival": "2025-11-12T09:20:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "C",
+        "Arrival": "2025-11-12T09:26:00+00:00",
+        "Load": 60
+      },
+      {
+        "Station": "B",
+        "Arrival": "2025-11-12T09:35:00+00:00",
+        "Load": 195
+      },
+      {
+        "Station": "A",
+        "Arrival": "2025-11-12T09:42:00+00:00",
+        "Load": 0
+      }
+    ]
+  },
+  {
+    "TrainId": "RED-T2",
+    "LineName": "Red Line (Return N-\u003EK)",
+    "DepartureTime": "2025-11-12T09:20:00+00:00",
+    "CrewId": "CREW-R2",
+    "Capacity": 220,
+    "MaxLoad": 0,
+    "RemainingSeats": 60,
+    "Stops": [
+      {
+        "Station": "N",
+        "Arrival": "2025-11-12T09:20:00+00:00",
+        "Load": 0
+      },
+      {
+        "Station": "M",
+        "Arrival": "2025-11-12T09:26:00+00:00",
+        "Load": 60
+      },
+      {
+        "Station": "L",
+        "Arrival": "2025-11-12T09:35:00+00:00",
+        "Load": 195
+      },
+      {
+        "Station": "K",
+        "Arrival": "2025-11-12T09:42:00+00:00",
+        "Load": 0
+      }
+    ]
+  }
+]

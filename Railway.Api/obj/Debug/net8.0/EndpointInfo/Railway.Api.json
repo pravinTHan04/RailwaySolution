@@ -1,0 +1,208 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Railway.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Booking/create": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/confirm/{bookingId}": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/cancel/{bookingId}": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Seats/available": {
+      "get": {
+        "tags": [
+          "Seats"
+        ],
+        "parameters": [
+          {
+            "name": "scheduleId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromStop",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "toStop",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Seats/lock": {
+      "post": {
+        "tags": [
+          "Seats"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LockSeatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LockSeatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LockSeatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateBookingRequest": {
+        "type": "object",
+        "properties": {
+          "scheduleId": {
+            "type": "string"
+          },
+          "passengerName": {
+            "type": "string"
+          },
+          "seatIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fromStopOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "toStopOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LockSeatRequest": {
+        "type": "object",
+        "properties": {
+          "scheduleId": {
+            "type": "string"
+          },
+          "seatIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fromStopOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "toStopOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tempUserToken": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

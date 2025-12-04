@@ -1,0 +1,37 @@
+﻿using System.Net.Http.Json;
+using System.Text.Json;
+
+namespace Railway.Core.Services
+{
+    public static class OllamaClient
+    {
+        private static readonly HttpClient _http = new HttpClient
+        {
+            BaseAddress = new Uri("http://localhost:11434")
+        };
+
+        public static async Task<string> AskAI(string prompt)
+        {
+            var request = new
+            {
+                model = "llama3", // change this if you're using a different model
+                prompt = prompt,
+                stream = false
+            };
+
+            var response = await _http.PostAsJsonAsync("/api/generate", request);
+            response.EnsureSuccessStatusCode();
+
+            var result = JsonSerializer.Deserialize<OllamaResponse>(
+                await response.Content.ReadAsStringAsync(),
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return result?.Response ?? "No response";
+        }
+
+        private class OllamaResponse
+        {
+            public string Response { get; set; }
+        }
+    }
+}

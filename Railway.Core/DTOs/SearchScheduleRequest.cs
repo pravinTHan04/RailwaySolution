@@ -16,7 +16,10 @@
         public string Duration { get; set; }
         public List<string> Stops { get; set; }
 
-        // NEW FIELDS ↓↓↓
+        public decimal Price { get; set; }          
+        public int TravelTime { get; set; }         
+        public string TrainType { get; set; }
+
         public string FromStation { get; set; }
         public string ToStation { get; set; }
         public int FromStopOrder { get; set; }

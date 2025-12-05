@@ -226,23 +226,32 @@ console.log("📨 Passenger info saved!");
       const reply = await sendChatMessage(userMsg);
       console.log("🤖 AI reply:", reply);
 
-      if (reply?.schedules?.length > 0) {
-        console.log("🛤 AI schedules:", reply.schedules);
-        setMode("selecting");
+// --------------------------------------------
+// NEW: RECOMMENDED TRAINS HANDLER
+// --------------------------------------------
+if (reply?.recommended) {
+  setMode("selecting");
 
-        addMessage({
-          sender: "ai",
-          text: `I found ${reply.schedules.length} train(s). Choose one to continue 🚆`,
-        });
+  addMessage({
+    sender: "ai",
+    text: reply.ai || "Here are the best options:",
+  });
 
-        addMessage({
-          sender: "ai",
-          type: "train-list",
-          data: reply.schedules,
-        });
+  const list = [
+    reply.recommended.fastest,
+    reply.recommended.cheapest,
+    reply.recommended.luxury
+  ].filter(Boolean);
 
-        return;
-      }
+  addMessage({
+    sender: "ai",
+    type: "train-list",
+    data: list,
+  });
+
+  return;
+}
+
 
       addMessage({
         sender: "ai",
@@ -285,24 +294,50 @@ console.log("📨 Passenger info saved!");
           {/* Messages */}
           <div className="p-3 h-64 overflow-y-auto space-y-2">
             {messages.map((m, i) => {
-              if (m.type === "train-list" && Array.isArray(m.data)) {
-                return (
-                  <div key={i} className="bg-gray-100 p-2 rounded-md">
-                    {m.data.map((train) => (
-                      <button
-                        key={train.scheduleId}
-                        onClick={() => selectTrain(train)}
-                        className="block w-full bg-blue-600 text-white px-2 py-2 rounded-md mb-2 hover:bg-blue-700 text-left"
-                      >
-                        <div className="font-semibold">{train.train}</div>
-                        <div className="text-xs">
-                          {new Date(train.departure).toLocaleString()}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                );
-              }
+if (m.type === "train-list" && Array.isArray(m.data)) {
+  return (
+    <div key={i} className="bg-gray-100 p-2 rounded-md">
+      {m.data.map((train) => (
+        <button
+          key={train.scheduleId}
+          onClick={() => selectTrain(train)}
+          className="block w-full bg-blue-600 text-white px-3 py-3 rounded-md mb-3 hover:bg-blue-700 text-left"
+        >
+          {/* 🔥 Tags */}
+          {train.trainType === "Express" && (
+            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-yellow-400 text-black">
+              🚄 Fastest
+            </span>
+          )}
+          {train.trainType === "Local" && (
+            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-green-400 text-black">
+              💸 Cheapest
+            </span>
+          )}
+          {train.trainType === "Luxury" && (
+            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-purple-500 text-white">
+              👑 Luxury
+            </span>
+          )}
+
+          <div className="font-semibold text-base">{train.train}</div>
+
+          <div className="text-xs text-gray-200">
+            Departure: {new Date(train.departure).toLocaleString()}
+          </div>
+
+          <div className="text-xs text-gray-200">
+            Price: Rs. {train.price}
+          </div>
+
+          <div className="text-xs text-gray-200">
+            Travel Time: {train.travelTime} min
+          </div>
+        </button>
+      ))}
+    </div>
+  );
+}
 
               return (
                 <div

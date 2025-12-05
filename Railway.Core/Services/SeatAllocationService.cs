@@ -44,7 +44,7 @@ namespace Railway.Core.Services
                         {
                             Id = Guid.NewGuid().ToString(),
                             CarriageId = carriage.Id,
-                            SeatNumber = $"{letter}{row:00}" // A01, A02, etc.
+                            SeatNumber = $"{letter}{row:00}" 
                         });
                     }
                 }
@@ -71,7 +71,7 @@ namespace Railway.Core.Services
                 {
                     Id = Guid.NewGuid().ToString(),
                     TrainId = trainId,
-                    Index = i // instead of carriageNumber
+                    Index = i 
                 });
             }
 
@@ -121,7 +121,7 @@ namespace Railway.Core.Services
                     else if (r.LockExpiresAt > now)
                         status = "held";
                     else
-                        continue; // expired lock → treat as available
+                        continue;
                 }
 
                 result.Add(new SeatAvailabilityDto
@@ -149,7 +149,154 @@ namespace Railway.Core.Services
 
         }
 
-        // Creates a pending booking and locks the seats
+        public async Task<SeatSuggestionResult> SuggestSeatsAsync(
+            string scheduleId,
+            int fromStopOrder,
+            int toStopOrder,
+            int seatCount)
+        {
+            var result = new SeatSuggestionResult();
+
+            await ReleaseExpiredLocksAsync();
+
+            var schedule = await _db.Schedules
+                .Include(s => s.Train)
+                    .ThenInclude(t => t.Carriages)
+                .FirstOrDefaultAsync(s => s.Id == scheduleId);
+
+            if (schedule == null)
+            {
+                result.Reason = "Schedule not found.";
+                return result;
+            }
+
+            var availability = await GetAvailableSeatsAsync(
+                scheduleId, fromStopOrder, toStopOrder
+            ); 
+
+            var allAvailable = availability
+                .SelectMany(cg => cg.Seats.Select(s => new
+                {
+                    Seat = s,               
+                    CarriageIndex = cg.Carriage
+                }))
+                .Where(x => x.Seat.Status == "available")
+                .ToList();
+
+            if (!allAvailable.Any())
+            {
+                result.Reason = "No seats available for this segment.";
+                return result;
+            }
+
+            var candidates = new List<SeatGroupCandidate>();
+
+            foreach (var carriageGroup in availability.OrderBy(cg => cg.Carriage))
+            {
+                var seatsInCarriage = carriageGroup.Seats
+                    .Where(s => s.Status == "available")
+                    .Select(s => new
+                    {
+                        Seat = s,
+                        CarriageIndex = carriageGroup.Carriage,
+                        Row = int.Parse(s.SeatNumber.Substring(1)), 
+                        Letter = s.SeatNumber.Substring(0, 1)       
+                    })
+                    .OrderBy(s => s.Row)
+                    .ThenBy(s => s.Letter)
+                    .ToList();
+
+                if (seatsInCarriage.Count < seatCount)
+                    continue;
+
+                for (int i = 0; i <= seatsInCarriage.Count - seatCount; i++)
+                {
+                    var window = seatsInCarriage
+                        .Skip(i)
+                        .Take(seatCount)
+                        .ToList();
+
+                    bool sameRow = window.All(x => x.Row == window[0].Row);
+                    bool consecutiveLetters = AreLettersConsecutive(
+                        window.Select(x => x.Letter).ToList()
+                    );
+                    bool contiguous = sameRow && consecutiveLetters;
+
+                    int score = 0;
+                    if (contiguous) score += 50;                 
+                    score += (10 - carriageGroup.Carriage);      
+                    score += seatCount * 5;                      
+
+                    var dtoSeats = window.Select(x => new SeatSuggestionSeatDto
+                    {
+                        SeatId = x.Seat.SeatId,
+                        SeatNumber = x.Seat.SeatNumber,
+                        CarriageId = x.Seat.CarriageId,
+                        CarriageIndex = x.CarriageIndex
+                    }).ToList();
+
+                    candidates.Add(new SeatGroupCandidate
+                    {
+                        Seats = dtoSeats,
+                        Score = score,
+                        Contiguous = contiguous,
+                        CarriageIndex = carriageGroup.Carriage
+                    });
+                }
+            }
+
+            if (!candidates.Any())
+            {
+                var fallbackSeats = allAvailable
+                    .OrderBy(x => x.CarriageIndex)
+                    .ThenBy(x => int.Parse(x.Seat.SeatNumber.Substring(1)))  
+                    .ThenBy(x => x.Seat.SeatNumber.Substring(0, 1))          
+                    .Take(seatCount)
+                    .Select(x => new SeatSuggestionSeatDto
+                    {
+                        SeatId = x.Seat.SeatId,
+                        SeatNumber = x.Seat.SeatNumber,
+                        CarriageId = x.Seat.CarriageId,
+                        CarriageIndex = x.CarriageIndex
+                    })
+                    .ToList();
+
+                result.Seats = fallbackSeats;
+                result.ExactMatch = false;
+                result.Reason = "No contiguous group found. Returning closest available seats.";
+                return result;
+            }
+
+            var best = candidates
+                .OrderByDescending(c => c.Score)
+                .First();
+
+            result.Seats = best.Seats;
+            result.ExactMatch = best.Contiguous;
+            result.Reason = best.Contiguous
+                ? "Contiguous seat group found."
+                : "Best available group found (not perfectly contiguous).";
+
+            return result;
+        }
+
+
+        private bool AreLettersConsecutive(List<string> letters)
+        {
+            var nums = letters.Select(l => (int)l[0]).ToList();
+            nums.Sort();
+
+            for (int i = 0; i < nums.Count - 1; i++)
+            {
+                if (nums[i + 1] != nums[i] + 1)
+                    return false;
+            }
+
+            return true;
+        }
+
+
+
         public async Task<List<ReservedSeat>> LockSeatsAsync(
             string scheduleId,
             List<string> seatIds,
@@ -189,7 +336,6 @@ namespace Railway.Core.Services
         {
             var now = DateTime.UtcNow;
 
-            // Find bookings that are pending AND expired
             var expiredBookings = await _db.Bookings
                 .Where(b =>
                     b.Status == BookingStatus.Pending &&
@@ -200,10 +346,8 @@ namespace Railway.Core.Services
 
             if (expiredBookings.Any())
             {
-                // Remove reserved seats tied to expired bookings
                 _db.ReservedSeats.RemoveRange(expiredBookings.SelectMany(b => b.ReservedSeats));
 
-                // Mark booking as expired (optional but logical)
                 foreach (var booking in expiredBookings)
                     booking.Status = BookingStatus.Expired;
 
@@ -227,7 +371,6 @@ namespace Railway.Core.Services
 
     _db.ReservedSeats.RemoveRange(reserved);
 
-    // If any booking has no seats left → mark expired
     foreach (var booking in affectedBookings)
     {
         await _db.Entry(booking).Collection(b => b.ReservedSeats).LoadAsync();
@@ -241,4 +384,11 @@ namespace Railway.Core.Services
 }
 
     }
+}
+internal class SeatGroupCandidate
+{
+    public List<SeatSuggestionSeatDto> Seats { get; set; } = new();
+    public int Score { get; set; }
+    public bool Contiguous { get; set; }
+    public int CarriageIndex { get; set; }
 }

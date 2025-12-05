@@ -9,5 +9,6 @@ public interface ISeatAllocationService
     Task ReleaseExpiredLocksAsync();
     Task<bool> UnlockSeatsAsync(string scheduleId, List<string> seatIds);
     Task<List<CarriageSeatGroup>> GetAvailableSeatsAsync(string scheduleId, int fromStopOrder, int toStopOrder);
+    Task<SeatSuggestionResult> SuggestSeatsAsync(string scheduleId, int fromStopOrder, int toStopOrder, int seatCount);
 
 }

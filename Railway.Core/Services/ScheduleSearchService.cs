@@ -53,14 +53,6 @@ namespace Railway.Core.Services
 
                     var durationStops = toStop.Order - fromStop.Order;
 
-                    var trainType = s.Train.TrainType.Name;  
-                    var pricePerKm = s.Train.TrainType.FareMultiplier; 
-                    var timePerKm = s.Train.TrainType.SpeedFactor;
-
-                    var price = durationStops * pricePerKm;
-                    var travelTime = durationStops * (int)(timePerKm * 10);
-
-
                     return new ScheduleResultDto
                     {
                         ScheduleId = s.Id,
@@ -68,9 +60,6 @@ namespace Railway.Core.Services
                         Route = s.Route.Name,
                         Departure = s.DepartureTime,
 
-                        Price = price,
-                        TravelTime = travelTime,
-                        TrainType = trainType,
 
                         Duration = $"{durationStops} stops",
                         Stops = s.Route.Stops

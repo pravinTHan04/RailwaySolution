@@ -1,4 +1,5 @@
 ﻿using Railway.Core.Models;
+using System.Text.Json.Serialization;
 
 public class TrainType
 {
@@ -6,8 +7,8 @@ public class TrainType
     public string Name { get; set; }
     public decimal FareMultiplier { get; set; }
     public decimal SpeedFactor { get; set; }
-    public bool StopsAtEveryStation { get; set; } 
+    public bool StopsAtEveryStation { get; set; }
     public string? Description { get; set; }
-
+    [JsonIgnore]
     public ICollection<Train> Trains { get; set; } = new List<Train>();
 }

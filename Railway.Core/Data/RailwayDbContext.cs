@@ -27,7 +27,7 @@ namespace Railway.Core.Data
         public DbSet<UserAiContext> AiContexts { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<TrainType> TrainTypes { get; set; }
-
+        public DbSet<UserPreference> UserPreferences { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -64,6 +64,18 @@ namespace Railway.Core.Data
             modelBuilder.Entity<Payment>()
                 .Property(p => p.Amount)
                 .HasPrecision(10, 2);
+
+            modelBuilder.Entity<TrainType>()
+                .Ignore(t => t.Trains);
+
+
+            modelBuilder.Entity<UserPreference>(entity =>
+            {
+                entity.HasKey(p => new { p.UserId, p.TrainType });
+                entity.Property(p => p.UserId).IsRequired().HasMaxLength(200);
+                entity.Property(p => p.TrainType).IsRequired().HasMaxLength(100);
+            });
+
         }
     }
 }

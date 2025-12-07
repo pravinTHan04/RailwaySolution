@@ -14,7 +14,7 @@ namespace Railway.Core.Services
         {
             var request = new
             {
-                model = "llama3", // change this if you're using a different model
+                model = "llama3", 
                 prompt = prompt,
                 stream = false
             };

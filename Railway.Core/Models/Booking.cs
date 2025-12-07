@@ -2,6 +2,7 @@
 public class Booking
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string UserId { get; set; }
     public string ScheduleId { get; set; }
     public Schedule Schedule { get; set; }
 

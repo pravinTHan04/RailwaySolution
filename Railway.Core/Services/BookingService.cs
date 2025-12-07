@@ -10,18 +10,25 @@ namespace Railway.Core.Services
     {
         private readonly RailwayDbContext _db;
         private readonly IEmailService _email;
+        private readonly UserPreferenceService _preferenceService;
 
 
-        public BookingService(RailwayDbContext db, IEmailService email)
+        public BookingService
+            (
+            RailwayDbContext db, 
+            IEmailService email,
+            UserPreferenceService preferenceService
+            )
         {
             _db = db;
             _email = email;
+            _preferenceService = preferenceService;
         }
-
 
         // STEP 1: Create pending booking (lock seats)
         public async Task<Booking> CreatePendingBookingAsync(
         string scheduleId,
+        string UserId,
         string passengerName,
         List<string> seatIds,
         int fromStopOrder,
@@ -33,9 +40,11 @@ namespace Railway.Core.Services
 
             var booking = new Booking
             {
+                UserId = UserId,                
+                PassengerName = passengerName,  
                 ScheduleId = scheduleId,
-                PassengerName = passengerName,
                 Status = BookingStatus.Pending,
+                CreatedAt = DateTime.UtcNow,
                 ExpiresAt = null
             };
 
@@ -98,6 +107,8 @@ namespace Railway.Core.Services
             await _db.SaveChangesAsync();
 
 
+
+
             // ---------------- 1️⃣ Generate or Reuse Ticket ----------------
             var existingTicket = await _db.Tickets.FirstOrDefaultAsync(t => t.BookingId == booking.Id);
 
@@ -130,6 +141,21 @@ namespace Railway.Core.Services
             }
 
             await _db.SaveChangesAsync();
+
+            // ✅ Update user preference here using the shared service
+            var userKey = booking.UserId ?? booking.PassengerName;
+            if (!string.IsNullOrWhiteSpace(userKey) &&
+                booking.Schedule?.Train?.TrainType != null &&
+                booking.Schedule?.Route != null)
+            {
+                await _preferenceService.AddOrUpdatePreference(
+                    userKey,
+                    booking.Schedule.Train.TrainType.Name,
+                    booking.Schedule.Route.Name,
+                    booking.Schedule.DepartureTime
+                );
+            }
+
 
 
             // ---------------- 2️⃣ Send Email to Primary Passenger ----------------
@@ -178,6 +204,8 @@ Thanks for choosing Railway.";
 
             return booking;
         }
+
+
 
 
 

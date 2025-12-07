@@ -238,6 +238,7 @@ if (reply?.recommended) {
   });
 
   const list = [
+    reply.recommended.personalized,
     reply.recommended.fastest,
     reply.recommended.cheapest,
     reply.recommended.luxury
@@ -292,50 +293,79 @@ if (reply?.recommended) {
           {/* Messages */}
           <div className="p-3 h-64 overflow-y-auto space-y-2">
             {messages.map((m, i) => {
-if (m.type === "train-list" && Array.isArray(m.data)) {
+// =========================
+// TRAIN LIST (with preference)
+// =========================
+if (m.type === "train-list") {
+  const { personalized, others } = m.data;
+
   return (
-    <div key={i} className="bg-gray-100 p-2 rounded-md">
-      {m.data.map((train) => (
-        <button
-          key={train.scheduleId}
-          onClick={() => selectTrain(train)}
-          className="block w-full bg-blue-600 text-white px-3 py-3 rounded-md mb-3 hover:bg-blue-700 text-left"
-        >
-          {/* 🔥 Tags */}
-          {train.trainType === "Express" && (
-            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-yellow-400 text-black">
-              🚄 Fastest
-            </span>
-          )}
-          {train.trainType === "Local" && (
-            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-green-400 text-black">
-              💸 Cheapest
-            </span>
-          )}
-          {train.trainType === "Luxury" && (
-            <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-purple-500 text-white">
-              👑 Luxury
-            </span>
-          )}
+    <div key={i} className="bg-gray-100 p-3 rounded-md space-y-4">
 
-          <div className="font-semibold text-base">{train.train}</div>
-
-          <div className="text-xs text-gray-200">
-            Departure: {new Date(train.departure).toLocaleString()}
+      {/* ❤️ USER PREFERENCE */}
+      {personalized && (
+        <div className="p-3 border-2 border-red-500 rounded-lg bg-white shadow">
+          <div className="text-xs font-bold text-red-600 mb-1">
+            ❤️ Based on your past bookings
           </div>
 
-          <div className="text-xs text-gray-200">
-            Price: Rs. {train.price}
-          </div>
+          <button
+            key={personalized.scheduleId}
+            onClick={() => selectTrain(personalized)}
+            className="block w-full bg-blue-600 text-white px-3 py-3 rounded-md hover:bg-blue-700 text-left"
+          >
+            <div className="font-semibold text-base">{personalized.train}</div>
+            <div className="text-xs text-gray-200">
+              Departure: {new Date(personalized.departure).toLocaleString()}
+            </div>
+            <div className="text-xs text-gray-200">Price: Rs. {personalized.price}</div>
+            <div className="text-xs text-gray-200">
+              Travel Time: {personalized.travelTime} min
+            </div>
+          </button>
+        </div>
+      )}
 
-          <div className="text-xs text-gray-200">
-            Travel Time: {train.travelTime} min
-          </div>
-        </button>
-      ))}
+      {/* 🔽 OTHER RECOMMENDED TRAINS */}
+      <div className="space-y-3">
+        {others?.map((train) => (
+          <button
+            key={train.scheduleId}
+            onClick={() => selectTrain(train)}
+            className="block w-full bg-blue-600 text-white px-3 py-3 rounded-md hover:bg-blue-700 text-left"
+          >
+            {/* Tags */}
+            {train.trainType === "Express" && (
+              <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-yellow-400 text-black">
+                🚄 Fastest
+              </span>
+            )}
+            {train.trainType === "Local" && (
+              <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-green-400 text-black">
+                💸 Cheapest
+              </span>
+            )}
+            {train.trainType === "Luxury" && (
+              <span className="inline-block mb-1 px-2 py-1 text-xs rounded bg-purple-500 text-white">
+                👑 Luxury
+              </span>
+            )}
+
+            <div className="font-semibold text-base">{train.train}</div>
+            <div className="text-xs text-gray-200">
+              Departure: {new Date(train.departure).toLocaleString()}
+            </div>
+            <div className="text-xs text-gray-200">Price: Rs. {train.price}</div>
+            <div className="text-xs text-gray-200">
+              Travel Time: {train.travelTime} min
+            </div>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
+
 
               return (
                 <div

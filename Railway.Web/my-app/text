@@ -1,0 +1,5282 @@
+[
+  {
+    "id": "00828009-6106-4790-af2f-f8fb26c24156",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T08:20:00",
+    "stops": [
+      {
+        "id": "57b4ad87-e518-4a55-a8a7-356b4264c72c",
+        "scheduleId": "00828009-6106-4790-af2f-f8fb26c24156",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-08T08:20:00",
+        "departure": "2025-12-08T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "5d8d91fa-3f9a-4618-a8bd-2230259a33ae",
+        "scheduleId": "00828009-6106-4790-af2f-f8fb26c24156",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-08T09:46:00",
+        "departure": "2025-12-08T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "acaed308-fbf5-4186-9846-ec486d9eef90",
+        "scheduleId": "00828009-6106-4790-af2f-f8fb26c24156",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T08:20:00",
+        "departure": "2025-12-08T08:20:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "023906ca-8916-45ae-9a5d-38a32cccc01a",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T09:40:00",
+    "stops": [
+      {
+        "id": "01a24647-5a4e-421e-8da0-90e739de5251",
+        "scheduleId": "023906ca-8916-45ae-9a5d-38a32cccc01a",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-08T09:40:00",
+        "departure": "2025-12-08T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "1f64a0bc-81c8-401c-acc6-a6afaaf801dd",
+        "scheduleId": "023906ca-8916-45ae-9a5d-38a32cccc01a",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-08T11:42:00",
+        "departure": "2025-12-08T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "7018806b-2b25-467c-bad4-94d06e9f8ea4",
+        "scheduleId": "023906ca-8916-45ae-9a5d-38a32cccc01a",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T09:40:00",
+        "departure": "2025-12-08T09:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "04503f0c-60a4-4e18-b4c1-bddbe2daafbe",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T06:40:00",
+    "stops": [
+      {
+        "id": "7a27bec3-4174-4a76-ac0c-d91c08ca2b88",
+        "scheduleId": "04503f0c-60a4-4e18-b4c1-bddbe2daafbe",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-07T06:40:00",
+        "departure": "2025-12-07T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "92f21417-8351-48ee-a10e-b4cfc4203e1d",
+        "scheduleId": "04503f0c-60a4-4e18-b4c1-bddbe2daafbe",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T06:40:00",
+        "departure": "2025-12-07T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "b0bc5b52-8559-48a9-b21f-a841cb5c7daf",
+        "scheduleId": "04503f0c-60a4-4e18-b4c1-bddbe2daafbe",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-07T10:18:00",
+        "departure": "2025-12-07T10:20:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "073d613f-d9a7-48de-957e-0e8dd17b7a5f",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T06:00:00",
+    "stops": [
+      {
+        "id": "6f2c6dfe-29e7-4583-857d-ea812ba98b42",
+        "scheduleId": "073d613f-d9a7-48de-957e-0e8dd17b7a5f",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T06:00:00",
+        "departure": "2025-12-05T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "b72ae73f-3431-4137-b4d0-7ba735e284d6",
+        "scheduleId": "073d613f-d9a7-48de-957e-0e8dd17b7a5f",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-05T08:07:59.9999999",
+        "departure": "2025-12-05T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "e59851fc-1d2e-4579-8a7c-44c9a27b7a78",
+        "scheduleId": "073d613f-d9a7-48de-957e-0e8dd17b7a5f",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-05T06:00:00",
+        "departure": "2025-12-05T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "0945ce25-98b9-4844-bb1f-3f7372a5f07f",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T06:00:00",
+    "stops": [
+      {
+        "id": "2578b0d0-a217-4d75-b342-ae7a1a5961f6",
+        "scheduleId": "0945ce25-98b9-4844-bb1f-3f7372a5f07f",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-02T08:07:59.9999999",
+        "departure": "2025-12-02T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "6758ca20-a5e8-448a-9299-a80286f6800e",
+        "scheduleId": "0945ce25-98b9-4844-bb1f-3f7372a5f07f",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T06:00:00",
+        "departure": "2025-12-02T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "84caebcc-fd35-46fc-a01e-3a3a9a0c9197",
+        "scheduleId": "0945ce25-98b9-4844-bb1f-3f7372a5f07f",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-02T06:00:00",
+        "departure": "2025-12-02T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "0aba7f49-7dfd-41ec-b1d3-2826312550b8",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T06:40:00",
+    "stops": [
+      {
+        "id": "1c2a800f-e96c-4f31-bd02-d96f3014db46",
+        "scheduleId": "0aba7f49-7dfd-41ec-b1d3-2826312550b8",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-09T06:40:00",
+        "departure": "2025-12-09T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "21de4e15-5e3e-44d8-a05f-d506188fe4c3",
+        "scheduleId": "0aba7f49-7dfd-41ec-b1d3-2826312550b8",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T06:40:00",
+        "departure": "2025-12-09T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "7778f131-9089-4878-8229-9e4c36ad15ca",
+        "scheduleId": "0aba7f49-7dfd-41ec-b1d3-2826312550b8",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-09T10:18:00",
+        "departure": "2025-12-09T10:20:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "0b1f948e-b0c0-46f8-8c53-07f6a5dd2e1a",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T06:40:00",
+    "stops": [
+      {
+        "id": "8e06464a-aeb2-494c-b9f8-bad32e954628",
+        "scheduleId": "0b1f948e-b0c0-46f8-8c53-07f6a5dd2e1a",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-02T10:18:00",
+        "departure": "2025-12-02T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "d4f8ae36-09dd-48bd-8aa9-ee51418bcd4c",
+        "scheduleId": "0b1f948e-b0c0-46f8-8c53-07f6a5dd2e1a",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T06:40:00",
+        "departure": "2025-12-02T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "e96ad9a8-2e49-4694-a0b7-34f526e89b37",
+        "scheduleId": "0b1f948e-b0c0-46f8-8c53-07f6a5dd2e1a",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-02T06:40:00",
+        "departure": "2025-12-02T06:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "0d34ae82-136f-4fd8-8fd0-a0cd52bdc2cf",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T06:00:00",
+    "stops": [
+      {
+        "id": "292b5063-0858-4737-b6dd-f609ca133c02",
+        "scheduleId": "0d34ae82-136f-4fd8-8fd0-a0cd52bdc2cf",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T06:00:00",
+        "departure": "2025-12-04T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "516009b1-78c9-4327-a6c6-2d0cbd9356d9",
+        "scheduleId": "0d34ae82-136f-4fd8-8fd0-a0cd52bdc2cf",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-04T08:07:59.9999999",
+        "departure": "2025-12-04T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "cf3fd245-d23c-4c0c-bc3a-66db153a85a3",
+        "scheduleId": "0d34ae82-136f-4fd8-8fd0-a0cd52bdc2cf",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-04T06:00:00",
+        "departure": "2025-12-04T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "0d9c372a-7228-436c-82a7-fae2429da687",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T06:40:00",
+    "stops": [
+      {
+        "id": "18fa21cc-84d4-4e0c-aa0a-171e8e4f5537",
+        "scheduleId": "0d9c372a-7228-436c-82a7-fae2429da687",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T06:40:00",
+        "departure": "2025-11-30T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "1fc6147d-3168-462d-9e7e-fa88ff8c0899",
+        "scheduleId": "0d9c372a-7228-436c-82a7-fae2429da687",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-11-30T06:40:00",
+        "departure": "2025-11-30T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "fbd4bfb7-eb32-4765-b63d-d6b071155a1e",
+        "scheduleId": "0d9c372a-7228-436c-82a7-fae2429da687",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-11-30T10:18:00",
+        "departure": "2025-11-30T10:20:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "13cb6a30-38f7-44d5-a70f-7c744252a334",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T09:00:00",
+    "stops": [
+      {
+        "id": "6597e491-dc0b-43de-bfab-66f890c69a51",
+        "scheduleId": "13cb6a30-38f7-44d5-a70f-7c744252a334",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T09:00:00",
+        "departure": "2025-12-06T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "69f5929b-4592-415e-8b46-84d513b44e82",
+        "scheduleId": "13cb6a30-38f7-44d5-a70f-7c744252a334",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-06T09:00:00",
+        "departure": "2025-12-06T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "6a045c30-8217-465f-a48f-80538f7d7c4b",
+        "scheduleId": "13cb6a30-38f7-44d5-a70f-7c744252a334",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-06T11:26:00",
+        "departure": "2025-12-06T11:28:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "16cc6fc0-3056-423c-8913-a7b618080d26",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T08:20:00",
+    "stops": [
+      {
+        "id": "56540cad-3dc9-4593-93b8-d1c0fd7a4863",
+        "scheduleId": "16cc6fc0-3056-423c-8913-a7b618080d26",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-03T09:46:00",
+        "departure": "2025-12-03T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "d63a061d-680c-4a6a-b103-fc58ca74223d",
+        "scheduleId": "16cc6fc0-3056-423c-8913-a7b618080d26",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-03T08:20:00",
+        "departure": "2025-12-03T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "e227b314-40d6-4a9b-b5b4-ba3cc871f9d8",
+        "scheduleId": "16cc6fc0-3056-423c-8913-a7b618080d26",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T08:20:00",
+        "departure": "2025-12-03T08:20:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "25076a41-6aa8-44da-8c89-48ab3ca88541",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T09:40:00",
+    "stops": [
+      {
+        "id": "5568f5a9-2036-488b-b219-62a074823a13",
+        "scheduleId": "25076a41-6aa8-44da-8c89-48ab3ca88541",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T09:40:00",
+        "departure": "2025-12-09T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "8771f253-5ba9-4382-bd94-317f3092f6f6",
+        "scheduleId": "25076a41-6aa8-44da-8c89-48ab3ca88541",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-09T09:40:00",
+        "departure": "2025-12-09T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "9267fdeb-6e72-4d47-8726-bc3fc1f40e01",
+        "scheduleId": "25076a41-6aa8-44da-8c89-48ab3ca88541",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-09T11:42:00",
+        "departure": "2025-12-09T11:44:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "254bc593-4cb6-4e49-ab52-2bc891206b1c",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T08:20:00",
+    "stops": [
+      {
+        "id": "2c534022-ee49-424c-8dc2-8d7fc240f594",
+        "scheduleId": "254bc593-4cb6-4e49-ab52-2bc891206b1c",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T08:20:00",
+        "departure": "2025-12-09T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "41d0cdc5-3833-4994-8a03-0786e6e3cc48",
+        "scheduleId": "254bc593-4cb6-4e49-ab52-2bc891206b1c",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-09T08:20:00",
+        "departure": "2025-12-09T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "e889e51b-f8b4-42bb-94dd-947eb0cd0036",
+        "scheduleId": "254bc593-4cb6-4e49-ab52-2bc891206b1c",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-09T09:46:00",
+        "departure": "2025-12-09T09:48:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "261d5733-f5c0-41bb-900a-2296610840dc",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T09:00:00",
+    "stops": [
+      {
+        "id": "1dde0700-b08c-489f-909d-32a81b719314",
+        "scheduleId": "261d5733-f5c0-41bb-900a-2296610840dc",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-09T11:26:00",
+        "departure": "2025-12-09T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "b2314b81-5fdc-4553-985c-8cd2b1d05b3b",
+        "scheduleId": "261d5733-f5c0-41bb-900a-2296610840dc",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T09:00:00",
+        "departure": "2025-12-09T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "ef161793-bd95-4ea5-baac-9dc1b0f739cc",
+        "scheduleId": "261d5733-f5c0-41bb-900a-2296610840dc",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-09T09:00:00",
+        "departure": "2025-12-09T09:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "2b782a7b-ce7b-49e2-8cfe-e194ca07a23f",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T06:00:00",
+    "stops": [
+      {
+        "id": "6033e015-a7fe-438d-8cb5-56868705104f",
+        "scheduleId": "2b782a7b-ce7b-49e2-8cfe-e194ca07a23f",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-06T08:07:59.9999999",
+        "departure": "2025-12-06T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "90c5a9c9-a4eb-400a-b777-ad5739ce66db",
+        "scheduleId": "2b782a7b-ce7b-49e2-8cfe-e194ca07a23f",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-06T06:00:00",
+        "departure": "2025-12-06T06:02:00",
+        "order": 2
+      },
+      {
+        "id": "f252453d-582a-4314-b9a2-2d73523ee5bb",
+        "scheduleId": "2b782a7b-ce7b-49e2-8cfe-e194ca07a23f",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T06:00:00",
+        "departure": "2025-12-06T06:00:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "36f4ac4f-44d2-4519-8e1a-377a1b9ebf4e",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T06:00:00",
+    "stops": [
+      {
+        "id": "38e515f1-dea5-439d-a0fb-ed9a844451cb",
+        "scheduleId": "36f4ac4f-44d2-4519-8e1a-377a1b9ebf4e",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T06:00:00",
+        "departure": "2025-12-01T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "96439f26-4f87-438c-972e-c538ddb54034",
+        "scheduleId": "36f4ac4f-44d2-4519-8e1a-377a1b9ebf4e",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-01T08:07:59.9999999",
+        "departure": "2025-12-01T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "d0020ce0-7c46-484f-b046-07e82a77b4dd",
+        "scheduleId": "36f4ac4f-44d2-4519-8e1a-377a1b9ebf4e",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-01T06:00:00",
+        "departure": "2025-12-01T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "37f11396-6254-4c69-99a9-68ab7a3579cc",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T08:20:00",
+    "stops": [
+      {
+        "id": "26341501-d8ac-4229-90d5-8a42bf16a6f2",
+        "scheduleId": "37f11396-6254-4c69-99a9-68ab7a3579cc",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-02T08:20:00",
+        "departure": "2025-12-02T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "a8de63a5-08f9-4345-84b6-0b1d784ab1ff",
+        "scheduleId": "37f11396-6254-4c69-99a9-68ab7a3579cc",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T08:20:00",
+        "departure": "2025-12-02T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "d14b3841-fdca-4e5f-b83b-26f43485ad9f",
+        "scheduleId": "37f11396-6254-4c69-99a9-68ab7a3579cc",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-02T09:46:00",
+        "departure": "2025-12-02T09:48:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "399d2eaf-c1a2-4eca-b4fb-2a27070a7c6c",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T06:00:00",
+    "stops": [
+      {
+        "id": "160865f8-c1e6-4a4b-8bcc-cd1f4b32cd3a",
+        "scheduleId": "399d2eaf-c1a2-4eca-b4fb-2a27070a7c6c",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T06:00:00",
+        "departure": "2025-12-07T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "5ea26efa-cdef-4626-a3bf-b628e90abf4a",
+        "scheduleId": "399d2eaf-c1a2-4eca-b4fb-2a27070a7c6c",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-07T06:00:00",
+        "departure": "2025-12-07T06:02:00",
+        "order": 2
+      },
+      {
+        "id": "edb7a9ff-76e2-4487-a960-986961fa798a",
+        "scheduleId": "399d2eaf-c1a2-4eca-b4fb-2a27070a7c6c",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-07T08:07:59.9999999",
+        "departure": "2025-12-07T08:09:59.9999999",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "39f6d894-c3fe-4c4d-8205-acd1cb217e53",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T07:20:00",
+    "stops": [
+      {
+        "id": "09f6522b-cc36-4dc4-b1b1-7728f9e677fa",
+        "scheduleId": "39f6d894-c3fe-4c4d-8205-acd1cb217e53",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-09T10:22:00",
+        "departure": "2025-12-09T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "2b12439e-8b45-4bcc-9e1b-2a8773e66cb0",
+        "scheduleId": "39f6d894-c3fe-4c4d-8205-acd1cb217e53",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-09T07:20:00",
+        "departure": "2025-12-09T07:22:00",
+        "order": 2
+      },
+      {
+        "id": "57d8e7d4-a875-4f0c-87f1-339fe3d24dec",
+        "scheduleId": "39f6d894-c3fe-4c4d-8205-acd1cb217e53",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T07:20:00",
+        "departure": "2025-12-09T07:20:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "42e9d1e0-3978-4b83-8538-36c7c7ac572e",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T07:20:00",
+    "stops": [
+      {
+        "id": "14b4ea23-7980-433e-8458-2bc76e06f935",
+        "scheduleId": "42e9d1e0-3978-4b83-8538-36c7c7ac572e",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-01T10:22:00",
+        "departure": "2025-12-01T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "c96aaadf-0a58-4067-9792-7ceb8cab6f25",
+        "scheduleId": "42e9d1e0-3978-4b83-8538-36c7c7ac572e",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T07:20:00",
+        "departure": "2025-12-01T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "f9accca1-24b9-4632-83b0-016d1ff5af23",
+        "scheduleId": "42e9d1e0-3978-4b83-8538-36c7c7ac572e",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-01T07:20:00",
+        "departure": "2025-12-01T07:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "4d0433f2-d9c4-4d28-adec-4dee710014af",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T09:00:00",
+    "stops": [
+      {
+        "id": "77904a90-0df1-4306-8693-7974d9506f42",
+        "scheduleId": "4d0433f2-d9c4-4d28-adec-4dee710014af",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T09:00:00",
+        "departure": "2025-12-05T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "8532b81b-e67f-482a-8bfc-005b8c7ffcdb",
+        "scheduleId": "4d0433f2-d9c4-4d28-adec-4dee710014af",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-05T11:26:00",
+        "departure": "2025-12-05T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "f8f8c6fe-995e-493c-a9ee-622e57ce3d41",
+        "scheduleId": "4d0433f2-d9c4-4d28-adec-4dee710014af",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-05T09:00:00",
+        "departure": "2025-12-05T09:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "4ecab67d-c1f1-42a0-aa9a-8ca72e6a1d65",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T07:20:00",
+    "stops": [
+      {
+        "id": "25e95be7-e639-470f-a25f-03fb1ca7c516",
+        "scheduleId": "4ecab67d-c1f1-42a0-aa9a-8ca72e6a1d65",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T07:20:00",
+        "departure": "2025-12-05T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "7a60f1c0-45e6-497e-b724-4325cb022cda",
+        "scheduleId": "4ecab67d-c1f1-42a0-aa9a-8ca72e6a1d65",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-05T10:22:00",
+        "departure": "2025-12-05T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "d122a143-8b15-447e-988a-5172faffa263",
+        "scheduleId": "4ecab67d-c1f1-42a0-aa9a-8ca72e6a1d65",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-05T07:20:00",
+        "departure": "2025-12-05T07:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "4fcd334c-1d53-40c2-beca-67ab9c182b99",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T08:20:00",
+    "stops": [
+      {
+        "id": "acda2b96-7664-4e02-9f3e-9d6fc57599be",
+        "scheduleId": "4fcd334c-1d53-40c2-beca-67ab9c182b99",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T08:20:00",
+        "departure": "2025-11-30T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "b6f48194-77e2-4082-82f6-8c3c7245e5be",
+        "scheduleId": "4fcd334c-1d53-40c2-beca-67ab9c182b99",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-11-30T08:20:00",
+        "departure": "2025-11-30T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "e7aed2ed-1d4a-4b30-bbfa-515bf1a26a1c",
+        "scheduleId": "4fcd334c-1d53-40c2-beca-67ab9c182b99",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-11-30T09:46:00",
+        "departure": "2025-11-30T09:48:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "60b6cbcc-8101-4833-983b-1dc4ba1f525d",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T09:00:00",
+    "stops": [
+      {
+        "id": "25a13026-add4-4b07-86df-e2b4ece80a9b",
+        "scheduleId": "60b6cbcc-8101-4833-983b-1dc4ba1f525d",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T09:00:00",
+        "departure": "2025-11-30T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "73a85168-de56-4bd6-98ef-e82746b4b732",
+        "scheduleId": "60b6cbcc-8101-4833-983b-1dc4ba1f525d",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-11-30T11:26:00",
+        "departure": "2025-11-30T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "9d3f733c-aa7a-4421-a7ee-be83d5eddcd1",
+        "scheduleId": "60b6cbcc-8101-4833-983b-1dc4ba1f525d",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-11-30T09:00:00",
+        "departure": "2025-11-30T09:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "6257c3e3-303a-4f2a-b72e-5bfb50e020d4",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T09:40:00",
+    "stops": [
+      {
+        "id": "2355b7e1-f0ba-4a93-bde8-e372fde5300f",
+        "scheduleId": "6257c3e3-303a-4f2a-b72e-5bfb50e020d4",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-04T11:42:00",
+        "departure": "2025-12-04T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "ac65a9e5-b26b-4ce1-ab43-9e1ac881ce26",
+        "scheduleId": "6257c3e3-303a-4f2a-b72e-5bfb50e020d4",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-04T09:40:00",
+        "departure": "2025-12-04T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "dfae8a61-ab3c-4111-915f-3ef769e47f33",
+        "scheduleId": "6257c3e3-303a-4f2a-b72e-5bfb50e020d4",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T09:40:00",
+        "departure": "2025-12-04T09:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "68c0cb2c-c187-4237-a329-470001886d04",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T08:20:00",
+    "stops": [
+      {
+        "id": "1d8d9f46-28d0-4f88-aeb6-a90264ca9e53",
+        "scheduleId": "68c0cb2c-c187-4237-a329-470001886d04",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-01T09:46:00",
+        "departure": "2025-12-01T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "95d71477-a902-455f-b852-5c2cc0bfefe4",
+        "scheduleId": "68c0cb2c-c187-4237-a329-470001886d04",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T08:20:00",
+        "departure": "2025-12-01T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "dc6e3ae7-42a6-4a8f-ae47-a8ecb7c1db57",
+        "scheduleId": "68c0cb2c-c187-4237-a329-470001886d04",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-01T08:20:00",
+        "departure": "2025-12-01T08:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "68c4b12f-67f2-41b8-8eaf-c297e4220a1e",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T08:20:00",
+    "stops": [
+      {
+        "id": "46f00f7f-7724-44c7-80f0-e0648847237f",
+        "scheduleId": "68c4b12f-67f2-41b8-8eaf-c297e4220a1e",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T08:20:00",
+        "departure": "2025-12-04T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "6d7cd201-3e83-4bd9-9dc5-c24fe8c912ce",
+        "scheduleId": "68c4b12f-67f2-41b8-8eaf-c297e4220a1e",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-04T09:46:00",
+        "departure": "2025-12-04T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "84619610-b53b-4184-8081-23032cfa5cb0",
+        "scheduleId": "68c4b12f-67f2-41b8-8eaf-c297e4220a1e",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-04T08:20:00",
+        "departure": "2025-12-04T08:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "6cb09629-6e4c-46bb-a9bf-6f6cea236f6d",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T09:40:00",
+    "stops": [
+      {
+        "id": "1f60bfbb-1d1a-4e0c-b658-d05e7967462c",
+        "scheduleId": "6cb09629-6e4c-46bb-a9bf-6f6cea236f6d",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T09:40:00",
+        "departure": "2025-11-30T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "433f131f-e311-43d9-a8e5-f0808639f5ac",
+        "scheduleId": "6cb09629-6e4c-46bb-a9bf-6f6cea236f6d",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-11-30T09:40:00",
+        "departure": "2025-11-30T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "ee032635-a7f2-4162-b6d2-e0443100b453",
+        "scheduleId": "6cb09629-6e4c-46bb-a9bf-6f6cea236f6d",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-11-30T11:42:00",
+        "departure": "2025-11-30T11:44:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "76381e97-78c2-4142-9a76-217c8f57a714",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T09:00:00",
+    "stops": [
+      {
+        "id": "b2153472-4d3e-4ed0-8933-22d424087c62",
+        "scheduleId": "76381e97-78c2-4142-9a76-217c8f57a714",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-01T11:26:00",
+        "departure": "2025-12-01T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "e1a0a351-834d-45ca-9bb4-61c1fdddd681",
+        "scheduleId": "76381e97-78c2-4142-9a76-217c8f57a714",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T09:00:00",
+        "departure": "2025-12-01T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "e25bace6-0928-4579-ae9a-7014a5084fcb",
+        "scheduleId": "76381e97-78c2-4142-9a76-217c8f57a714",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-01T09:00:00",
+        "departure": "2025-12-01T09:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "78d15a3c-0299-4029-b43c-cb1799afbf38",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T09:00:00",
+    "stops": [
+      {
+        "id": "1a4738e3-aff8-44a4-bea6-b456e60c5897",
+        "scheduleId": "78d15a3c-0299-4029-b43c-cb1799afbf38",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-07T11:26:00",
+        "departure": "2025-12-07T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "3f00f578-7640-4c66-baf4-633e4e468ee9",
+        "scheduleId": "78d15a3c-0299-4029-b43c-cb1799afbf38",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-07T09:00:00",
+        "departure": "2025-12-07T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "9295fda2-5df9-4979-875f-96ca1147b01f",
+        "scheduleId": "78d15a3c-0299-4029-b43c-cb1799afbf38",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T09:00:00",
+        "departure": "2025-12-07T09:00:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "79cf022f-e196-4bdc-8d99-dae717d6afaf",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T06:00:00",
+    "stops": [
+      {
+        "id": "2b4b4d75-d269-4c15-ac5e-256a0f9ca853",
+        "scheduleId": "79cf022f-e196-4bdc-8d99-dae717d6afaf",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T06:00:00",
+        "departure": "2025-12-03T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "b39290db-8b80-44fa-bb44-4f5e95729e46",
+        "scheduleId": "79cf022f-e196-4bdc-8d99-dae717d6afaf",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-03T06:00:00",
+        "departure": "2025-12-03T06:02:00",
+        "order": 2
+      },
+      {
+        "id": "e2a53fdf-5bfb-4545-bc56-8047dfe47116",
+        "scheduleId": "79cf022f-e196-4bdc-8d99-dae717d6afaf",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-03T08:07:59.9999999",
+        "departure": "2025-12-03T08:09:59.9999999",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "7db34041-8f70-47dd-9848-3ea8efec49fe",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T08:20:00",
+    "stops": [
+      {
+        "id": "959cbdbd-875f-48b3-a347-5c6fb369e75d",
+        "scheduleId": "7db34041-8f70-47dd-9848-3ea8efec49fe",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-06T09:46:00",
+        "departure": "2025-12-06T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "c96660de-b236-4c25-9301-dc277400eaca",
+        "scheduleId": "7db34041-8f70-47dd-9848-3ea8efec49fe",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-06T08:20:00",
+        "departure": "2025-12-06T08:22:00",
+        "order": 2
+      },
+      {
+        "id": "dda87f6f-8bce-4f1a-b503-0d9fafd0bb64",
+        "scheduleId": "7db34041-8f70-47dd-9848-3ea8efec49fe",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T08:20:00",
+        "departure": "2025-12-06T08:20:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "864a7118-3eb2-45b1-abdd-6ffe63444d55",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T06:40:00",
+    "stops": [
+      {
+        "id": "10370f49-0c0e-4d74-89e7-efc824704cd9",
+        "scheduleId": "864a7118-3eb2-45b1-abdd-6ffe63444d55",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T06:40:00",
+        "departure": "2025-12-04T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "486ebb35-2207-45ae-bbcd-2c45c00e3d89",
+        "scheduleId": "864a7118-3eb2-45b1-abdd-6ffe63444d55",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-04T06:40:00",
+        "departure": "2025-12-04T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "d1fc9343-eec2-445c-b003-d15f30afd476",
+        "scheduleId": "864a7118-3eb2-45b1-abdd-6ffe63444d55",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-04T10:18:00",
+        "departure": "2025-12-04T10:20:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "8c2af795-f97e-496f-9aec-b8a1cfb3c0f0",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T07:20:00",
+    "stops": [
+      {
+        "id": "153fc511-8794-4c29-9ed0-dd6c5bd8f661",
+        "scheduleId": "8c2af795-f97e-496f-9aec-b8a1cfb3c0f0",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-11-30T10:22:00",
+        "departure": "2025-11-30T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "c48b3e31-12ad-44a8-b82e-119df2c0c224",
+        "scheduleId": "8c2af795-f97e-496f-9aec-b8a1cfb3c0f0",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T07:20:00",
+        "departure": "2025-11-30T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "faff71e5-1058-41fb-8305-a73741d785bc",
+        "scheduleId": "8c2af795-f97e-496f-9aec-b8a1cfb3c0f0",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-11-30T07:20:00",
+        "departure": "2025-11-30T07:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "8cd70347-b6eb-4ab0-bdd8-08d5be49c3e3",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T09:40:00",
+    "stops": [
+      {
+        "id": "4cde64a2-ca10-4448-8f1c-74b23c3640ed",
+        "scheduleId": "8cd70347-b6eb-4ab0-bdd8-08d5be49c3e3",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-05T11:42:00",
+        "departure": "2025-12-05T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "6737001e-bd6b-4de4-a2d0-59bad99cd1ef",
+        "scheduleId": "8cd70347-b6eb-4ab0-bdd8-08d5be49c3e3",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T09:40:00",
+        "departure": "2025-12-05T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "b02ec5e7-54ba-4bfc-beef-307fe298e8b0",
+        "scheduleId": "8cd70347-b6eb-4ab0-bdd8-08d5be49c3e3",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-05T09:40:00",
+        "departure": "2025-12-05T09:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9283a510-0293-49a4-87d7-8b3e8094c01e",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T06:40:00",
+    "stops": [
+      {
+        "id": "1e00c0ce-bd62-44db-8b0d-2552273cdd55",
+        "scheduleId": "9283a510-0293-49a4-87d7-8b3e8094c01e",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T06:40:00",
+        "departure": "2025-12-08T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "75fe10ce-0e12-4116-bb0b-5229c133dc2a",
+        "scheduleId": "9283a510-0293-49a4-87d7-8b3e8094c01e",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-08T10:18:00",
+        "departure": "2025-12-08T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "ca80f458-bc8b-4231-bcac-305b38b71103",
+        "scheduleId": "9283a510-0293-49a4-87d7-8b3e8094c01e",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-08T06:40:00",
+        "departure": "2025-12-08T06:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9a247946-6d22-4a78-b69e-949cfc46d4e9",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-09T06:00:00",
+    "stops": [
+      {
+        "id": "03fad599-3782-44e3-a1bb-76b4cb6f119b",
+        "scheduleId": "9a247946-6d22-4a78-b69e-949cfc46d4e9",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-09T08:07:59.9999999",
+        "departure": "2025-12-09T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "422c9081-5bdd-41bd-a9ec-4cc5f9dea1e9",
+        "scheduleId": "9a247946-6d22-4a78-b69e-949cfc46d4e9",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-09T06:00:00",
+        "departure": "2025-12-09T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "dfc0d87a-c828-44c6-badb-d6cae369cd39",
+        "scheduleId": "9a247946-6d22-4a78-b69e-949cfc46d4e9",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-09T06:00:00",
+        "departure": "2025-12-09T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9a282e9b-e874-4ce8-98eb-072c45c4b745",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T08:20:00",
+    "stops": [
+      {
+        "id": "a97624d5-1282-431b-9a76-e5624f630c7b",
+        "scheduleId": "9a282e9b-e874-4ce8-98eb-072c45c4b745",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T08:20:00",
+        "departure": "2025-12-05T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "b8973a5a-5b81-4309-8911-47548b0cf5d4",
+        "scheduleId": "9a282e9b-e874-4ce8-98eb-072c45c4b745",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-05T09:46:00",
+        "departure": "2025-12-05T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "e8d99c7a-82fc-42c9-8d41-18a805ee431f",
+        "scheduleId": "9a282e9b-e874-4ce8-98eb-072c45c4b745",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-05T08:20:00",
+        "departure": "2025-12-05T08:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9c380dae-88bf-4f95-a1f0-ed6a48f2e53a",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T07:20:00",
+    "stops": [
+      {
+        "id": "67349f6c-d96c-4d62-af3f-70de35c882f3",
+        "scheduleId": "9c380dae-88bf-4f95-a1f0-ed6a48f2e53a",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T07:20:00",
+        "departure": "2025-12-03T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "9c869e12-dd88-42bb-b7f8-ec69af55ae1a",
+        "scheduleId": "9c380dae-88bf-4f95-a1f0-ed6a48f2e53a",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-03T10:22:00",
+        "departure": "2025-12-03T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "e56ad4f4-505e-4667-984a-9962b6271849",
+        "scheduleId": "9c380dae-88bf-4f95-a1f0-ed6a48f2e53a",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-03T07:20:00",
+        "departure": "2025-12-03T07:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9c68bf21-562e-4b84-84bd-768d4cbe1927",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T06:00:00",
+    "stops": [
+      {
+        "id": "17a57a62-9e5b-4bb8-b983-04ba7f2a1924",
+        "scheduleId": "9c68bf21-562e-4b84-84bd-768d4cbe1927",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T06:00:00",
+        "departure": "2025-12-08T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "2bfed1a7-8a6e-46e8-bcb3-bd1e0a3907e8",
+        "scheduleId": "9c68bf21-562e-4b84-84bd-768d4cbe1927",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-08T08:07:59.9999999",
+        "departure": "2025-12-08T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "aa5bdafe-3665-441e-9040-292157343701",
+        "scheduleId": "9c68bf21-562e-4b84-84bd-768d4cbe1927",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-08T06:00:00",
+        "departure": "2025-12-08T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "9d400108-7f7b-4aa9-bf12-f4fc905f2410",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T06:40:00",
+    "stops": [
+      {
+        "id": "36b1d18c-9047-473c-b782-c605a495f9bf",
+        "scheduleId": "9d400108-7f7b-4aa9-bf12-f4fc905f2410",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-06T10:18:00",
+        "departure": "2025-12-06T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "b2a7ad5e-13ae-43ef-804f-020abbc4c52f",
+        "scheduleId": "9d400108-7f7b-4aa9-bf12-f4fc905f2410",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-06T06:40:00",
+        "departure": "2025-12-06T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "f4b0ea12-e1af-4436-a7c6-f862990314a7",
+        "scheduleId": "9d400108-7f7b-4aa9-bf12-f4fc905f2410",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T06:40:00",
+        "departure": "2025-12-06T06:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "a094e883-ed4a-433e-9b50-b9033e291a67",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T09:40:00",
+    "stops": [
+      {
+        "id": "7081a992-219b-4ebb-9d3b-eee6ff16bd9f",
+        "scheduleId": "a094e883-ed4a-433e-9b50-b9033e291a67",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-01T11:42:00",
+        "departure": "2025-12-01T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "87b9422e-996c-4542-967a-e1e204e0dc22",
+        "scheduleId": "a094e883-ed4a-433e-9b50-b9033e291a67",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T09:40:00",
+        "departure": "2025-12-01T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "929e018f-7241-4d7b-a4bf-e79c40c0e256",
+        "scheduleId": "a094e883-ed4a-433e-9b50-b9033e291a67",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-01T09:40:00",
+        "departure": "2025-12-01T09:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "a22e350e-7154-425e-86a1-885aa5b38eaa",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T09:40:00",
+    "stops": [
+      {
+        "id": "0b7280fc-5724-48b1-ac60-f5c680c107af",
+        "scheduleId": "a22e350e-7154-425e-86a1-885aa5b38eaa",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T09:40:00",
+        "departure": "2025-12-07T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "1332fc98-4afa-41c2-90a1-476f81136cd7",
+        "scheduleId": "a22e350e-7154-425e-86a1-885aa5b38eaa",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-07T09:40:00",
+        "departure": "2025-12-07T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "151611d1-2a25-4fe9-92e5-246f8238b222",
+        "scheduleId": "a22e350e-7154-425e-86a1-885aa5b38eaa",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-07T11:42:00",
+        "departure": "2025-12-07T11:44:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "a4544a76-a136-45b2-af6c-f04a20e4ca2f",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T09:40:00",
+    "stops": [
+      {
+        "id": "29b473b2-8019-4888-9197-24cc35096993",
+        "scheduleId": "a4544a76-a136-45b2-af6c-f04a20e4ca2f",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-02T09:40:00",
+        "departure": "2025-12-02T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "56501e79-ca7a-4f91-a0b6-7999b7cd8ff8",
+        "scheduleId": "a4544a76-a136-45b2-af6c-f04a20e4ca2f",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-02T11:42:00",
+        "departure": "2025-12-02T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "89bb811c-0d22-486e-8e6c-83273e33da51",
+        "scheduleId": "a4544a76-a136-45b2-af6c-f04a20e4ca2f",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T09:40:00",
+        "departure": "2025-12-02T09:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "a8ed647e-9393-4ef5-95f1-2727daffcb1d",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T07:20:00",
+    "stops": [
+      {
+        "id": "22e6cc6c-98b1-4005-b269-896a675cf839",
+        "scheduleId": "a8ed647e-9393-4ef5-95f1-2727daffcb1d",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T07:20:00",
+        "departure": "2025-12-02T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "ea8763b7-9cc4-4aa8-8a44-4a777100ba50",
+        "scheduleId": "a8ed647e-9393-4ef5-95f1-2727daffcb1d",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-02T07:20:00",
+        "departure": "2025-12-02T07:22:00",
+        "order": 2
+      },
+      {
+        "id": "f7101d2d-8089-4578-95fe-72e3a023da87",
+        "scheduleId": "a8ed647e-9393-4ef5-95f1-2727daffcb1d",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-02T10:22:00",
+        "departure": "2025-12-02T10:24:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "aeb5b4ef-9a61-4828-9fb4-13a0ae6682fd",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T09:00:00",
+    "stops": [
+      {
+        "id": "4b257a64-6e8d-4b6c-bf4a-61dd3b90aab2",
+        "scheduleId": "aeb5b4ef-9a61-4828-9fb4-13a0ae6682fd",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-08T09:00:00",
+        "departure": "2025-12-08T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "52e9a753-fc48-4a1a-b876-7ed1507a107b",
+        "scheduleId": "aeb5b4ef-9a61-4828-9fb4-13a0ae6682fd",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-08T11:26:00",
+        "departure": "2025-12-08T11:28:00",
+        "order": 3
+      },
+      {
+        "id": "7832fcde-e76f-41ee-9ee4-23d9635902bf",
+        "scheduleId": "aeb5b4ef-9a61-4828-9fb4-13a0ae6682fd",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T09:00:00",
+        "departure": "2025-12-08T09:00:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "b033a4b7-1f20-46dc-acc8-c2be39ea82e6",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T09:00:00",
+    "stops": [
+      {
+        "id": "7b4b8505-6617-4a3b-bda1-f2031f1e91f2",
+        "scheduleId": "b033a4b7-1f20-46dc-acc8-c2be39ea82e6",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T09:00:00",
+        "departure": "2025-12-04T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "c4f8d0ae-a910-4e98-9343-d6e08f7fd017",
+        "scheduleId": "b033a4b7-1f20-46dc-acc8-c2be39ea82e6",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-04T09:00:00",
+        "departure": "2025-12-04T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "e2d50b6f-00b7-41e0-a361-29ada962090c",
+        "scheduleId": "b033a4b7-1f20-46dc-acc8-c2be39ea82e6",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-04T11:26:00",
+        "departure": "2025-12-04T11:28:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "b1c545cc-b84e-42ef-9ad7-190640b7233b",
+    "trainId": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+    "train": {
+      "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+      "name": "Galle Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          null,
+          {
+            "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+            "name": "Northern Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T08:20:00",
+    "stops": [
+      {
+        "id": "19dae668-646a-4cb5-9489-32f894b5db4e",
+        "scheduleId": "b1c545cc-b84e-42ef-9ad7-190640b7233b",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T08:20:00",
+        "departure": "2025-12-07T08:20:00",
+        "order": 1
+      },
+      {
+        "id": "1cb64618-7fd8-4119-b820-5fb4747e89cb",
+        "scheduleId": "b1c545cc-b84e-42ef-9ad7-190640b7233b",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-07T09:46:00",
+        "departure": "2025-12-07T09:48:00",
+        "order": 3
+      },
+      {
+        "id": "b2a9e98b-2081-4acd-bcd2-9cf8fbbdb12f",
+        "scheduleId": "b1c545cc-b84e-42ef-9ad7-190640b7233b",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-07T08:20:00",
+        "departure": "2025-12-07T08:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "bf7ba562-e83d-49d7-b5b7-b734c3b955ed",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T09:40:00",
+    "stops": [
+      {
+        "id": "3f52e5c1-4dda-48e3-ba45-4fcb57d050bf",
+        "scheduleId": "bf7ba562-e83d-49d7-b5b7-b734c3b955ed",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-06T09:40:00",
+        "departure": "2025-12-06T09:42:00",
+        "order": 2
+      },
+      {
+        "id": "5d6a37fa-8493-4aee-a9f3-12b589a90ba7",
+        "scheduleId": "bf7ba562-e83d-49d7-b5b7-b734c3b955ed",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-06T11:42:00",
+        "departure": "2025-12-06T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "d3e0cda6-28a0-4dc8-97d1-37963ecbfbe7",
+        "scheduleId": "bf7ba562-e83d-49d7-b5b7-b734c3b955ed",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T09:40:00",
+        "departure": "2025-12-06T09:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "cbaa462e-40f0-4873-9e6c-146b08871af1",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-04T07:20:00",
+    "stops": [
+      {
+        "id": "0e8642af-3f7b-4889-a3aa-9d77a2f0ef6a",
+        "scheduleId": "cbaa462e-40f0-4873-9e6c-146b08871af1",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-04T07:20:00",
+        "departure": "2025-12-04T07:22:00",
+        "order": 2
+      },
+      {
+        "id": "0fec8aaf-5052-48f8-b645-f877bf147dfe",
+        "scheduleId": "cbaa462e-40f0-4873-9e6c-146b08871af1",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-04T07:20:00",
+        "departure": "2025-12-04T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "bed7ae51-f252-44b8-8216-da9cf412f464",
+        "scheduleId": "cbaa462e-40f0-4873-9e6c-146b08871af1",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-04T10:22:00",
+        "departure": "2025-12-04T10:24:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "cf7ce91b-41de-4e66-b8b6-006eb8db41b7",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-05T06:40:00",
+    "stops": [
+      {
+        "id": "5c0e99cc-4527-4a68-9422-98409c92f107",
+        "scheduleId": "cf7ce91b-41de-4e66-b8b6-006eb8db41b7",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-05T10:18:00",
+        "departure": "2025-12-05T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "9d5c207a-5148-4ded-a23b-7d13a1caf9c0",
+        "scheduleId": "cf7ce91b-41de-4e66-b8b6-006eb8db41b7",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-05T06:40:00",
+        "departure": "2025-12-05T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "f9c9f65f-4391-4f67-b761-310b965146f0",
+        "scheduleId": "cf7ce91b-41de-4e66-b8b6-006eb8db41b7",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-05T06:40:00",
+        "departure": "2025-12-05T06:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "d0ebf1d2-c4af-4032-ba02-065a3e4f07fa",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-06T07:20:00",
+    "stops": [
+      {
+        "id": "09fa58a0-8449-4f65-acb0-49d72e78674f",
+        "scheduleId": "d0ebf1d2-c4af-4032-ba02-065a3e4f07fa",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-06T07:20:00",
+        "departure": "2025-12-06T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "3592eb03-2554-4f00-8ae3-57eb5d321086",
+        "scheduleId": "d0ebf1d2-c4af-4032-ba02-065a3e4f07fa",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-06T07:20:00",
+        "departure": "2025-12-06T07:22:00",
+        "order": 2
+      },
+      {
+        "id": "fcab7748-e40d-44cc-bb6d-d5396f83138a",
+        "scheduleId": "d0ebf1d2-c4af-4032-ba02-065a3e4f07fa",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-06T10:22:00",
+        "departure": "2025-12-06T10:24:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "d4931eef-483e-4177-a1cb-217b456b56d7",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T09:00:00",
+    "stops": [
+      {
+        "id": "51dd3278-688c-4349-a0ee-be7594d6986f",
+        "scheduleId": "d4931eef-483e-4177-a1cb-217b456b56d7",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-03T09:00:00",
+        "departure": "2025-12-03T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "67a08b7f-8b66-477f-9f68-aa61609df20a",
+        "scheduleId": "d4931eef-483e-4177-a1cb-217b456b56d7",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T09:00:00",
+        "departure": "2025-12-03T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "690caf2e-552c-4033-97cf-73b8ad038c72",
+        "scheduleId": "d4931eef-483e-4177-a1cb-217b456b56d7",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-03T11:26:00",
+        "departure": "2025-12-03T11:28:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "d6db9f05-bce3-4216-9eb2-1efc699e7ee6",
+    "trainId": "31A3E949-9F00-4581-95AF-C702980961F1",
+    "train": {
+      "id": "31A3E949-9F00-4581-95AF-C702980961F1",
+      "name": "Northern Intercity Express",
+      "trainTypeId": "type-express",
+      "trainType": {
+        "id": "type-express",
+        "name": "Express",
+        "fareMultiplier": 1.5,
+        "speedFactor": 0.7,
+        "stopsAtEveryStation": false,
+        "description": "Fast train, fewer stops",
+        "trains": [
+          {
+            "id": "339654DF-6A1D-44C2-8A3B-0DFB6C5CCB59",
+            "name": "Galle Intercity Express",
+            "trainTypeId": "type-express",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-11-30T06:00:00",
+    "stops": [
+      {
+        "id": "20a404f4-9d66-4864-ade6-4f0aaba6d9d0",
+        "scheduleId": "d6db9f05-bce3-4216-9eb2-1efc699e7ee6",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-11-30T08:07:59.9999999",
+        "departure": "2025-11-30T08:09:59.9999999",
+        "order": 3
+      },
+      {
+        "id": "6f810739-55b8-4a65-991d-cff51eae4c8c",
+        "scheduleId": "d6db9f05-bce3-4216-9eb2-1efc699e7ee6",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-11-30T06:00:00",
+        "departure": "2025-11-30T06:00:00",
+        "order": 1
+      },
+      {
+        "id": "99b047c5-c711-49c9-98a5-9ce8ce5d4ec2",
+        "scheduleId": "d6db9f05-bce3-4216-9eb2-1efc699e7ee6",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-11-30T06:00:00",
+        "departure": "2025-11-30T06:02:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "e2ee7d10-9956-4949-8332-553127b1bd11",
+    "trainId": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+    "train": {
+      "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+      "name": "Coastal Luxury Express",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          null,
+          {
+            "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+            "name": "Jaffna Queen Luxury Service",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T09:40:00",
+    "stops": [
+      {
+        "id": "0ccd3fe3-2ef3-4ade-ade1-0ef6504afef9",
+        "scheduleId": "e2ee7d10-9956-4949-8332-553127b1bd11",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-03T11:42:00",
+        "departure": "2025-12-03T11:44:00",
+        "order": 3
+      },
+      {
+        "id": "d2de71c9-6001-4f64-a31f-ce74b8668500",
+        "scheduleId": "e2ee7d10-9956-4949-8332-553127b1bd11",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T09:40:00",
+        "departure": "2025-12-03T09:40:00",
+        "order": 1
+      },
+      {
+        "id": "f23ab10a-513c-428b-ade4-6da6dc192aea",
+        "scheduleId": "e2ee7d10-9956-4949-8332-553127b1bd11",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-03T09:40:00",
+        "departure": "2025-12-03T09:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "e7d5027e-8a7f-4588-b7d3-fc3ac6811bd0",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-01T06:40:00",
+    "stops": [
+      {
+        "id": "261c8aba-933f-4451-8ea4-83a1c6cbe2d6",
+        "scheduleId": "e7d5027e-8a7f-4588-b7d3-fc3ac6811bd0",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-01T10:18:00",
+        "departure": "2025-12-01T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "42a0f00c-c03a-46b9-b6c5-27b367812017",
+        "scheduleId": "e7d5027e-8a7f-4588-b7d3-fc3ac6811bd0",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-01T06:40:00",
+        "departure": "2025-12-01T06:40:00",
+        "order": 1
+      },
+      {
+        "id": "77eafe0b-f680-433a-8046-495f12eaa5c2",
+        "scheduleId": "e7d5027e-8a7f-4588-b7d3-fc3ac6811bd0",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-01T06:40:00",
+        "departure": "2025-12-01T06:42:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "e8b037f0-c139-4758-b391-9e7c7792f25a",
+    "trainId": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+    "train": {
+      "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+      "name": "Southern Line Local",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          {
+            "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+            "name": "Mannar Local Service",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-north",
+            "defaultRoute": {
+              "id": "route-north",
+              "name": "Northern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-south",
+      "defaultRoute": {
+        "id": "route-south",
+        "name": "Southern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-south",
+    "route": {
+      "id": "route-south",
+      "name": "Southern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-02T09:00:00",
+    "stops": [
+      {
+        "id": "46c7bce9-c24d-4aa6-aa88-7f9a7ac557c6",
+        "scheduleId": "e8b037f0-c139-4758-b391-9e7c7792f25a",
+        "schedule": null,
+        "stationId": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+        "station": {
+          "id": "5F50B718-7D90-4637-8A1E-0BF013488FE1",
+          "name": "Galle"
+        },
+        "arrival": "2025-12-02T09:00:00",
+        "departure": "2025-12-02T09:02:00",
+        "order": 2
+      },
+      {
+        "id": "65254195-0d0e-45ef-a89b-cc24c350b631",
+        "scheduleId": "e8b037f0-c139-4758-b391-9e7c7792f25a",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-02T09:00:00",
+        "departure": "2025-12-02T09:00:00",
+        "order": 1
+      },
+      {
+        "id": "d1bfca22-f467-4cfe-aa2d-4925fae5876c",
+        "scheduleId": "e8b037f0-c139-4758-b391-9e7c7792f25a",
+        "schedule": null,
+        "stationId": "9542B97A-8E60-465D-888C-DED3D555F29D",
+        "station": {
+          "id": "9542B97A-8E60-465D-888C-DED3D555F29D",
+          "name": "Matara"
+        },
+        "arrival": "2025-12-02T11:26:00",
+        "departure": "2025-12-02T11:28:00",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "id": "f07e3f75-6ddf-4862-ba47-19e766a6dc3e",
+    "trainId": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+    "train": {
+      "id": "ae4261a1-07ac-418b-bb3b-a5ac213bfbe8",
+      "name": "Mannar Local Service",
+      "trainTypeId": "type-local",
+      "trainType": {
+        "id": "type-local",
+        "name": "Local",
+        "fareMultiplier": 1,
+        "speedFactor": 1.2,
+        "stopsAtEveryStation": true,
+        "description": "Stops at all stations, cheapest",
+        "trains": [
+          null,
+          {
+            "id": "b0894b8d-ef8a-467f-9c01-6dc7081a7924",
+            "name": "Southern Line Local",
+            "trainTypeId": "type-local",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          }
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-03T06:40:00",
+    "stops": [
+      {
+        "id": "2483e7fc-d3e0-4062-89e0-3071ace564b3",
+        "scheduleId": "f07e3f75-6ddf-4862-ba47-19e766a6dc3e",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-03T06:40:00",
+        "departure": "2025-12-03T06:42:00",
+        "order": 2
+      },
+      {
+        "id": "ea52a540-a58e-4228-a448-1375493d43ee",
+        "scheduleId": "f07e3f75-6ddf-4862-ba47-19e766a6dc3e",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-03T10:18:00",
+        "departure": "2025-12-03T10:20:00",
+        "order": 3
+      },
+      {
+        "id": "f9a4edce-1ae8-498a-a18f-160bcc991814",
+        "scheduleId": "f07e3f75-6ddf-4862-ba47-19e766a6dc3e",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-03T06:40:00",
+        "departure": "2025-12-03T06:40:00",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "f198b400-edeb-408d-b3a3-9e8fe92cc0e6",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-07T07:20:00",
+    "stops": [
+      {
+        "id": "4a20ce13-9e49-4698-bcd8-2b412bce0927",
+        "scheduleId": "f198b400-edeb-408d-b3a3-9e8fe92cc0e6",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-07T10:22:00",
+        "departure": "2025-12-07T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "6fb97d54-6a78-4098-9e80-683bf5d0676a",
+        "scheduleId": "f198b400-edeb-408d-b3a3-9e8fe92cc0e6",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-07T07:20:00",
+        "departure": "2025-12-07T07:20:00",
+        "order": 1
+      },
+      {
+        "id": "7bf80837-d859-4999-b3f0-5a6737454f7e",
+        "scheduleId": "f198b400-edeb-408d-b3a3-9e8fe92cc0e6",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-07T07:20:00",
+        "departure": "2025-12-07T07:22:00",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "f8533836-6eb6-4162-a378-baf1c97a29cc",
+    "trainId": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+    "train": {
+      "id": "7FDF8ADE-9BD3-4DCF-8232-0CA14AF3CF63",
+      "name": "Jaffna Queen Luxury Service",
+      "trainTypeId": "type-luxury",
+      "trainType": {
+        "id": "type-luxury",
+        "name": "Luxury",
+        "fareMultiplier": 2,
+        "speedFactor": 1,
+        "stopsAtEveryStation": true,
+        "description": "Premium seating, same stops but more comfortable",
+        "trains": [
+          {
+            "id": "CF601D95-316F-4C86-B897-EDDCF21FA268",
+            "name": "Coastal Luxury Express",
+            "trainTypeId": "type-luxury",
+            "trainType": null,
+            "defaultRouteId": "route-south",
+            "defaultRoute": {
+              "id": "route-south",
+              "name": "Southern Line",
+              "stops": []
+            },
+            "carriages": []
+          },
+          null
+        ]
+      },
+      "defaultRouteId": "route-north",
+      "defaultRoute": {
+        "id": "route-north",
+        "name": "Northern Line",
+        "stops": []
+      },
+      "carriages": []
+    },
+    "routeId": "route-north",
+    "route": {
+      "id": "route-north",
+      "name": "Northern Line",
+      "stops": []
+    },
+    "departureTime": "2025-12-08T07:20:00",
+    "stops": [
+      {
+        "id": "9eefc71d-db9f-4927-86d7-efcfde2195c7",
+        "scheduleId": "f8533836-6eb6-4162-a378-baf1c97a29cc",
+        "schedule": null,
+        "stationId": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+        "station": {
+          "id": "8A2368C5-9A99-46EB-9166-FE827818EBCC",
+          "name": "Anuradhapura"
+        },
+        "arrival": "2025-12-08T07:20:00",
+        "departure": "2025-12-08T07:22:00",
+        "order": 2
+      },
+      {
+        "id": "a06010b2-ff11-4353-a560-41220b65efcd",
+        "scheduleId": "f8533836-6eb6-4162-a378-baf1c97a29cc",
+        "schedule": null,
+        "stationId": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+        "station": {
+          "id": "A9C10081-8926-4624-92BE-CEA2412E70B9",
+          "name": "Jaffna"
+        },
+        "arrival": "2025-12-08T10:22:00",
+        "departure": "2025-12-08T10:24:00",
+        "order": 3
+      },
+      {
+        "id": "b92cd186-59a0-495e-be1f-20a57bc869db",
+        "scheduleId": "f8533836-6eb6-4162-a378-baf1c97a29cc",
+        "schedule": null,
+        "stationId": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+        "station": {
+          "id": "35EA65A6-7BDD-49DE-9F38-2B729DC81626",
+          "name": "Colombo Fort"
+        },
+        "arrival": "2025-12-08T07:20:00",
+        "departure": "2025-12-08T07:20:00",
+        "order": 1
+      }
+    ]
+  }
+]

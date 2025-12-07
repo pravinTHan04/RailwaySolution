@@ -67,7 +67,7 @@ login(
         navigate("/admin");
       } else {
         console.log("🎟 Redirecting to search...");
-        navigate("/search");
+        navigate("/schedule");
       }
 
     } catch (err) {

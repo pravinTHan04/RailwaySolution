@@ -9,8 +9,8 @@ import PaymentPage from "./pages/PaymentPage";
 import TicketPage from "./pages/TicketPage";
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
-import ChatBot from "./components/Chatbot";
 import Navbar from "./components/Navbar";
+import ProfilePage from "./pages/ProfilePage";
 
 import AdminLayout from "./pages/admin/AdminLayout";
 import DashboardPage from "./pages/admin/DashboardPage";
@@ -48,8 +48,6 @@ function UserLayout({ children }) {
       {!hideNav && <Navbar />}  {/* USE NAVBAR HERE */}
 
       {children}
-
-      {!hideNav && <ChatBot />}
     </>
   );
 }
@@ -93,6 +91,8 @@ export default function App() {
           path="/ticket"
           element={<ProtectedRoute><UserLayout><TicketPage /></UserLayout></ProtectedRoute>}
         />
+
+        <Route path="/profile" element={<ProfilePage />} />
 
         {/* ---------------- ADMIN ROUTES ---------------- */}
         <Route

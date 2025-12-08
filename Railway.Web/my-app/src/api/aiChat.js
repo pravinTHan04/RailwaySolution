@@ -2,9 +2,15 @@ import api from "./axios";
 
 export async function sendChatMessage(question) {
   try {
-    const res = await api.post("/api/ai/ask", {
-      question,
-    });
+    const res = await api.post(
+      "/api/ai/ask",
+      { question },
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
 
     return res.data;
   } catch (err) {

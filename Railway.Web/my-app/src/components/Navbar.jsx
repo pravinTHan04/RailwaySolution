@@ -42,15 +42,11 @@ export default function Navbar() {
   const initials =
     (user?.firstname?.[0] || user?.email?.[0] || "U").toUpperCase();
 
-  const handleProfileClick = () => {
-    setMenuOpen(false);
-    // you can create /profile page later
-    alert(
-      `Profile\n\nName: ${displayName}\nEmail: ${user?.email || "N/A"}\nRole: ${
-        user?.role || "N/A"
-      }`
-    );
-  };
+const handleProfileClick = () => {
+  setMenuOpen(false);
+  navigate("/profile");
+};
+
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");

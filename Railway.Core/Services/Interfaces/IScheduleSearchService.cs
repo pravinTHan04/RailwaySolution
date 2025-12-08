@@ -8,6 +8,8 @@ namespace Railway.Core.Services.Interfaces
         Task<List<ScheduleResultDto>> SearchAsync(SearchScheduleRequest request);
         Task<Station?> GetStationByNameAsync(string name);
         Task<List<string>> GetAllStationNamesAsync();
+        Task<List<ScheduleResultDto>> SearchWithPreferencesAsync(SearchScheduleRequest request, string userId);
+
 
     }
 }

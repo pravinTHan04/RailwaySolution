@@ -2,9 +2,12 @@
 {
     public class SearchScheduleRequest
     {
+        public string UserId { get; set; }
         public string FromStationId { get; set; }
         public string ToStationId { get; set; }
         public DateTime Date { get; set; }
+        public double Score { get; set; }
+
     }
 
     public class ScheduleResultDto
@@ -24,5 +27,7 @@
         public string ToStation { get; set; }
         public int FromStopOrder { get; set; }
         public int ToStopOrder { get; set; }
+        public double Score { get; set; }
+
     }
 }

@@ -10,6 +10,7 @@
         public DateTime DepartureTime { get; set; }
         public int FromStopOrder { get; set; }
         public int ToStopOrder { get; set; }
+
     }
 
     public class TrainDto

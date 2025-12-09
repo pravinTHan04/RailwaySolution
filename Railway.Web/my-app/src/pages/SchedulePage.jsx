@@ -12,6 +12,8 @@ export default function SchedulePage() {
   const [date, setDate] = useState("");
   const [manualResults, setManualResults] = useState([]);
   const [manualLoading, setManualLoading] = useState(false);
+  const [time, setTime] = useState("");
+
 
   useEffect(() => {
     loadStations();

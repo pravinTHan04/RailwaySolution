@@ -269,7 +269,6 @@ Thanks for choosing Railway.";
             var from = booking.ReservedSeats.Min(rs => rs.FromStopOrder);
             var to = booking.ReservedSeats.Max(rs => rs.ToStopOrder);
 
-            // Get route segments between stops
             var stops = schedule.Route.Stops
                 .Where(s => s.Order >= from && s.Order < to)
                 .OrderBy(s => s.Order)
@@ -278,14 +277,15 @@ Thanks for choosing Railway.";
             decimal totalKm = stops.Sum(s => s.DistanceFromPreviousKm);
 
             if (totalKm <= 0)
-                throw new Exception("Distance data missing.");
+            {
+                // Fallback: use stop count instead of distance
+                var stopCount = Math.Max(1, to - from);
+                const decimal flatPerStop = 10m;
+                return stopCount * flatPerStop * booking.ReservedSeats.Count;
+            }
 
-            // --- BASE TICKET CALCULATION ---
-            const decimal baseRatePerKm = 4.50m;  // LKR per km (adjust later)
-
-            var baseFare = (decimal)totalKm * baseRatePerKm;
-
-            // Apply train type multiplier
+            const decimal baseRatePerKm = 4.50m;
+            var baseFare = totalKm * baseRatePerKm;
             var finalFare = baseFare * trainType.FareMultiplier;
 
             return Math.Round(finalFare, 2);

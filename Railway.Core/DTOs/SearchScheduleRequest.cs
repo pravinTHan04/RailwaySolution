@@ -1,4 +1,6 @@
-﻿namespace Railway.Core.DTOs
+﻿using Railway.Core.Models;
+
+namespace Railway.Core.DTOs
 {
     public class SearchScheduleRequest
     {
@@ -28,6 +30,8 @@
         public int FromStopOrder { get; set; }
         public int ToStopOrder { get; set; }
         public double Score { get; set; }
+        public DelayPredictionResult Delay { get; set; }
+
 
     }
 }

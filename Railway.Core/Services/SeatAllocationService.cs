@@ -304,10 +304,27 @@ namespace Railway.Core.Services
             int toStopOrder,
             string tempUserToken)
         {
+            if (string.IsNullOrWhiteSpace(scheduleId))
+                throw new ArgumentException("scheduleId is required", nameof(scheduleId));
+
+            if (seatIds == null || !seatIds.Any())
+                throw new ArgumentException("At least one seat must be provided.", nameof(seatIds));
+
+            // Make sure we always have a user key
+            var userKey = string.IsNullOrWhiteSpace(tempUserToken)
+                ? $"guest_{Guid.NewGuid()}"
+                : tempUserToken;
+
+            // (Optional but safer) verify schedule exists
+            var scheduleExists = await _db.Schedules.AnyAsync(s => s.Id == scheduleId);
+            if (!scheduleExists)
+                throw new InvalidOperationException("Schedule not found for locking seats.");
+
             var booking = new Booking
             {
                 ScheduleId = scheduleId,
-                PassengerName = tempUserToken,
+                UserId = userKey,              // ✅ IMPORTANT
+                PassengerName = userKey,       // temp name for lock-only booking
                 Status = BookingStatus.Pending,
                 ExpiresAt = DateTime.UtcNow.AddMinutes(5)
             };

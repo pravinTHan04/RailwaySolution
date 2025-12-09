@@ -11,11 +11,11 @@ export default function ChatBot() {
   const selectedTrain = useRef(null);
   const availableSeatsRef = useRef([]);
 
+
+
   const addMessage = (msg) => setMessages((prev) => [...prev, msg]);
 
-  // -----------------------------------------------------
   // FETCH SEATS
-  // -----------------------------------------------------
   async function fetchSeatsForTrain(scheduleId, fromStopOrder, toStopOrder) {
     try {
       const res = await api.get("/api/seats/available", {
@@ -28,9 +28,7 @@ export default function ChatBot() {
     }
   }
 
-  // -----------------------------------------------------
   // TRAIN SELECT
-  // -----------------------------------------------------
   async function selectTrain(train) {
     const fromStopOrder =
       train.fromOrder ?? train.fromStopOrder ?? train.from ?? 1;
@@ -110,25 +108,37 @@ export default function ChatBot() {
         try {
           const t = selectedTrain.current;
 
-          const firstSeat = availableSeatsRef.current[0];
+          const requestedCount = t.seatCount;
+          const available = availableSeatsRef.current;
 
-          const payload = {
-            scheduleId: t.scheduleId,
-            passengerName: t.name,
-            seatIds: [firstSeat.seatId],
-            fromStopOrder: t.fromStopOrder,
-            toStopOrder: t.toStopOrder,
-          };
+          if (available.length < requestedCount) {
+          addMessage({
+          sender: "ai",
+          text: `❌ Only ${available.length} seats available. You requested ${requestedCount}.`
+          });
+          return;
+          }
+const selectedSeats = available.slice(0, requestedCount).map(s => s.seatId);
+
+const payload = {
+    scheduleId: t.scheduleId,
+    passengerName: t.name,
+    seatIds: selectedSeats,                 // <-- NOW MULTIPLE SEATS
+    fromStopOrder: t.fromStopOrder,
+    toStopOrder: t.toStopOrder,
+};
 
           const createRes = await api.post("/api/booking/create", payload);
           const bookingId = createRes.data.id || createRes.data.Id;
 
-          await api.post("/api/booking/passengers", {
-            bookingId,
-            passengers: [
-              { fullName: t.name, email: t.email }
-            ]
-          });
+await api.post("/api/booking/passengers", {
+    bookingId,
+    passengers: selectedSeats.map(() => ({
+        fullName: t.name,
+        email: t.email
+    }))
+});
+
 
           await api.post(`/api/booking/confirm/${bookingId}`);
 
@@ -184,9 +194,9 @@ export default function ChatBot() {
     }
   }
 
-  // -----------------------------------------------------
   // UI RENDER (panel version — no floating button)
-  // -----------------------------------------------------
+  
+  
   return (
     <div className="w-full h-full flex flex-col border rounded-xl shadow bg-white">
       {/* Header */}
@@ -203,31 +213,77 @@ export default function ChatBot() {
             return (
               <div key={i} className="bg-gray-100 p-3 rounded-md space-y-4">
                 {/* Personalized */}
-                {personalized && (
-                  <div className="p-3 border-2 border-red-500 rounded-lg bg-white shadow">
-                    <div className="text-xs font-bold text-red-600 mb-1">
-                      ❤️ Based on your past bookings
-                    </div>
+{personalized && (
+  <div className="p-3 border-2 border-red-500 rounded-lg bg-white shadow">
+    <div className="text-xs font-bold text-red-600 mb-1">
+      ❤️ Based on your past bookings
+    </div>
 
-                    <button
-                      onClick={() => selectTrain(personalized.train)}
-                      className="w-full bg-blue-600 text-white p-2 rounded-md"
-                    >
-                      {personalized.train.train}
-                    </button>
-                  </div>
-                )}
+    <button
+      onClick={() => selectTrain(personalized.train)}
+      className="block w-full bg-blue-600 text-white px-3 py-3 rounded-md hover:bg-blue-700 text-left"
+    >
+      <div className="font-semibold">{personalized.train.train}</div>
+
+      <div className="text-xs">
+        Departure: {new Date(personalized.train.departure).toLocaleString()}
+      </div>
+
+      <div className="text-xs">Price: Rs. {personalized.train.price}</div>
+
+      <div className="text-xs">Travel Time: {personalized.train.travelTime} min</div>
+
+      {/* Correct delay handling */}
+      <div className="text-xs text-yellow-600 font-semibold">
+        Expected Delay: {personalized.train.delay?.expectedDelayMinutes ?? 0} minutes
+      </div>
+
+      {personalized.train.delay?.confidence > 0.5 && (
+        <div className="text-xs text-orange-500 font-bold">
+          ⚠ High delay risk
+        </div>
+      )}
+    </button>
+  </div>
+)}
+
+
 
                 {/* Others */}
-                {others?.map((train) => (
-                  <button
-                    key={train.scheduleId}
-                    onClick={() => selectTrain(train)}
-                    className="w-full bg-blue-600 text-white p-2 rounded-md"
-                  >
-                    {train.train}
-                  </button>
-                ))}
+{others?.map((o) => {
+  const delayMin = o.train.delay?.expectedDelayMinutes ?? 0;
+  const confidence = o.train.delay?.confidence ?? 0;
+
+  return (
+    <button
+      key={o.train.scheduleId}
+      onClick={() => selectTrain(o.train)}
+      className="w-full bg-blue-600 text-white p-2 rounded-md text-left"
+    >
+      <div className="font-semibold">{o.train.train}</div>
+
+      <div className="text-xs">
+        Departure: {new Date(o.train.departure).toLocaleString()}
+      </div>
+
+      <div className="text-xs">Price: Rs. {o.train.price}</div>
+
+      <div className="text-xs">Travel Time: {o.train.travelTime} min</div>
+
+      <div className="text-xs text-yellow-600 font-semibold">
+        Expected Delay: {delayMin} minutes
+      </div>
+
+      {confidence > 0.5 && (
+        <div className="text-[11px] text-orange-500 font-bold">
+          ⚠ High delay risk
+        </div>
+      )}
+    </button>
+  );
+})}
+
+
               </div>
             );
           }

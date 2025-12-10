@@ -10,6 +10,8 @@ namespace Railway.Core.Services.Interfaces
         Task CancelBookingAsync(string bookingId);
         Task<List<Booking>> GetBookingsForScheduleAsync(string scheduleId);
         Task<Ticket?> GetTicketByBookingIdAsync(string bookingId);
+        Task ResendTicketAsync(string bookingId);
+
 
     }
 }

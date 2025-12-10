@@ -195,12 +195,6 @@ Thanks for choosing Railway.";
 
             return booking;
         }
-
-
-
-
-
-
         // STEP 3: Cancel booking
         public async Task CancelBookingAsync(string bookingId)
         {
@@ -224,10 +218,6 @@ Thanks for choosing Railway.";
                 .Include(b => b.Passengers)  // <-- REQUIRED
                 .FirstOrDefaultAsync(b => b.Id == bookingId);
         }
-
-
-
-
         // STEP 4: Get all bookings for schedule
         public async Task<List<Booking>> GetBookingsForScheduleAsync(string scheduleId)
         {
@@ -236,7 +226,6 @@ Thanks for choosing Railway.";
                 .Include(b => b.ReservedSeats)
                 .ToListAsync();
         }
-
         public async Task<Ticket?> GetTicketByBookingIdAsync(string bookingId)
         {
             return await _db.Tickets
@@ -245,7 +234,6 @@ Thanks for choosing Railway.";
                         .ThenInclude(s => s.Seat)
                 .FirstOrDefaultAsync(t => t.BookingId == bookingId);
         }
-
         private decimal CalculateFare(Booking booking)
         {
             var schedule = _db.Schedules
@@ -281,6 +269,44 @@ Thanks for choosing Railway.";
 
             return Math.Round(finalFare, 2);
         }
+
+        public async Task ResendTicketAsync(string bookingId)
+        {
+            var ticket = await _db.Tickets
+                .Include(t => t.Booking)
+                    .ThenInclude(b => b.Passengers)
+                .FirstOrDefaultAsync(t => t.BookingId == bookingId);
+
+            if (ticket == null)
+                throw new Exception("Ticket not found.");
+
+            var passenger = ticket.Booking.Passengers.FirstOrDefault();
+            if (passenger == null)
+                throw new Exception("Passenger info missing.");
+
+            var seats = string.Join(", ", ticket.Booking.ReservedSeats.Select(s => s.Seat.SeatNumber));
+
+            var body = $@"
+Hello {passenger.FullName},
+
+Here is a copy of your ticket.
+
+Route: {ticket.Booking.Schedule.Route?.Name}
+Departure: {ticket.Booking.Schedule.DepartureTime}
+Seats: {seats}
+Ticket No: {ticket.TicketNumber}
+
+QR code attached.";
+
+            await _email.SendEmailWithAttachmentAsync(
+                passenger.Email,
+                $"Your Ticket Copy - {ticket.TicketNumber}",
+                body.Replace("\n", "<br>"),
+                Convert.FromBase64String(ticket.QrCodeBase64),
+                $"{ticket.TicketNumber}.png"
+            );
+        }
+
 
 
     }

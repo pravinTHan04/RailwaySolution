@@ -11,15 +11,19 @@ namespace Railway.Core.Services
     {
         private readonly RailwayDbContext _db;
         private readonly UserPreferenceService _pref;
+        private readonly IDelayPredictionService _delay;
+
 
         public ScheduleSearchService
             (
             RailwayDbContext db,
-            UserPreferenceService pref
+            UserPreferenceService pref,
+            IDelayPredictionService delay
             )
         {
             _db = db;
             _pref = pref;
+            _delay = delay;
         }
 
         public double ScoreSchedule(ScheduleResultDto schedule, List<UserPreference> prefs)
@@ -113,7 +117,8 @@ namespace Railway.Core.Services
                         FromStation = fromStop.Station.Name,
                         ToStation = toStop.Station.Name,
                         FromStopOrder = fromStop.Order,
-                        ToStopOrder = toStop.Order
+                        ToStopOrder = toStop.Order,
+                        Delay = _delay.PredictForSchedule(s)
                     };
                 })
                 .ToList();

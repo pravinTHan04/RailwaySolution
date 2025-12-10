@@ -16,7 +16,8 @@ namespace Railway.Core.Services
             {
                 model = "llama3", 
                 prompt = prompt,
-                stream = false
+                stream = false,
+                options = new { temperature = 0 }
             };
 
             var response = await _http.PostAsJsonAsync("/api/generate", request);

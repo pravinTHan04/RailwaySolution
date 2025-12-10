@@ -51,6 +51,7 @@ function getSeatLockToken() {
 
 
 
+
   useEffect(() => {
     if (scheduleId) fetchSeatAvailability();
   }, [scheduleId]);

@@ -8,7 +8,6 @@ export default function PaymentPage() {
 
   const bookingId = params.get("bookingId");
   const seatCount = Number(params.get("count"));
-  const pricePerSeat = 10;
   const total = seatCount * 10;
 
   const [cardNumber, setCardNumber] = useState("");
@@ -24,12 +23,27 @@ export default function PaymentPage() {
 
     setProcessing(true);
 
-    // Fake delay for realism
-    await new Promise(res => setTimeout(res, 2000));
-
     try {
+      await new Promise(res => setTimeout(res, 1500));
+
+      // 1. Create payment row
+      const intent = await api.post("/api/payment/create", {
+        bookingId,
+        amount: total
+      });
+
+      const paymentId = intent.data.id;
+      if (!paymentId) throw new Error("Payment creation failed.");
+
+      // 2. Confirm payment
+      await api.post(`/api/payment/confirm/${paymentId}`);
+
+      // 3. Confirm booking & generate ticket
       await api.post(`/api/booking/confirm/${bookingId}`);
+
+      // 4. Redirect to ticket page
       navigate(`/ticket?bookingId=${bookingId}`);
+
     } catch (err) {
       console.error(err);
       alert("Payment failed. Try again.");
@@ -44,22 +58,19 @@ export default function PaymentPage() {
 
       <p className="text-lg font-semibold">Total: £{total}</p>
 
-      <input
-        className="border p-2 w-full"
+      <input className="border p-2 w-full"
         placeholder="Card Number"
         value={cardNumber}
         onChange={e => setCardNumber(e.target.value)}
       />
 
       <div className="flex gap-2">
-        <input
-          className="border p-2 w-full"
+        <input className="border p-2 w-full"
           placeholder="MM/YY"
           value={expiry}
           onChange={e => setExpiry(e.target.value)}
         />
-        <input
-          className="border p-2 w-full"
+        <input className="border p-2 w-full"
           placeholder="CVV"
           value={cvv}
           onChange={e => setCvv(e.target.value)}

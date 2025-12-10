@@ -96,15 +96,6 @@ namespace Railway.Core.Services
 
             var fare = CalculateFare(booking);
 
-            var payment = new Payment
-            {
-                BookingId = booking.Id,
-                Amount = fare,
-                Status = PaymentStatus.Pending
-            };
-
-            _db.Payments.Add(payment);
-            await _db.SaveChangesAsync();
 
 
 

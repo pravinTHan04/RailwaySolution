@@ -30,7 +30,9 @@ namespace Railway.Core.Services
 
         public async Task<Payment> SimulateSuccessAsync(string paymentId)
         {
-            var payment = await _db.Payments.Include(p => p.Booking).FirstOrDefaultAsync(p => p.Id == paymentId);
+            var payment = await _db.Payments
+                .Include(p => p.Booking)
+                .FirstOrDefaultAsync(p => p.Id == paymentId);
 
             if (payment == null)
                 throw new Exception("Payment not found");
@@ -38,10 +40,12 @@ namespace Railway.Core.Services
             payment.Status = PaymentStatus.Success;
             payment.PaidAt = DateTime.UtcNow;
 
-            payment.Booking.Status = BookingStatus.Confirmed;
+            // ❌ DO NOT CONFIRM BOOKING HERE
+            // Booking confirmation and ticket generation happen in BookingService
 
             await _db.SaveChangesAsync();
             return payment;
         }
+
     }
 }

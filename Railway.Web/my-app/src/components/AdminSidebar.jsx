@@ -1,19 +1,21 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../auth/useAuth";
+
 export default function AdminSidebar() {
   const path = useLocation().pathname;
   const navigate = useNavigate();
   const { logout } = useAuth();
 
   const handleLogout = () => {
-    logout();       // clears auth + localStorage via AuthProvider
-    navigate("/");  // go back to login page
+    logout();
+    navigate("/");
   };
 
   const navItems = [
     { name: "Dashboard", link: "/admin" },
     { name: "Stations", link: "/admin/stations" },
     { name: "Trains", link: "/admin/trains" },
+    { name: "Analytics", link: "/admin/analytics" }, // ← ADD THIS
   ];
 
   return (

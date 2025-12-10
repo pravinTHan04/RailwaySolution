@@ -16,6 +16,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 import DashboardPage from "./pages/admin/DashboardPage";
 import StationsPage from "./pages/admin/StationPage";
 import TrainsPage from "./pages/admin/TrainPage";
+import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
 
 // User protected route
 function ProtectedRoute({ children }) {
@@ -106,6 +107,7 @@ export default function App() {
           <Route index element={<DashboardPage />} />
           <Route path="stations" element={<StationsPage />} />
           <Route path="trains" element={<TrainsPage />} />
+          <Route path="analytics" element={<AdminAnalyticsPage />} />
         </Route>
 
         {/* Catch unknown URLs */}

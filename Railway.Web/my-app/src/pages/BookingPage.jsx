@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import {jwtDecode} from "jwt-decode";
 
 export default function BookingPage() {
   const [searchParams] = useSearchParams();
@@ -9,10 +10,10 @@ export default function BookingPage() {
   const scheduleId = searchParams.get("scheduleId");
 
   const fromStopOrder = Number(searchParams.get("fromOrder"));
-const toStopOrder = Number(searchParams.get("toOrder"));
+  const toStopOrder = Number(searchParams.get("toOrder"));
 
-const [carriages, setCarriages] = useState([]);
-const [activeCarriage, setActiveCarriage] = useState(null);
+  const [carriages, setCarriages] = useState([]);
+  const [activeCarriage, setActiveCarriage] = useState(null);
 
   const [seats, setSeats] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -28,22 +29,26 @@ const [activeCarriage, setActiveCarriage] = useState(null);
   const [suggestionInfo, setSuggestionInfo] = useState(null);
   const [suggestedSeatIds, setSuggestedSeatIds] = useState([]);
 
- 
+function getUserId() {
+  const token = localStorage.getItem("authToken");
+  if (!token) return null;
 
-  function getUserToken() {
-  // If user logged in and backend stores name in localStorage
-  const user = localStorage.getItem("userName");
-  if (user) return user;
-
-  // Otherwise ensure persistent guest identity
-  let guest = localStorage.getItem("guestId");
-  if (!guest) {
-    guest = "guest_" + crypto.randomUUID();
-    localStorage.setItem("guestId", guest);
-  }
-
-  return guest;
+  const decoded = jwtDecode(token);
+  return decoded.sub;   // or decoded.nameid based on your token
 }
+
+function getSeatLockToken() {
+  const userId = getUserId();
+  if (userId) return userId; // logged-in user's real ID
+
+  let guestId = localStorage.getItem("guestId");
+  if (!guestId) {
+    guestId = "guest_" + crypto.randomUUID();
+    localStorage.setItem("guestId", guestId);
+  }
+  return guestId;
+}
+
 
 
   useEffect(() => {
@@ -198,7 +203,7 @@ function toggleSeat(seat) {
         seatIds,
         fromStopOrder,
         toStopOrder,
-        tempUserToken: getUserToken()
+        tempUserToken: getSeatLockToken()
       });
 
       setLocked(true);
@@ -239,13 +244,13 @@ function toggleSeat(seat) {
   if (!locked) return alert("You must lock seats first.");
 
   try {
-const res = await api.post("/api/booking/create", {
-  scheduleId,
-  passengerName: getUserToken(),
-  seatIds: selectedSeats.map(s => s.seatId),
-  fromStopOrder,
-  toStopOrder
-});
+  const res = await api.post("/api/booking/create", {
+    scheduleId,
+    seatIds: selectedSeats.map(s => s.seatId),
+    fromStopOrder,
+    toStopOrder
+  });
+
 
 // FIX: Read correct key
 const bookingId = res.data.id;  

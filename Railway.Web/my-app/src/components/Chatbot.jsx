@@ -2,12 +2,16 @@ import { useState, useRef, useEffect } from "react";
 import { sendChatMessage } from "../api/aiChat";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import usePcmRecorder from "../hooks/usePcmRecorder";
 
 export default function ChatBot() {
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("idle"); // idle | selecting | seat | name | email | confirm-payment
+
+
+const { startRecording, stopRecording, recording } = usePcmRecorder();
 
   const selectedTrain = useRef(null);
   const availableSeatsRef = useRef([]);
@@ -20,12 +24,43 @@ export default function ChatBot() {
 
   const navigate = useNavigate();
 
-  const recognitionRef = useRef(null);
 
 
   const addMessage = (msg) => setMessages((prev) => [...prev, msg]);
 
-  // =============== FETCH SEATS ===============
+async function handleVoice() {
+  if (!recording) {
+    startRecording();
+    addMessage({ sender: "ai", text: "🎤 Listening..." });
+  } else {
+    const wavBlob = await stopRecording();
+
+    const formData = new FormData();
+    formData.append("audio", wavBlob, "speech.wav");
+
+    const res = await api.post("/api/ai/speech-to-text", formData);
+
+    const text = res.data.text;
+
+    addMessage({ sender: "user", text });
+    handleSend(text); // send to chat logic
+  }
+}
+
+
+async function sendAudioToServer(wavBlob) {
+  const formData = new FormData();
+  formData.append("audio", wavBlob, "speech.wav");
+
+  const res = await api.post("/api/ai/speech-to-text", formData, {
+    headers: { "Content-Type": "multipart/form-data" }
+  });
+
+  const text = res.data.text;
+  setQuestion(text); // autofill the text box
+  handleSend(text);  // optionally auto-send
+}
+
   async function fetchSeatsForTrain(scheduleId, fromStopOrder, toStopOrder) {
     try {
       const res = await api.get("/api/seats/available", {
@@ -38,27 +73,9 @@ export default function ChatBot() {
     }
   }
 
-  useEffect(() => {
-  if (!("webkitSpeechRecognition" in window)) return;
 
-  const rec = new window.webkitSpeechRecognition();
-  rec.continuous = false;
-  rec.interimResults = false;
-  rec.lang = "en-US";
 
-  rec.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    setQuestion(transcript);          // fill input
-    handleSend(transcript);           // auto-send voice text
-  };
 
-  recognitionRef.current = rec;
-}, []);
-
-function startListening() {
-  if (!recognitionRef.current) return;
-  recognitionRef.current.start();
-}
 
 
 
@@ -553,7 +570,14 @@ return (
         Send
       </button>
 
-      <button onClick={startListening}>🎤 Speak</button>
+<button 
+  onClick={handleVoice} 
+  className="px-5 py-2 rounded-xl bg-[#e0e0e0]"
+>
+  {recording ? "⛔ Stop" : "🎤 Speak"}
+</button>
+
+
 
     </div>
   </div>

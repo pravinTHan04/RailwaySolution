@@ -21,12 +21,10 @@ export default function AdminSidebar() {
   return (
     <div className="w-64 min-h-screen bg-white border-r border-gray-200 p-5 flex flex-col">
 
-      {/* HEADER */}
       <h1 className="text-xl font-semibold text-gray-900 mb-6">
         Admin Panel
       </h1>
 
-      {/* NAV LIST */}
       <nav className="flex-1 space-y-1">
         {navItems.map((item) => {
           const active = path === item.link;
@@ -46,7 +44,6 @@ export default function AdminSidebar() {
         })}
       </nav>
 
-      {/* LOGOUT BUTTON */}
       <button
         onClick={handleLogout}
         className="mt-6 w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-sm font-medium transition"

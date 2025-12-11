@@ -57,14 +57,12 @@ export default function Navbar() {
   return (
     <nav className="w-full px-4 py-3 border-b bg-white/80 backdrop-blur-md flex items-center justify-between shadow-sm">
       
-      {/* Left Nav Items */}
       <div className="flex gap-6 text-gray-700 text-sm">
         <Link to="/schedule" className="hover:text-black transition">
           Schedule
         </Link>
       </div>
 
-      {/* Profile */}
       <div className="relative">
         <button
           onClick={() => setMenuOpen((x) => !x)}
@@ -79,7 +77,6 @@ export default function Navbar() {
           </div>
         </button>
 
-        {/* Dropdown */}
         {menuOpen && (
           <div className="absolute right-0 mt-3 w-56 bg-white border border-gray-200 rounded-xl shadow-lg z-30 py-2 animate-fade-in">
             

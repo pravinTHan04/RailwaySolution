@@ -76,22 +76,18 @@ export default function SchedulePage() {
   return (
     <div className="min-h-screen p-4 flex justify-center bg-gray-100">
 
-      {/* Container */}
       <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-        {/* Message Header */}
         <div className="lg:col-span-2 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-200 text-gray-900 text-lg font-medium">
           {message}
         </div>
 
-        {/* LEFT PANEL (Manual Search) */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-h-[80vh] overflow-y-auto">
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Manual Search</h2>
 
           <div className="space-y-4">
 
-            {/* FROM */}
             <div className="flex flex-col gap-1">
               <label className="text-sm text-gray-700">From</label>
               <select
@@ -110,7 +106,6 @@ export default function SchedulePage() {
               </select>
             </div>
 
-            {/* TO */}
             <div className="flex flex-col gap-1">
               <label className="text-sm text-gray-700">To</label>
               <select
@@ -129,7 +124,6 @@ export default function SchedulePage() {
               </select>
             </div>
 
-            {/* DATE */}
             <div className="flex flex-col gap-1">
               <label className="text-sm text-gray-700">Date</label>
               <input
@@ -140,7 +134,6 @@ export default function SchedulePage() {
               />
             </div>
 
-            {/* BUTTON */}
             <button
               onClick={searchManual}
               className="w-full p-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-900 transition"
@@ -149,7 +142,6 @@ export default function SchedulePage() {
             </button>
           </div>
 
-          {/* RESULTS */}
           {manualResults.length > 0 && (
             <div className="mt-6 space-y-4">
               <h3 className="text-lg font-semibold text-gray-900">Results</h3>
@@ -186,7 +178,6 @@ export default function SchedulePage() {
           )}
         </div>
 
-        {/* RIGHT PANEL (Chatbot) */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-h-[80vh] overflow-y-auto">
           <ChatBot />
         </div>

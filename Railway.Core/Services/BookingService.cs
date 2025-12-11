@@ -25,7 +25,6 @@ namespace Railway.Core.Services
             _preferenceService = preferenceService;
         }
 
-        // STEP 1: Create pending booking (lock seats)
         public async Task<Booking> CreatePendingBookingAsync(
         string scheduleId,
         string UserId,
@@ -69,7 +68,7 @@ namespace Railway.Core.Services
         }
 
 
-        // STEP 2: Confirm booking
+        // Confirm booking
         public async Task<Booking> ConfirmBookingAsync(string bookingId)
         {
             var booking = await _db.Bookings
@@ -88,7 +87,6 @@ namespace Railway.Core.Services
             if (booking == null)
                 throw new Exception("Booking not found.");
 
-            // If already confirmed → return existing ticket and skip duplicate operations
             if (booking.Status == BookingStatus.Confirmed)
                 return booking;
 
@@ -100,7 +98,6 @@ namespace Railway.Core.Services
 
 
 
-            // ---------------- 1️⃣ Generate or Reuse Ticket ----------------
             var existingTicket = await _db.Tickets.FirstOrDefaultAsync(t => t.BookingId == booking.Id);
 
             Ticket ticket;
@@ -133,7 +130,6 @@ namespace Railway.Core.Services
 
             await _db.SaveChangesAsync();
 
-            // ✅ Update user preference here using the shared service
             var userKey = booking.UserId ?? booking.PassengerName;
             if (!string.IsNullOrWhiteSpace(userKey) &&
                 booking.Schedule?.Train?.TrainType != null &&
@@ -149,7 +145,6 @@ namespace Railway.Core.Services
 
 
 
-            // ---------------- 2️⃣ Send Email to Primary Passenger ----------------
             try
             {
                 var primaryPassenger = booking.Passengers?.FirstOrDefault();
@@ -195,7 +190,6 @@ Thanks for choosing Railway.";
 
             return booking;
         }
-        // STEP 3: Cancel booking
         public async Task CancelBookingAsync(string bookingId)
         {
             var booking = await _db.Bookings.FindAsync(bookingId);
@@ -215,10 +209,9 @@ Thanks for choosing Railway.";
                     .ThenInclude(s => s.Route)
                 .Include(b => b.ReservedSeats)
                     .ThenInclude(rs => rs.Seat)
-                .Include(b => b.Passengers)  // <-- REQUIRED
+                .Include(b => b.Passengers)  
                 .FirstOrDefaultAsync(b => b.Id == bookingId);
         }
-        // STEP 4: Get all bookings for schedule
         public async Task<List<Booking>> GetBookingsForScheduleAsync(string scheduleId)
         {
             return await _db.Bookings
@@ -257,7 +250,6 @@ Thanks for choosing Railway.";
 
             if (totalKm <= 0)
             {
-                // Fallback: use stop count instead of distance
                 var stopCount = Math.Max(1, to - from);
                 const decimal flatPerStop = 10m;
                 return stopCount * flatPerStop * booking.ReservedSeats.Count;

@@ -47,7 +47,6 @@ export default function ProfilePage() {
   return (
     <div className="p-6 max-w-4xl mx-auto space-y-8">
 
-      {/* Profile Header */}
       <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 flex gap-6 items-center">
         <div className="w-20 h-20 rounded-full bg-black text-white flex items-center justify-center text-3xl font-semibold shadow-sm">
           {user.firstname?.[0]?.toUpperCase() || "U"}
@@ -61,7 +60,6 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* Stats Widgets */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
         <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-4 text-center">
@@ -86,7 +84,6 @@ export default function ProfilePage() {
 
       </div>
 
-      {/* User Info */}
       <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 space-y-3">
         <h2 className="text-xl font-semibold text-gray-900">Account Details</h2>
 
@@ -95,7 +92,6 @@ export default function ProfilePage() {
         <div><span className="font-medium">Email:</span> {user.email}</div>
       </div>
 
-      {/* Bookings */}
       <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">My Bookings</h2>
 

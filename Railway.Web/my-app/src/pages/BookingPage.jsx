@@ -27,7 +27,6 @@ export default function BookingPage() {
   const [suggestedSeatIds, setSuggestedSeatIds] = useState([]);
   const [suggestionInfo, setSuggestionInfo] = useState(null);
 
-  // ========== ID Helpers ==========
   function getUserId() {
     const token = localStorage.getItem("authToken");
     if (!token) return null;
@@ -48,7 +47,6 @@ export default function BookingPage() {
     return guestId;
   }
 
-  // ========== Load Seats ==========
   useEffect(() => {
     if (scheduleId) loadSeats();
   }, [scheduleId]);
@@ -71,7 +69,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Countdown Timer ==========
   useEffect(() => {
     if (!timerActive) return;
 
@@ -90,7 +87,6 @@ export default function BookingPage() {
     return () => clearInterval(timer);
   }, [timerActive]);
 
-  // ========== Suggest Seats ==========
   async function suggestSeats() {
     if (!requiredCount) return alert("Select number of seats first.");
 
@@ -130,7 +126,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Select Seat ==========
   function toggleSeat(seat) {
     if (locked) return;
     if (seat.status !== "available") return;
@@ -144,7 +139,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Lock ==========
   async function lockSeats() {
     const seatIds = selectedSeats.map((s) => s.seatId);
 
@@ -165,7 +159,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Unlock ==========
   async function cancelLockedSeats() {
     const seatIds = selectedSeats.map((s) => s.seatId);
 
@@ -182,7 +175,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Create Booking ==========
   async function continueToPassengerDetails() {
     const seatIds = selectedSeats.map((s) => s.seatId);
 
@@ -203,7 +195,6 @@ export default function BookingPage() {
     }
   }
 
-  // ========== Reset ==========
   function resetSelection() {
     setSelectedSeats([]);
     setLocked(false);
@@ -211,7 +202,6 @@ export default function BookingPage() {
     setTimeLeft(300);
   }
 
-  // ========== Render ==========
   if (!scheduleId) {
     return <p className="p-6 text-red-500">No train selected.</p>;
   }
@@ -220,7 +210,6 @@ export default function BookingPage() {
 
   const activeCar = carriages.find((c) => c.carriage === activeCarriage);
 
-  // Organize seats into rows + A/B/C/D groups
   const rows = {};
 
   activeCar?.seats.forEach((seat) => {
@@ -234,13 +223,11 @@ export default function BookingPage() {
   return (
     <div className="max-w-4xl mx-auto p-4 space-y-6">
 
-      {/* HEADER */}
       <div className="mt-2">
         <h1 className="text-3xl font-semibold text-gray-900">Seat Selection</h1>
         <p className="text-gray-500">Choose your seats and lock them.</p>
       </div>
 
-      {/* SEAT COUNT CARD */}
       {!requiredCount && (
         <div className="bg-white rounded-2xl shadow p-6">
           <h2 className="text-xl font-semibold text-gray-900">Number of Seats</h2>
@@ -260,7 +247,6 @@ export default function BookingPage() {
 
       {requiredCount && (
         <>
-          {/* TIMER */}
           {timerActive && (
             <div className="bg-yellow-100 border border-yellow-200 rounded-xl p-4 text-center font-semibold">
               ⏳ Reserved: {Math.floor(timeLeft / 60)}:
@@ -268,7 +254,6 @@ export default function BookingPage() {
             </div>
           )}
 
-          {/* CARRIAGE SELECTOR */}
           <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-3">Carriage</h2>
 
@@ -289,13 +274,11 @@ export default function BookingPage() {
             </div>
           </div>
 
-          {/* SEAT MAP */}
           <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Seats</h2>
 
             <div className="flex flex-col md:flex-row gap-6">
 
-              {/* GRID */}
               <div className="flex-1">
                 {Object.keys(rows)
                   .sort((a, b) => a - b)
@@ -339,7 +322,6 @@ export default function BookingPage() {
                   ))}
               </div>
 
-              {/* SUMMARY CARD */}
               <div className="w-full md:w-60 bg-gray-50 rounded-xl p-4 border space-y-3">
                 <h3 className="text-lg font-semibold text-gray-900">Your Seats</h3>
 
@@ -360,9 +342,7 @@ export default function BookingPage() {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex justify-between items-center pt-2">
-            {/* Left: Suggest */}
             <div>
               <button
                 onClick={suggestSeats}
@@ -379,7 +359,6 @@ export default function BookingPage() {
               )}
             </div>
 
-            {/* Right: Lock / Continue */}
             <div className="flex gap-3">
               {!locked ? (
                 <button

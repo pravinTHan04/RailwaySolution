@@ -19,7 +19,6 @@ namespace Railway.Core.Services
             if (string.IsNullOrWhiteSpace(qrData))
                 return new TicketValidationResult { Valid = false, Message = "QR data missing" };
 
-            // QR format: bookingId|name|scheduleId
             var parts = qrData.Split('|');
             if (parts.Length < 1)
                 return new TicketValidationResult { Valid = false, Message = "Invalid QR format" };
@@ -46,7 +45,7 @@ namespace Railway.Core.Services
             if (ticket.IsUsed)
                 return new TicketValidationResult { Valid = false, Message = "Ticket already used" };
 
-            // Mark as used
+
             ticket.IsUsed = true;
             await _db.SaveChangesAsync();
 

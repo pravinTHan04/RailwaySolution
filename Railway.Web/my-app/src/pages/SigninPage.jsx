@@ -63,7 +63,6 @@ export default function SigninPage() {
   return (
     <div className="relative min-h-screen w-full">
 
-      {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full animate-fade">
           <img src={ArchImage} className="absolute inset-0 w-full h-full object-cover opacity-100" />
@@ -72,15 +71,12 @@ export default function SigninPage() {
         </div>
       </div>
 
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 z-10" />
 
-      {/* Content */}
       <div className="relative z-20 flex flex-col px-4 pt-16 text-white">
         <h1 className="text-3xl font-bold text-center mb-2">Smart Railway Booking</h1>
         <p className="text-center text-sm mb-6">Fast, easy, AI-assisted train travel</p>
 
-        {/* Mobile card */}
         <div className="w-full max-w-sm mx-auto bg-white text-black rounded-2xl shadow-lg p-6">
 
           <h3 className="text-xl font-semibold text-center mb-4">Sign In</h3>
@@ -93,7 +89,6 @@ export default function SigninPage() {
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-            {/* Email */}
             <div className="flex flex-col gap-1">
               <label className="text-sm font-medium">Email</label>
               <input
@@ -106,7 +101,6 @@ export default function SigninPage() {
               />
             </div>
 
-            {/* Password */}
             <div className="flex flex-col gap-1">
               <label className="text-sm font-medium">Password</label>
               <input
@@ -119,7 +113,6 @@ export default function SigninPage() {
               />
             </div>
 
-            {/* Sign In */}
             <button
               type="submit"
               disabled={loading}
@@ -131,7 +124,6 @@ export default function SigninPage() {
             </button>
           </form>
 
-          {/* Sign Up */}
           <div className="flex justify-center mt-4">
             <button
               className="text-sm text-blue-600 underline"

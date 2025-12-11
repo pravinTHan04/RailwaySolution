@@ -77,15 +77,12 @@ export default function TrainsPage() {
     <div className="min-h-screen px-4 py-8 bg-gray-50">
       <div className="max-w-lg mx-auto">
 
-        {/* PAGE HEADER */}
         <h1 className="text-3xl font-semibold text-gray-900 mb-6">
           Train Management
         </h1>
 
-        {/* ADD TRAIN CARD */}
         <div className="bg-white rounded-2xl shadow p-6 border border-gray-200 space-y-4 mb-8">
 
-          {/* Train Name */}
           <div className="space-y-1">
             <label className="text-sm font-medium text-gray-700">Train Name</label>
             <input
@@ -97,7 +94,6 @@ export default function TrainsPage() {
             />
           </div>
 
-          {/* Train Type */}
           <div className="space-y-1">
             <label className="text-sm font-medium text-gray-700">Train Type</label>
             <select
@@ -115,7 +111,6 @@ export default function TrainsPage() {
             </select>
           </div>
 
-          {/* Add Button */}
           <button
             onClick={addTrain}
             className="w-full bg-black text-white py-3 rounded-xl font-semibold
@@ -125,10 +120,8 @@ export default function TrainsPage() {
           </button>
         </div>
 
-        {/* ERROR */}
         {error && <p className="text-red-600 mb-3">{error}</p>}
 
-        {/* LIST */}
         <div className="space-y-3">
           {loading ? (
             <p>Loading trains...</p>

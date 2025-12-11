@@ -40,9 +40,6 @@ namespace Railway.Core.Services
             payment.Status = PaymentStatus.Success;
             payment.PaidAt = DateTime.UtcNow;
 
-            // ❌ DO NOT CONFIRM BOOKING HERE
-            // Booking confirmation and ticket generation happen in BookingService
-
             await _db.SaveChangesAsync();
             return payment;
         }

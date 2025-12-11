@@ -126,7 +126,6 @@ namespace Railway.Core.Services
                     Departure = departureTime
                 });
 
-                // apply travel time with correct type conversion
                 double travelMinutes = stop.TravelTimeFromPrevious.TotalMinutes * Convert.ToDouble(speed);
                 cursor = departureTime.AddMinutes(travelMinutes);
             }

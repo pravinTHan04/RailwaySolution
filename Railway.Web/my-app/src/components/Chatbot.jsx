@@ -8,10 +8,9 @@ export default function ChatBot() {
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [mode, setMode] = useState("idle"); // idle | selecting | seat | name | email | confirm-payment
+  const [mode, setMode] = useState("idle"); 
 
-
-const { startRecording, stopRecording, recording } = usePcmRecorder();
+  const { startRecording, stopRecording, recording } = usePcmRecorder();
 
   const selectedTrain = useRef(null);
   const availableSeatsRef = useRef([]);
@@ -40,10 +39,10 @@ async function handleVoice() {
 
     const res = await api.post("/api/ai/speech-to-text", formData);
 
-    const text = res.data.text;
+ const text = String(res.data.text || "").trim();
+addMessage({ sender: "user", text });
+handleSend(text);
 
-    addMessage({ sender: "user", text });
-    handleSend(text); // send to chat logic
   }
 }
 
@@ -56,10 +55,9 @@ async function sendAudioToServer(wavBlob) {
     headers: { "Content-Type": "multipart/form-data" }
   });
 
-  const text = res.data.text;
-  setQuestion(text); // autofill the text box
-  handleSend(text);  // optionally auto-send
-}
+const text = String(res.data.text || "").trim();
+  setQuestion(text); 
+  handleSend(text);  }
 
   async function fetchSeatsForTrain(scheduleId, fromStopOrder, toStopOrder) {
     try {
@@ -74,12 +72,6 @@ async function sendAudioToServer(wavBlob) {
   }
 
 
-
-
-
-
-
-  // =============== TRAIN SELECT ===============
   async function selectTrain(train) {
     const fromStopOrder =
       train.fromOrder ?? train.fromStopOrder ?? train.from ?? 1;
@@ -117,10 +109,13 @@ async function sendAudioToServer(wavBlob) {
     });
   }
 
-  // SEND HANDLER
-
 async function handleSend(injectedText = null) {
   const userMsg = injectedText ? injectedText : question.trim();
+
+    if (typeof userMsg !== "string") {
+  console.error("Invalid userMsg:", userMsg);
+  return;
+}
     if (!userMsg || loading) return;
 
     const ticketMatch = userMsg.match(/RAIL-\d{6}/i);
@@ -319,7 +314,6 @@ if (ticketMatch) {
   addMessage({ sender: "user", text: `Cancel booking ${ticketRef}` });
 
   try {
-    // 1) Convert ticketRef → bookingId
     const lookup = await api.get(`/api/booking/get-by-ticket/${ticketRef}`);
     const bookingId = lookup.data.id;
 
@@ -328,9 +322,7 @@ if (ticketMatch) {
       return;
     }
 
-    // 2) Cancel booking
     await api.post(`/api/booking/cancel/${bookingId}`);
-
     addMessage({
       sender: "ai",
       text: `Booking with ticket ${ticketRef} has been cancelled successfully.`,
@@ -349,7 +341,6 @@ async function handleResendByTicket(ticketRef) {
   addMessage({ sender: "user", text: `Resend ticket ${ticketRef}` });
 
   try {
-    // 1) Convert ticketRef → bookingId
     const lookup = await api.get(`/api/booking/get-by-ticket/${ticketRef}`);
     const bookingId = lookup.data.id;
 
@@ -358,7 +349,6 @@ async function handleResendByTicket(ticketRef) {
       return;
     }
 
-    // 2) Resend ticket email
     await api.post(`/api/booking/resend-ticket/${bookingId}`);
 
     addMessage({
@@ -376,27 +366,19 @@ async function handleResendByTicket(ticketRef) {
 }
 
 
-  // --- QUICK COMMAND PARSER (Cancel / Resend) ---
 
 
-
-  // ==================================================
-  // RENDER
-  // ==================================================
 return (
   <div className="w-full h-full flex flex-col bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
     
-    {/* Header */}
     <div className="p-4 border-b border-gray-200 bg-white text-center font-semibold text-gray-900">
       Railway Assistant
     </div>
 
-    {/* Messages */}
     <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
 
       {messages.map((m, i) => {
 
-        // TRAIN LIST (Apple Card Style)
         if (m.type === "train-list") {
           const { personalized, others } = m.data;
 
@@ -431,7 +413,6 @@ return (
                 </div>
               )}
 
-              {/* Other recommended */}
               {others?.map((o) => (
                 <button
                   key={o.train.scheduleId}
@@ -458,7 +439,6 @@ return (
           );
         }
 
-        // PAYMENT BUTTON
         if (m.type === "payment-button") {
           return (
             <button
@@ -506,7 +486,6 @@ return (
           );
         }
 
-        // REGULAR MESSAGES
         return (
           <div
             key={i}
@@ -524,7 +503,6 @@ return (
       {loading && <div className="text-xs text-gray-500">Thinking...</div>}
     </div>
 
-    {/* Input Bar */}
     <div className="p-3 border-t border-gray-200 bg-white flex gap-2">
 
       <input

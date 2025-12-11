@@ -26,7 +26,6 @@ export default function AdminAnalyticsPage() {
 
   const [error, setError] = useState("");
 
-  /* ---------------- FETCH FUNCTIONS ---------------- */
 
   async function fetchLoadFactor() {
     try {
@@ -96,7 +95,6 @@ export default function AdminAnalyticsPage() {
     }
   }
 
-  /* ---------------- Reusable UI ---------------- */
 
   const Card = ({ title, children }) => (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 space-y-4">
@@ -151,17 +149,14 @@ export default function AdminAnalyticsPage() {
     </Card>
   );
 
-  /* ---------------- Main UI ---------------- */
 
   return (
     <div className="min-h-screen p-6 space-y-10 bg-gray-50">
       
-      {/* Title */}
       <h1 className="text-3xl font-semibold">Admin Analytics Dashboard</h1>
 
       {error && <div className="bg-red-100 text-red-700 p-3 rounded-xl">{error}</div>}
 
-      {/* Filters */}
       <Card title="Filters">
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -205,7 +200,6 @@ export default function AdminAnalyticsPage() {
         </div>
       </Card>
 
-      {/* LOAD FACTOR */}
       {date && (
         <Card title={`Load Factor – ${date}`}>
           {loadFactor.length === 0 ? (
@@ -231,7 +225,6 @@ export default function AdminAnalyticsPage() {
         </Card>
       )}
 
-      {/* REVENUE */}
       {from && to && (
         <Card title={`Revenue (${from} → ${to})`}>
           {revenue.length === 0 ? (
@@ -257,7 +250,6 @@ export default function AdminAnalyticsPage() {
         </Card>
       )}
 
-      {/* BOOKINGS */}
       {from && to && (
         <Card title="Bookings Over Time">
           {bookings.length === 0 ? (
@@ -282,11 +274,9 @@ export default function AdminAnalyticsPage() {
         </Card>
       )}
 
-      {/* AI PREDICTIONS */}
       {aiPredictions && (
         <Card title="AI Predictions (Next 7 Days)">
           
-          {/* Revenue */}
           <div>
             <h3 className="font-semibold">Revenue Forecast</h3>
             <ul className="list-disc ml-6 mt-2">
@@ -296,7 +286,6 @@ export default function AdminAnalyticsPage() {
             </ul>
           </div>
 
-          {/* Insights */}
           {aiInsights && (
             <div className="bg-gray-100 p-4 rounded-xl border">
               <h3 className="font-semibold mb-2">AI Insights</h3>
@@ -304,7 +293,6 @@ export default function AdminAnalyticsPage() {
             </div>
           )}
 
-          {/* Load Factor */}
           <div>
             <h3 className="font-semibold mt-4">Load Factor Forecast</h3>
             <ul className="list-disc ml-6 mt-2">
@@ -314,7 +302,6 @@ export default function AdminAnalyticsPage() {
             </ul>
           </div>
 
-          {/* Demand */}
           <div>
             <h3 className="font-semibold mt-4">Expected Seat Demand</h3>
             <ul className="list-disc ml-6 mt-2">
@@ -324,7 +311,6 @@ export default function AdminAnalyticsPage() {
             </ul>
           </div>
 
-          {/* Delay */}
           <div>
             <h3 className="font-semibold mt-4">Delay Risk</h3>
             <ul className="list-disc ml-6 mt-2">

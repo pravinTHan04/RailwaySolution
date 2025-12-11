@@ -8,32 +8,27 @@ export function convertToWav(buffer, sampleRate = 44100) {
   const blockAlign = numChannels * bytesPerSample;
   const byteRate = sampleRate * blockAlign;
 
-  // "RIFF"
   writeString(view, 0, "RIFF");
   view.setUint32(4, 36 + numFrames * bytesPerSample, true);
   writeString(view, 8, "WAVE");
 
-  // fmt chunk
   writeString(view, 12, "fmt ");
-  view.setUint32(16, 16, true); // PCM
-  view.setUint16(20, 1, true); // PCM
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
   view.setUint16(22, numChannels, true);
   view.setUint32(24, sampleRate, true);
   view.setUint32(28, byteRate, true);
   view.setUint16(32, blockAlign, true);
   view.setUint16(34, bytesPerSample * 8, true);
 
-  // data chunk
   writeString(view, 36, "data");
   view.setUint32(40, numFrames * bytesPerSample, true);
 
   const wavBuffer = new ArrayBuffer(44 + numFrames * bytesPerSample);
   const wavView = new DataView(wavBuffer);
 
-  // Copy header
   new Uint8Array(wavBuffer).set(new Uint8Array(wavHeader), 0);
 
-  // Copy samples (float → 16-bit PCM)
   let offset = 44;
   for (let i = 0; i < numFrames; i++, offset += 2) {
     let s = Math.max(-1, Math.min(1, buffer[i]));

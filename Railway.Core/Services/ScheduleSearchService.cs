@@ -78,7 +78,7 @@ namespace Railway.Core.Services
                     .ThenInclude(r => r.Stops)
                         .ThenInclude(rs => rs.Station)
                 .Include(s => s.Train)
-                    .ThenInclude(t => t.TrainType)   // ✔ CORRECT
+                    .ThenInclude(t => t.TrainType)   
                 .Where(s => s.DepartureTime.Date == request.Date.Date)
                 .ToListAsync();
 
@@ -133,18 +133,15 @@ namespace Railway.Core.Services
 
         public async Task<List<ScheduleResultDto>> SearchWithPreferencesAsync(SearchScheduleRequest request, string userId)
         {
-            // 1) Get schedules using the existing method
             var schedules = await SearchAsync(request);
 
-            // 2) Load user preferences
             var prefs = await _db.UserPreferences
                 .Where(p => p.UserId == userId)
                 .ToListAsync();
 
             if (!prefs.Any())
-                return schedules; // no personalization possible
+                return schedules;
 
-            // 3) Apply weighting
             var weighted = schedules
                 .Select(s => new
                 {

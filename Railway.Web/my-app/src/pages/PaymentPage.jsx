@@ -15,20 +15,14 @@ export default function PaymentPage() {
   const [cvv, setCvv] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  // ------------------------------
-  // FORMATTERS
-  // ------------------------------
-
-  // CARD NUMBER: numbers only, max 16 digits
   function handleCardNumber(val) {
-    let cleaned = val.replace(/\D/g, ""); // remove non-digits
+    let cleaned = val.replace(/\D/g, ""); 
     if (cleaned.length > 16) cleaned = cleaned.slice(0, 16);
     setCardNumber(cleaned);
   }
 
-  // EXPIRY: MM/YY with auto slash
   function handleExpiry(val) {
-    let cleaned = val.replace(/\D/g, ""); // remove non-digits
+    let cleaned = val.replace(/\D/g, ""); 
     if (cleaned.length > 4) cleaned = cleaned.slice(0, 4);
 
     if (cleaned.length >= 3) {
@@ -38,7 +32,6 @@ export default function PaymentPage() {
     setExpiry(cleaned);
   }
 
-  // CVV: numbers only, max 4 digits
   function handleCvv(val) {
     let cleaned = val.replace(/\D/g, "");
     if (cleaned.length > 4) cleaned = cleaned.slice(0, 4);
@@ -54,7 +47,6 @@ export default function PaymentPage() {
     setProcessing(true);
 
     try {
-      // Fake delay for effect
       await new Promise((res) => setTimeout(res, 1500));
 
       const intent = await api.post("/api/payment/create", {
@@ -100,7 +92,6 @@ export default function PaymentPage() {
           <span className="text-xl font-semibold text-gray-900">£{total}</span>
         </div>
 
-        {/* CARD NUMBER */}
         <div className="space-y-1">
           <label className="text-sm text-gray-700 font-medium">Card Number</label>
           <input
@@ -112,7 +103,6 @@ export default function PaymentPage() {
           />
         </div>
 
-        {/* EXPIRY + CVV */}
         <div className="flex gap-3">
           <div className="flex-1 space-y-1">
             <label className="text-sm text-gray-700 font-medium">Expiry (MM/YY)</label>

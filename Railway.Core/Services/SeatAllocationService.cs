@@ -79,7 +79,6 @@ namespace Railway.Core.Services
         }
 
 
-        // Returns seats still free for this trip segment
         public async Task<List<CarriageSeatGroup>> GetAvailableSeatsAsync(string scheduleId, int fromStopOrder, int toStopOrder)
         {
 
@@ -310,12 +309,10 @@ namespace Railway.Core.Services
             if (seatIds == null || !seatIds.Any())
                 throw new ArgumentException("At least one seat must be provided.", nameof(seatIds));
 
-            // Make sure we always have a user key
             var userKey = string.IsNullOrWhiteSpace(tempUserToken)
                 ? $"guest_{Guid.NewGuid()}"
                 : tempUserToken;
 
-            // (Optional but safer) verify schedule exists
             var scheduleExists = await _db.Schedules.AnyAsync(s => s.Id == scheduleId);
             if (!scheduleExists)
                 throw new InvalidOperationException("Schedule not found for locking seats.");
@@ -323,8 +320,8 @@ namespace Railway.Core.Services
             var booking = new Booking
             {
                 ScheduleId = scheduleId,
-                UserId = userKey,              // ✅ IMPORTANT
-                PassengerName = userKey,       // temp name for lock-only booking
+                UserId = userKey,             
+                PassengerName = userKey,       
                 Status = BookingStatus.Pending,
                 ExpiresAt = DateTime.UtcNow.AddMinutes(5)
             };

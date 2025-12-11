@@ -29,9 +29,7 @@ namespace Railway.Core.Services
             double confidence = 0.15; // base low delay risk
             var reasons = new List<string>();
 
-            // ------------------------------
-            // 1) TIME-BASED DELAY PATTERNS
-            // ------------------------------
+
             if (hour >= 7 && hour <= 9)
             {
                 confidence += 0.35;
@@ -57,9 +55,7 @@ namespace Railway.Core.Services
                 reasons.Add("Off-peak hours – lower congestion.");
             }
 
-            // ------------------------------
-            // 2) TRAIN TYPE EFFECT
-            // ------------------------------
+     
             if (trainType.Equals("Local", StringComparison.OrdinalIgnoreCase))
             {
                 confidence += 0.25;
@@ -79,9 +75,7 @@ namespace Railway.Core.Services
                 reasons.Add("Luxury service is prioritized – usually more punctual.");
             }
 
-            // ------------------------------
-            // 3) STOP COUNT (ROUTE LENGTH EFFECT)
-            // ------------------------------
+
             if (stopCount >= 8)
             {
                 confidence += 0.20;
@@ -95,9 +89,7 @@ namespace Railway.Core.Services
                 reasons.Add("Medium route length.");
             }
 
-            // ------------------------------
-            // 4) ROUTE-BASED TWEAK (example)
-            // ------------------------------
+
             if (routeName.Contains("Southern", StringComparison.OrdinalIgnoreCase))
             {
                 confidence += 0.05;
@@ -105,16 +97,12 @@ namespace Railway.Core.Services
                 reasons.Add("Southern Line occasionally faces congestion.");
             }
 
-            // ------------------------------
-            // 5) SANITIZE OUTPUT VALUES
-            // ------------------------------
+
             if (delayMinutes < 0) delayMinutes = 0;
             if (confidence < 0) confidence = 0;
             if (confidence > 1) confidence = 1;
 
-            // HIGH-RISK IF:
-            // - confidence >= 0.5
-            // - AND delay >= 5 minutes
+ 
             bool isDelayed = confidence >= 0.5 && delayMinutes >= 5;
 
             return new DelayPredictionResult

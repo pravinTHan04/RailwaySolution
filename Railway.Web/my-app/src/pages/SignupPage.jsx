@@ -57,7 +57,6 @@ export default function SignupPage() {
     <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-4xl bg-white border border-gray-200 rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
-        {/* IMAGE SIDE (retained as requested) */}
         <div className="hidden md:block">
           <img
             src={SignupImage}
@@ -66,7 +65,6 @@ export default function SignupPage() {
           />
         </div>
 
-        {/* FORM SIDE (Apple style) */}
         <div className="p-8 md:p-10">
           <h1 className="text-3xl font-semibold text-gray-900">Create Account</h1>
           <p className="text-gray-500 text-sm mt-1">
@@ -75,7 +73,6 @@ export default function SignupPage() {
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-6">
 
-            {/* FIRST + LAST NAME */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <AppleInput
                 name="firstName"
@@ -91,7 +88,6 @@ export default function SignupPage() {
               />
             </div>
 
-            {/* PHONE */}
             <AppleInput
               name="phone"
               placeholder="Phone Number"
@@ -99,7 +95,6 @@ export default function SignupPage() {
               onChange={handleChange}
             />
 
-            {/* EMAIL */}
             <AppleInput
               type="email"
               name="email"
@@ -108,7 +103,6 @@ export default function SignupPage() {
               onChange={handleChange}
             />
 
-            {/* PASSWORD + CONFIRM */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <AppleInput
                 type="password"
@@ -132,7 +126,6 @@ export default function SignupPage() {
               <p className="text-red-600 text-sm">❌ Passwords do not match.</p>
             )}
 
-            {/* Sign Up Button */}
             <button
               type="submit"
               disabled={loading}
@@ -144,7 +137,6 @@ export default function SignupPage() {
             </button>
           </form>
 
-          {/* Footer */}
           <p className="text-center text-gray-600 text-sm mt-8">
             Already have an account?{" "}
             <Link to="/" className="text-blue-600 font-medium hover:underline">
@@ -157,7 +149,6 @@ export default function SignupPage() {
   );
 }
 
-/* Apple-like input component */
 function AppleInput({ className = "", ...props }) {
   return (
     <input

@@ -11,7 +11,6 @@ public class UserPreferenceService
         _db = db;
     }
 
-    // READ PREFERENCES
     public async Task<List<UserPreference>> GetPreferences(string userId)
     {
         return await _db.UserPreferences
@@ -20,7 +19,6 @@ public class UserPreferenceService
             .ToListAsync();
     }
 
-    // UPDATE PREFERENCE
     public async Task AddOrUpdatePreference(
         string userId,
         string trainType,
@@ -55,8 +53,8 @@ public class UserPreferenceService
         {
             pref.BookingsCount++;
             pref.RouteCount++;
-            pref.PreferredTime = timeText;               // UPDATE most recent
-            pref.LastUsedTimestamp = DateTime.UtcNow;    // UPDATE time
+            pref.PreferredTime = timeText;               
+            pref.LastUsedTimestamp = DateTime.UtcNow;    
         }
 
         await _db.SaveChangesAsync();

@@ -28,7 +28,7 @@ export default function useRecorder() {
       mediaRecorderRef.current.onstop = async () => {
         const blob = new Blob(audioChunks.current, { type: "audio/webm" });
 
-        const wavBlob = await convertToWav(blob); // <<< IMPORTANT
+        const wavBlob = await convertToWav(blob);
         resolve(wavBlob);
       };
 

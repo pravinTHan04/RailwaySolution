@@ -25,13 +25,11 @@ export default function TicketPage() {
 return (
   <div className="max-w-md mx-auto p-6 space-y-8">
 
-    {/* HEADER */}
     <div className="text-center">
       <h1 className="text-3xl font-bold text-gray-900">Your Ticket</h1>
       <p className="text-gray-500 text-sm mt-1">Booking Confirmation</p>
     </div>
 
-    {/* TICKET CARD */}
     <div className="bg-white rounded-2xl shadow-lg border p-6 space-y-4">
 
       <div className="space-y-2">
@@ -67,7 +65,6 @@ return (
       </div>
     </div>
 
-    {/* QR CODE */}
     <div className="flex flex-col items-center gap-4">
       <img
         src={`data:image/png;base64,${ticket.qrBase64}`}
@@ -84,7 +81,6 @@ return (
       </a>
     </div>
 
-    {/* RESEND BUTTON */}
     <button
       onClick={async () => {
         try {

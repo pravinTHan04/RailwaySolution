@@ -1,6 +1,6 @@
 export async function convertToWav(blob) {
   const arrayBuffer = await blob.arrayBuffer();
-  const audioCtx = new AudioContext({ sampleRate: 16000 }); // Vosk requirement
+  const audioCtx = new AudioContext({ sampleRate: 16000 });
   const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
 
   const channelData = audioBuffer.getChannelData(0);

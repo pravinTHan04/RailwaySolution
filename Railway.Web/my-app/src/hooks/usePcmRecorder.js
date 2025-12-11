@@ -39,7 +39,6 @@ export default function usePcmRecorder() {
       streamRef.current.getTracks().forEach((t) => t.stop());
       setRecording(false);
 
-      // Merge PCM chunks
       const pcm = mergeBuffers(pcmDataRef.current);
       pcmDataRef.current = [];
 

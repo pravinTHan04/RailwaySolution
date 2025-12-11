@@ -49,13 +49,11 @@ export default function PassengerDetailsPage() {
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-8">
 
-      {/* PAGE HEADER */}
       <div>
         <h1 className="text-3xl font-semibold text-gray-900">Passenger Details</h1>
         <p className="text-gray-500 mt-1">Enter information for each passenger.</p>
       </div>
 
-      {/* PASSENGER CARDS */}
       {passengers.map((p, i) => (
         <div
           key={i}
@@ -65,7 +63,6 @@ export default function PassengerDetailsPage() {
             Passenger {i + 1}
           </h2>
 
-          {/* FULL NAME */}
           <div className="space-y-1">
             <label className="text-sm font-medium text-gray-700">Full Name</label>
             <input
@@ -77,7 +74,6 @@ export default function PassengerDetailsPage() {
             />
           </div>
 
-          {/* EMAIL */}
           <div className="space-y-1">
             <label className="text-sm font-medium text-gray-700">Email</label>
             <input
@@ -91,7 +87,6 @@ export default function PassengerDetailsPage() {
         </div>
       ))}
 
-      {/* CONTINUE BUTTON */}
       <div className="flex justify-end">
         <button
           onClick={submit}

@@ -384,89 +384,73 @@ async function handleResendByTicket(ticketRef) {
   // RENDER
   // ==================================================
 return (
-  <div className="w-full h-full flex flex-col rounded-2xl bg-[#e0e0e0]
-    shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] overflow-hidden">
-
-    {/* HEADER */}
-    <div className="p-4 text-center font-bold text-gray-700 bg-[#e0e0e0]
-      shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]">
+  <div className="w-full h-full flex flex-col bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+    
+    {/* Header */}
+    <div className="p-4 border-b border-gray-200 bg-white text-center font-semibold text-gray-900">
       Railway Assistant
     </div>
 
-    {/* MESSAGES AREA */}
-    <div className="flex-1 p-4 space-y-3 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+    {/* Messages */}
+    <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
+
       {messages.map((m, i) => {
-        // --------------------------------------
-        // TRAIN LIST MESSAGE (NEUMORPHIC CARD)
-        // --------------------------------------
+
+        // TRAIN LIST (Apple Card Style)
         if (m.type === "train-list") {
           const { personalized, others } = m.data;
+
           return (
-            <div
-              key={i}
-              className="p-4 rounded-xl bg-[#e0e0e0]
-              shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]"
-            >
-              {/* Personalized */}
+            <div key={i} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm space-y-3">
+
               {personalized && (
-                <div className="p-3 rounded-xl mb-3 bg-[#e0e0e0]
-                  shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]">
-                  
-                  <div className="text-xs font-bold text-red-600 mb-1">
+                <div className="border border-gray-300 rounded-lg p-3 bg-white">
+                  <div className="text-xs font-medium text-red-600 mb-1">
                     ❤️ Based on your past bookings
                   </div>
 
                   <button
                     onClick={() => selectTrain(personalized.train)}
-                    className="w-full text-left text-gray-700 p-3 rounded-xl bg-[#e0e0e0]
-                    shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]
-                    active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]"
+                    className="w-full text-left space-y-1"
                   >
-                    <div className="font-bold">{personalized.train.train}</div>
-                    <div className="text-xs">
+                    <div className="font-semibold text-gray-900">{personalized.train.train}</div>
+                    <div className="text-xs text-gray-600">
                       Departure: {new Date(personalized.train.departure).toLocaleString()}
                     </div>
-                    <div className="text-xs">Price: Rs. {personalized.train.price}</div>
-                    <div className="text-xs">Travel Time: {personalized.train.travelTime} min</div>
+                    <div className="text-xs text-gray-600">Price: Rs. {personalized.train.price}</div>
+                    <div className="text-xs text-gray-600">Travel Time: {personalized.train.travelTime} min</div>
 
-                    <div className="text-xs text-yellow-600 font-semibold">
+                    <div className="text-xs text-yellow-600 font-medium">
                       Expected Delay: {personalized.train.delay?.expectedDelayMinutes ?? 0} minutes
                     </div>
 
                     {personalized.train.delay?.confidence > 0.5 && (
-                      <div className="text-xs text-orange-500 font-bold">
-                        ⚠ High delay risk
-                      </div>
+                      <div className="text-xs text-orange-500 font-bold">⚠ High delay risk</div>
                     )}
                   </button>
                 </div>
               )}
 
-              {/* Other recommended trains */}
+              {/* Other recommended */}
               {others?.map((o) => (
                 <button
                   key={o.train.scheduleId}
                   onClick={() => selectTrain(o.train)}
-                  className="w-full text-left px-3 py-3 mb-3 rounded-xl bg-[#e0e0e0] text-gray-700
-                  shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]
-                  active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]"
+                  className="w-full border border-gray-300 bg-white rounded-lg p-3 text-left space-y-1"
                 >
-                  <div className="font-semibold">{o.train.train}</div>
-
-                  <div className="text-xs">
+                  <div className="font-semibold text-gray-900">{o.train.train}</div>
+                  <div className="text-xs text-gray-600">
                     Departure: {new Date(o.train.departure).toLocaleString()}
                   </div>
-                  <div className="text-xs">Price: Rs. {o.train.price}</div>
-                  <div className="text-xs">Travel Time: {o.train.travelTime} min</div>
+                  <div className="text-xs text-gray-600">Price: Rs. {o.train.price}</div>
+                  <div className="text-xs text-gray-600">Travel Time: {o.train.travelTime} min</div>
 
-                  <div className="text-xs text-yellow-600 font-semibold">
+                  <div className="text-xs text-yellow-600 font-medium">
                     Expected Delay: {o.train.delay?.expectedDelayMinutes ?? 0} minutes
                   </div>
 
                   {o.train.delay?.confidence > 0.5 && (
-                    <div className="text-[11px] text-orange-500 font-bold">
-                      ⚠ High delay risk
-                    </div>
+                    <div className="text-xs text-orange-500 font-bold">⚠ High delay risk</div>
                   )}
                 </button>
               ))}
@@ -474,9 +458,7 @@ return (
           );
         }
 
-        // --------------------------------------
-        // PAYMENT BUTTON MESSAGE
-        // --------------------------------------
+        // PAYMENT BUTTON
         if (m.type === "payment-button") {
           return (
             <button
@@ -517,69 +499,58 @@ return (
                   alert("Failed to prepare booking");
                 }
               }}
-              className="px-4 py-3 text-gray-700 rounded-xl bg-[#e0e0e0] 
-              shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]
-              active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]"
+              className="w-full bg-black text-white p-3 rounded-lg text-center font-medium hover:bg-gray-900 transition"
             >
               Proceed to Payment →
             </button>
           );
         }
 
-        // --------------------------------------
-        // STANDARD USER/AI MESSAGE
-        // --------------------------------------
+        // REGULAR MESSAGES
         return (
           <div
             key={i}
-            className={`p-3 rounded-xl max-w-[80%] text-sm
-              ${m.sender === "user" 
-                ? "ml-auto bg-[#e0e0e0] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]" 
-                : "mr-auto bg-[#e0e0e0] shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff]"
-              }`}
+            className={`max-w-[80%] p-3 text-sm rounded-xl ${
+              m.sender === "user"
+                ? "ml-auto bg-blue-600 text-white"
+                : "mr-auto bg-white border border-gray-200 text-gray-900"
+            }`}
           >
             {m.text}
           </div>
         );
       })}
 
-      {loading && (
-        <div className="text-xs text-gray-500">Thinking...</div>
-      )}
+      {loading && <div className="text-xs text-gray-500">Thinking...</div>}
     </div>
 
-    {/* INPUT BAR */}
-    <div className="p-3 flex gap-3 
-      shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] bg-[#e0e0e0]">
+    {/* Input Bar */}
+    <div className="p-3 border-t border-gray-200 bg-white flex gap-2">
 
       <input
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleSend()}
         placeholder="Ask something..."
-        className="flex-1 px-3 py-2 rounded-xl bg-[#e0e0e0] text-gray-700 
-        shadow-inner shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]"
+        className="flex-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black/20 text-sm"
       />
 
       <button
         onClick={handleSend}
-        className="px-5 py-2 rounded-xl bg-[#e0e0e0] text-gray-700 font-semibold
-        shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]
-        active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]"
+        className="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-900 transition"
       >
         Send
       </button>
 
-<button 
-  onClick={handleVoice} 
-  className="px-5 py-2 rounded-xl bg-[#e0e0e0]"
->
-  {recording ? "⛔ Stop" : "🎤 Speak"}
-</button>
-
-
+      <button
+        onClick={handleVoice}
+        className="px-3 py-2 bg-gray-200 rounded-lg text-sm hover:bg-gray-300 transition"
+      >
+        {recording ? "⛔ Stop" : "🎤"}
+      </button>
 
     </div>
+
   </div>
 );
 

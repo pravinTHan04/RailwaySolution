@@ -1,61 +1,77 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 export default function BookingPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
   const scheduleId = searchParams.get("scheduleId");
-
   const fromStopOrder = Number(searchParams.get("fromOrder"));
   const toStopOrder = Number(searchParams.get("toOrder"));
 
   const [carriages, setCarriages] = useState([]);
   const [activeCarriage, setActiveCarriage] = useState(null);
 
-  const [seats, setSeats] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
-
   const [requiredCount, setRequiredCount] = useState(null);
+
   const [loading, setLoading] = useState(true);
+  const [locked, setLocked] = useState(false);
 
   const [timerActive, setTimerActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(300);
-  const [locked, setLocked] = useState(false);
 
   const [suggesting, setSuggesting] = useState(false);
-  const [suggestionInfo, setSuggestionInfo] = useState(null);
   const [suggestedSeatIds, setSuggestedSeatIds] = useState([]);
+  const [suggestionInfo, setSuggestionInfo] = useState(null);
 
-function getUserId() {
-  const token = localStorage.getItem("authToken");
-  if (!token) return null;
+  // ========== ID Helpers ==========
+  function getUserId() {
+    const token = localStorage.getItem("authToken");
+    if (!token) return null;
 
-  const decoded = jwtDecode(token);
-  return decoded.sub;   // or decoded.nameid based on your token
-}
-
-function getSeatLockToken() {
-  const userId = getUserId();
-  if (userId) return userId; // logged-in user's real ID
-
-  let guestId = localStorage.getItem("guestId");
-  if (!guestId) {
-    guestId = "guest_" + crypto.randomUUID();
-    localStorage.setItem("guestId", guestId);
+    const decoded = jwtDecode(token);
+    return decoded.sub;
   }
-  return guestId;
-}
 
+  function getSeatLockToken() {
+    const userId = getUserId();
+    if (userId) return userId;
 
+    let guestId = localStorage.getItem("guestId");
+    if (!guestId) {
+      guestId = "guest_" + crypto.randomUUID();
+      localStorage.setItem("guestId", guestId);
+    }
+    return guestId;
+  }
 
-
+  // ========== Load Seats ==========
   useEffect(() => {
-    if (scheduleId) fetchSeatAvailability();
+    if (scheduleId) loadSeats();
   }, [scheduleId]);
 
+  async function loadSeats() {
+    try {
+      const res = await api.get("/api/seats/available", {
+        params: { scheduleId, fromStopOrder, toStopOrder },
+      });
+
+      setCarriages(res.data);
+
+      if (!activeCarriage && res.data.length > 0) {
+        setActiveCarriage(res.data[0].carriage);
+      }
+
+      setLoading(false);
+    } catch (err) {
+      console.error("Seat API Error:", err);
+    }
+  }
+
+  // ========== Countdown Timer ==========
   useEffect(() => {
     if (!timerActive) return;
 
@@ -64,7 +80,7 @@ function getSeatLockToken() {
         if (prev <= 1) {
           clearInterval(timer);
           resetSelection();
-          alert("⏳ Seat locks expired. Please select again.");
+          alert("⏳ Seat reservation expired. Please select again.");
           return 0;
         }
         return prev - 1;
@@ -74,128 +90,62 @@ function getSeatLockToken() {
     return () => clearInterval(timer);
   }, [timerActive]);
 
-async function fetchSeatAvailability() {
-  try {
-    const res = await api.get("/api/seats/available", {
-      params: { scheduleId, fromStopOrder, toStopOrder },
-    });
+  // ========== Suggest Seats ==========
+  async function suggestSeats() {
+    if (!requiredCount) return alert("Select number of seats first.");
 
-    setCarriages(res.data);
+    setSuggesting(true);
+    setSuggestionInfo(null);
 
-    // Default to carriage 1
-    if (!activeCarriage && res.data.length > 0) {
-      setActiveCarriage(res.data[0].carriage);
+    try {
+      const res = await api.post("/api/booking/suggest-seats", {
+        scheduleId,
+        fromStopOrder,
+        toStopOrder,
+        seatCount: requiredCount,
+      });
+
+      const data = res.data;
+
+      if (!data?.seats?.length) {
+        alert("No suggestions available.");
+        return;
+      }
+
+      const flatSeats = carriages.flatMap((c) => c.seats);
+      const mapped = data.seats
+        .map((s) => flatSeats.find((x) => x.seatId === s.seatId))
+        .filter(Boolean);
+
+      setSuggestedSeatIds(mapped.map((s) => s.seatId));
+      setSuggestionInfo({
+        reason: data.reason,
+        exactMatch: data.exactMatch,
+      });
+    } catch (err) {
+      console.error("Seat suggestion error:", err);
+      alert("Unable to fetch suggestion.");
+    } finally {
+      setSuggesting(false);
     }
-
-    setLoading(false);
-  } catch (err) {
-    console.error("Seat API Error:", err);
-  }
-}
-
-async function suggestSeats() {
-  if (!requiredCount) {
-    alert("Select how many seats you need first.");
-    setSuggestedSeatIds(mappedSeats.map(s => s.seatId));
-    return;
   }
 
-  if (!scheduleId) return;
+  // ========== Select Seat ==========
+  function toggleSeat(seat) {
+    if (locked) return;
+    if (seat.status !== "available") return;
 
-  setSuggesting(true);
-  setSuggestionInfo(null);
+    const exists = selectedSeats.some((s) => s.seatId === seat.seatId);
 
-  try {
-    const res = await api.post("/api/booking/suggest-seats", {
-      scheduleId,
-      fromStopOrder,
-      toStopOrder,
-      seatCount: requiredCount,
-    });
-
-    const data = res.data;
-
-    if (!data || !data.seats || data.seats.length === 0) {
-      alert("No seat suggestion available for this segment.");
-      return;
+    if (exists) {
+      setSelectedSeats((prev) => prev.filter((s) => s.seatId !== seat.seatId));
+    } else if (selectedSeats.length < requiredCount) {
+      setSelectedSeats((prev) => [...prev, seat]);
     }
-
-    // Flatten all seats from carriages
-    const flatSeats = carriages.flatMap((c) => c.seats);
-
-    // Map backend results (seatId only) to actual seat objects from availability API
-    const mappedSeats = data.seats
-      .map((s) => flatSeats.find((seat) => seat.seatId === s.seatId))
-      .filter(Boolean);
-
-    if (mappedSeats.length === 0) {
-      alert("Suggestion returned seats that are not in current layout.");
-      return;
-    }
-
-    // Apply suggestion to selected seats
-setSuggestedSeatIds(mappedSeats.map(s => s.seatId));
-
-    // Save info for UI message
-    setSuggestionInfo({
-      exactMatch: data.exactMatch,
-      reason: data.reason,
-      count: mappedSeats.length,
-    });
-  } catch (err) {
-    console.error("Seat suggestion failed:", err);
-    alert("Could not get seat suggestion.");
-  } finally {
-    setSuggesting(false);
-  }
-}
-
-function resetSelection() {
-    setSelectedSeats([]);
-    setLocked(false);
-    setTimerActive(false);
-    setTimeLeft(300);
-    fetchSeatAvailability();
   }
 
-// function parseSeat(seat) {
-//   const letter = seat.seatNumber.substring(0, 1);   // A/B/C/D
-//   const row = Number(seat.seatNumber.substring(1)); // 1,2,3...
-//   return { ...seat, row, letter };
-// }
-
-const active = carriages.find((c) => c.carriage === activeCarriage);
-
-const rows = {};
-
-if (active) {
-  active.seats.forEach((seat) => {
-    const letter = seat.seatNumber.substring(0, 1);
-    const row = parseInt(seat.seatNumber.substring(1));
-
-    if (!rows[row]) rows[row] = {};
-    rows[row][letter] = seat;
-  });
-}
-
-
-function toggleSeat(seat) {
-  if (locked) return;
-  if (seat.status !== "available") return;
-
-  const exists = selectedSeats.some((s) => s.seatId === seat.seatId);
-
-  if (exists) {
-    setSelectedSeats((prev) => prev.filter((s) => s.seatId !== seat.seatId));
-  } else if (selectedSeats.length < requiredCount) {
-    setSelectedSeats((prev) => [...prev, seat]);
-  }
-}
-``
-
+  // ========== Lock ==========
   async function lockSeats() {
-    if (selectedSeats.length !== requiredCount) return;
-
     const seatIds = selectedSeats.map((s) => s.seatId);
 
     try {
@@ -204,265 +154,262 @@ function toggleSeat(seat) {
         seatIds,
         fromStopOrder,
         toStopOrder,
-        tempUserToken: getSeatLockToken()
+        tempUserToken: getSeatLockToken(),
       });
 
       setLocked(true);
       setTimerActive(true);
-      fetchSeatAvailability();
-    } catch (err) {
-      console.error("Lock failed:", err);
-      alert("⚠ Could not lock seats.");
+      loadSeats();
+    } catch {
+      alert("Could not lock seats.");
     }
   }
 
+  // ========== Unlock ==========
   async function cancelLockedSeats() {
-  if (!locked || selectedSeats.length === 0) return;
+    const seatIds = selectedSeats.map((s) => s.seatId);
 
-  const seatIds = selectedSeats.map(s => s.seatId);
+    try {
+      await api.post("/api/seats/unlock", {
+        scheduleId,
+        seatIds,
+      });
 
-  try {
-    await api.post("/api/seats/unlock", {
-      scheduleId,
-      seatIds
-    });
+      resetSelection();
+      loadSeats();
+    } catch {
+      alert("Failed to unlock seats.");
+    }
+  }
 
-    // Reset local state
+  // ========== Create Booking ==========
+  async function continueToPassengerDetails() {
+    const seatIds = selectedSeats.map((s) => s.seatId);
+
+    try {
+      const res = await api.post("/api/booking/create", {
+        scheduleId,
+        seatIds,
+        fromStopOrder,
+        toStopOrder,
+      });
+
+      const bookingId = res.data.id;
+      if (!bookingId) return alert("Booking failed.");
+
+      navigate(`/passenger?bookingId=${bookingId}&count=${selectedSeats.length}`);
+    } catch (err) {
+      alert("Booking failed.");
+    }
+  }
+
+  // ========== Reset ==========
+  function resetSelection() {
+    setSelectedSeats([]);
     setLocked(false);
     setTimerActive(false);
     setTimeLeft(300);
-    setSelectedSeats([]);
-
-    await fetchSeatAvailability();
-  } catch (err) {
-    console.error("Unlock failed:", err);
-    alert("⚠ Failed to unlock seats.");
   }
-}
 
+  // ========== Render ==========
+  if (!scheduleId) {
+    return <p className="p-6 text-red-500">No train selected.</p>;
+  }
 
- async function continueToPassengerDetails() {
-  if (!locked) return alert("You must lock seats first.");
+  if (loading) return <p className="p-6">Loading seats...</p>;
 
-  try {
-  const res = await api.post("/api/booking/create", {
-    scheduleId,
-    seatIds: selectedSeats.map(s => s.seatId),
-    fromStopOrder,
-    toStopOrder
+  const activeCar = carriages.find((c) => c.carriage === activeCarriage);
+
+  // Organize seats into rows + A/B/C/D groups
+  const rows = {};
+
+  activeCar?.seats.forEach((seat) => {
+    const letter = seat.seatNumber[0];
+    const row = parseInt(seat.seatNumber.slice(1));
+
+    if (!rows[row]) rows[row] = {};
+    rows[row][letter] = seat;
   });
 
+  return (
+    <div className="max-w-4xl mx-auto p-4 space-y-6">
 
-// FIX: Read correct key
-const bookingId = res.data.id;  
-
-if (!bookingId) {
-  alert("❌ Booking failed. No booking ID returned.");
-  return;
-}
-
-navigate(`/passenger?bookingId=${bookingId}&count=${selectedSeats.length}`);
-
-    
-  } catch (err) {
-    console.error("Booking creation failed:", err);
-    alert("Could not create booking.");
-  }
-}
-
-
-
-  if (!scheduleId)
-    return <div className="p-6 text-red-500 text-lg">❌ No train selected.</div>;
-
-  if (loading) return <div className="p-6 text-lg">Loading seats...</div>;
-
-return (
-  <div className="max-w-5xl mx-auto p-6 space-y-8">
-
-    {/* Header */}
-    <header className="flex items-center justify-between">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Seat Selection</h1>
-        <p className="text-gray-500 mt-1">Choose your seats and lock them.</p>
+      {/* HEADER */}
+      <div className="mt-2">
+        <h1 className="text-3xl font-semibold text-gray-900">Seat Selection</h1>
+        <p className="text-gray-500">Choose your seats and lock them.</p>
       </div>
-    </header>
 
-    {/* Step Card */}
-    {!requiredCount && (
-      <section className="bg-white shadow-sm border rounded-xl p-6">
-        <h2 className="text-xl font-semibold text-gray-800">How many seats do you need?</h2>
-
-        <select
-          className="mt-4 w-48 border rounded-lg p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500"
-          onChange={(e) => setRequiredCount(Number(e.target.value))}
-        >
-          <option value="">Select...</option>
-          {[1, 2, 3, 4, 5, 6].map((n) => (
-            <option key={n} value={n}>{n}</option>
-          ))}
-        </select>
-      </section>
-    )}
-
-    {requiredCount && (
-      <>
-        {/* Timer */}
-        {timerActive && (
-          <div className="p-4 bg-yellow-50 border border-yellow-300 text-yellow-900 rounded-xl shadow-sm text-center text-lg font-semibold">
-            ⏳ Reserved for {Math.floor(timeLeft / 60)}:
-            {String(timeLeft % 60).padStart(2, "0")}
-          </div>
-        )}
-
-        {/* Carriage Selector */}
-        <section className="bg-white shadow-sm border rounded-xl p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-800">Select Carriage</h2>
-
-          <div className="flex gap-3 flex-wrap">
-            {carriages.map((c) => (
-              <button
-                key={c.carriage}
-                onClick={() => setActiveCarriage(c.carriage)}
-                className={`px-5 py-2.5 rounded-lg font-medium transition-all shadow-sm
-                  ${
-                    activeCarriage === c.carriage
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-100 hover:bg-gray-200"
-                  }`}
-              >
-                Carriage {c.carriage}
-              </button>
+      {/* SEAT COUNT CARD */}
+      {!requiredCount && (
+        <div className="bg-white rounded-2xl shadow p-6">
+          <h2 className="text-xl font-semibold text-gray-900">Number of Seats</h2>
+          <select
+            className="mt-3 w-40 p-3 rounded-xl bg-gray-50 border text-gray-800"
+            onChange={(e) => setRequiredCount(Number(e.target.value))}
+          >
+            <option value="">Select…</option>
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <option key={n} value={n}>
+                {n}
+              </option>
             ))}
-          </div>
-        </section>
+          </select>
+        </div>
+      )}
 
-        {/* SEAT MAP */}
-        <section className="bg-white shadow-sm border rounded-xl p-6">
-          <h2 className="flex justify-center gap-10 text-xl font-semibold text-gray-800 mb-6">Choose Seats</h2>
-
-          <div className="flex justify-center gap-10">
-            {/* Seats Grid */}
-            <div>
-              {Object.keys(rows).sort((a, b) => a - b).map((rowNumber) => (
-  <div key={rowNumber} className="grid grid-cols-4 gap-4 mb-4">
-    {["A", "B", "C", "D"].map((letter) => {
-      const seat = rows[rowNumber][letter];
-      if (!seat) return <div key={letter}></div>;
-
-      const isSelected = selectedSeats.some((s) => s.seatId === seat.seatId);
-      const isSuggested = suggestedSeatIds.includes(seat.seatId);
-
-      const statusStyles =
-        seat.status === "booked"
-          ? "bg-red-500 text-white cursor-not-allowed"
-          : seat.status === "held"
-          ? "bg-gray-400 text-white cursor-not-allowed"
-          : isSelected
-          ? "bg-blue-600 text-white"
-          : isSuggested
-          ? "bg-green-100 border-green-500"
-          : "bg-white hover:bg-blue-100";
-
-      const suggestionBorder = isSuggested ? "ring-2 ring-green-500" : "";
-
-      return (
-        <button
-          key={seat.seatId}
-          disabled={locked || seat.status !== "available"}
-          onClick={() => toggleSeat(seat)}
-          className={`p-4 rounded-lg border shadow-sm transition font-semibold text-center 
-            ${statusStyles} ${suggestionBorder}`}
-        >
-          {seat.seatNumber}
-        </button>
-      );
-    })}
-  </div>
-))}
-
+      {requiredCount && (
+        <>
+          {/* TIMER */}
+          {timerActive && (
+            <div className="bg-yellow-100 border border-yellow-200 rounded-xl p-4 text-center font-semibold">
+              ⏳ Reserved: {Math.floor(timeLeft / 60)}:
+              {String(timeLeft % 60).padStart(2, "0")}
             </div>
+          )}
 
-            {/* Sidebar Summary */}
-            <aside className="w-64 bg-gray-50 border rounded-xl p-5 shadow-sm space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">Your Selection</h3>
+          {/* CARRIAGE SELECTOR */}
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">Carriage</h2>
 
-              <div className="text-gray-600">
+            <div className="flex gap-2 flex-wrap">
+              {carriages.map((c) => (
+                <button
+                  key={c.carriage}
+                  onClick={() => setActiveCarriage(c.carriage)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium ${
+                    activeCarriage === c.carriage
+                      ? "bg-black text-white"
+                      : "bg-gray-100 text-gray-700"
+                  }`}
+                >
+                  Carriage {c.carriage}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* SEAT MAP */}
+          <div className="bg-white rounded-2xl shadow p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Seats</h2>
+
+            <div className="flex flex-col md:flex-row gap-6">
+
+              {/* GRID */}
+              <div className="flex-1">
+                {Object.keys(rows)
+                  .sort((a, b) => a - b)
+                  .map((row) => (
+                    <div key={row} className="grid grid-cols-4 gap-3 mb-3">
+                      {["A", "B", "C", "D"].map((letter) => {
+                        const seat = rows[row][letter];
+                        if (!seat) return <div key={letter}></div>;
+
+                        const isSelected = selectedSeats.some(
+                          (s) => s.seatId === seat.seatId
+                        );
+                        const isSuggested = suggestedSeatIds.includes(seat.seatId);
+
+                        let className = "p-3 rounded-xl border text-center text-sm";
+
+                        if (seat.status === "booked") {
+                          className += " bg-red-500 text-white";
+                        } else if (seat.status === "held") {
+                          className += " bg-gray-400 text-white";
+                        } else if (isSelected) {
+                          className += " bg-black text-white";
+                        } else if (isSuggested) {
+                          className += " bg-green-100 border-green-500";
+                        } else {
+                          className += " bg-gray-50 hover:bg-gray-100";
+                        }
+
+                        return (
+                          <button
+                            key={seat.seatId}
+                            onClick={() => toggleSeat(seat)}
+                            disabled={locked || seat.status !== "available"}
+                            className={className}
+                          >
+                            {seat.seatNumber}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ))}
+              </div>
+
+              {/* SUMMARY CARD */}
+              <div className="w-full md:w-60 bg-gray-50 rounded-xl p-4 border space-y-3">
+                <h3 className="text-lg font-semibold text-gray-900">Your Seats</h3>
+
                 {selectedSeats.length === 0 ? (
-                  <p>No seats selected.</p>
+                  <p className="text-gray-500 text-sm">None selected.</p>
                 ) : (
                   selectedSeats.map((s) => (
-                    <p key={s.seatId} className="font-medium">
-                      • Seat {s.seatNumber}
+                    <p key={s.seatId} className="font-medium text-gray-800">
+                      • {s.seatNumber}
                     </p>
                   ))
                 )}
-              </div>
 
-              <div className="pt-2 border-t">
-                <p className="text-gray-700 font-medium">
-                  Total: {selectedSeats.length} / {requiredCount}
+                <p className="text-gray-700 font-medium pt-2 border-t">
+                  {selectedSeats.length} / {requiredCount}
                 </p>
               </div>
-            </aside>
+            </div>
           </div>
-        </section>
 
-        {/* Actions */}
-<div className="flex justify-between items-center mt-4">
-  {/* Left: Suggest Button */}
-  <div>
-<button
-  onClick={suggestSeats}
-  disabled={!requiredCount || locked || suggesting}
-  className="p-4 rounded-lg bg-purple-600 text-white shadow-md hover:bg-purple-700 disabled:bg-gray-400"
->
-  {suggesting ? "Suggesting..." : "Suggest Best Seats"}
-</button>
+          {/* Action Buttons */}
+          <div className="flex justify-between items-center pt-2">
+            {/* Left: Suggest */}
+            <div>
+              <button
+                onClick={suggestSeats}
+                disabled={suggesting || locked}
+                className="px-5 py-3 rounded-xl bg-purple-600 text-white shadow hover:bg-purple-700 disabled:bg-gray-400"
+              >
+                {suggesting ? "Suggesting…" : "Suggest Best Seats"}
+              </button>
 
+              {suggestionInfo && (
+                <p className="text-sm text-gray-600 mt-1">
+                  {suggestionInfo.exactMatch ? "✅" : "⚠️"} {suggestionInfo.reason}
+                </p>
+              )}
+            </div>
 
-    {suggestionInfo && (
-      <p className="mt-2 text-sm text-gray-600">
-        {suggestionInfo.exactMatch ? "✅" : "⚠️"} {suggestionInfo.reason}
-      </p>
-    )}
-  </div>
+            {/* Right: Lock / Continue */}
+            <div className="flex gap-3">
+              {!locked ? (
+                <button
+                  onClick={lockSeats}
+                  disabled={selectedSeats.length !== requiredCount}
+                  className="px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 disabled:bg-gray-400"
+                >
+                  Lock Seats
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={cancelLockedSeats}
+                    className="px-5 py-3 bg-red-500 text-white rounded-xl shadow hover:bg-red-600"
+                  >
+                    Cancel
+                  </button>
 
-  {/* Right: Lock / Continue Buttons */}
-  <div className="flex gap-4">
-    {!locked ? (
-      <button
-        onClick={lockSeats}
-        disabled={selectedSeats.length !== requiredCount}
-        className="px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        Lock Seats
-      </button>
-    ) : (
-      <>
-        <button
-          onClick={cancelLockedSeats}
-          className="px-5 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600"
-        >
-          Cancel
-        </button>
-
-        <button
-          onClick={continueToPassengerDetails}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
-        >
-          Continue →
-        </button>
-      </>
-    )}
-  </div>
-</div>
-
-      </>
-    )}
-  </div>
-);
-
-
-
+                  <button
+                    onClick={continueToPassengerDetails}
+                    className="px-6 py-3 bg-black text-white rounded-xl shadow hover:bg-gray-900"
+                  >
+                    Continue →
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
 }

@@ -27,8 +27,6 @@ export default function SchedulePage() {
     }
   }, []);
 
-
-
   async function sendLocation() {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
@@ -76,72 +74,76 @@ export default function SchedulePage() {
   }
 
   return (
-    <div className="min-h-screen p-6 bg-[#e0e0e0] flex justify-center">
-      
-      {/* MAX WIDTH CONTAINER */}
+    <div className="min-h-screen p-4 flex justify-center bg-gray-100">
+
+      {/* Container */}
       <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-        {/* MESSAGE */}
-        <div className="lg:col-span-2 mb-2 p-4 rounded-2xl text-gray-800 text-xl font-semibold
-          shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]">
+        {/* Message Header */}
+        <div className="lg:col-span-2 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-200 text-gray-900 text-lg font-medium">
           {message}
         </div>
 
-        {/* LEFT PANEL */}
-        <div className="p-6 rounded-2xl bg-[#e0e0e0]
-          shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]
-          overflow-y-auto max-h-[80vh]">
+        {/* LEFT PANEL (Manual Search) */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-h-[80vh] overflow-y-auto">
 
-          <h2 className="text-2xl font-bold mb-6 text-gray-700">Manual Search</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Manual Search</h2>
 
-          <div className="space-y-5">
-            <select
-              className="border-none rounded-xl p-4 w-full bg-[#e0e0e0] text-gray-700 
-              shadow-inner shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]"
-              onChange={(e) => setFrom(e.target.value)}
-              value={from}
-            >
-              <option value="">From Station</option>
-              {stations
-                .filter((st) => st.id !== to)
-                .map((st) => (
-                  <option key={st.id} value={st.id}>
-                    {st.name}
-                  </option>
-                ))}
-            </select>
+          <div className="space-y-4">
 
-            <select
-              className="border-none rounded-xl p-4 w-full bg-[#e0e0e0] text-gray-700 
-              shadow-inner shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]"
-              onChange={(e) => setTo(e.target.value)}
-              value={to}
-            >
-              <option value="">To Station</option>
-              {stations
-                .filter((st) => st.id !== from)
-                .map((st) => (
-                  <option key={st.id} value={st.id}>
-                    {st.name}
-                  </option>
-                ))}
-            </select>
+            {/* FROM */}
+            <div className="flex flex-col gap-1">
+              <label className="text-sm text-gray-700">From</label>
+              <select
+                className="p-3 rounded-lg border border-gray-300 bg-white text-gray-800 focus:ring-2 focus:ring-black/20"
+                onChange={(e) => setFrom(e.target.value)}
+                value={from}
+              >
+                <option value="">Select From Station</option>
+                {stations
+                  .filter((st) => st.id !== to)
+                  .map((st) => (
+                    <option key={st.id} value={st.id}>
+                      {st.name}
+                    </option>
+                  ))}
+              </select>
+            </div>
 
-            <input
-              type="date"
-              className="border-none rounded-xl p-4 w-full bg-[#e0e0e0] text-gray-700 
-              shadow-inner shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
+            {/* TO */}
+            <div className="flex flex-col gap-1">
+              <label className="text-sm text-gray-700">To</label>
+              <select
+                className="p-3 rounded-lg border border-gray-300 bg-white text-gray-800 focus:ring-2 focus:ring-black/20"
+                onChange={(e) => setTo(e.target.value)}
+                value={to}
+              >
+                <option value="">Select To Station</option>
+                {stations
+                  .filter((st) => st.id !== from)
+                  .map((st) => (
+                    <option key={st.id} value={st.id}>
+                      {st.name}
+                    </option>
+                  ))}
+              </select>
+            </div>
 
+            {/* DATE */}
+            <div className="flex flex-col gap-1">
+              <label className="text-sm text-gray-700">Date</label>
+              <input
+                type="date"
+                className="p-3 rounded-lg border border-gray-300 bg-white text-gray-800 focus:ring-2 focus:ring-black/20"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+
+            {/* BUTTON */}
             <button
               onClick={searchManual}
-              className="mt-4 py-3 w-full rounded-xl text-gray-700 font-semibold
-              bg-[#e0e0e0]
-              shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]
-              active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]
-              transition"
+              className="w-full p-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-900 transition"
             >
               {manualLoading ? "Searching..." : "Search →"}
             </button>
@@ -149,17 +151,16 @@ export default function SchedulePage() {
 
           {/* RESULTS */}
           {manualResults.length > 0 && (
-            <div className="mt-8 space-y-4">
-              <h3 className="text-xl font-semibold text-gray-700">Results</h3>
+            <div className="mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-900">Results</h3>
 
               {manualResults.map((trip) => (
                 <div
                   key={trip.id}
-                  className="p-5 rounded-xl bg-[#e0e0e0]
-                  shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]"
+                  className="p-4 rounded-xl border border-gray-200 bg-white shadow-sm"
                 >
-                  <p className="font-bold text-lg text-gray-700">{trip.train.name}</p>
-                  <p className="text-gray-600">{trip.route.name}</p>
+                  <p className="font-semibold text-gray-900">{trip.train.name}</p>
+                  <p className="text-gray-600 text-sm">{trip.route.name}</p>
 
                   <p className="mt-2 text-sm text-gray-700">
                     Departure:{" "}
@@ -170,10 +171,7 @@ export default function SchedulePage() {
                   </p>
 
                   <button
-                    className="mt-4 w-full py-2 rounded-xl bg-[#e0e0e0] text-gray-700
-                    shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff]
-                    active:shadow-inner active:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]
-                    transition"
+                    className="mt-3 w-full p-2 rounded-lg bg-gray-800 text-white hover:bg-black transition text-sm"
                     onClick={() =>
                       navigate(
                         `/book?scheduleId=${trip.id}&fromOrder=${trip.fromStopOrder}&toOrder=${trip.toStopOrder}`
@@ -188,13 +186,11 @@ export default function SchedulePage() {
           )}
         </div>
 
-        {/* RIGHT PANEL */}
-        <div className="p-6 rounded-2xl bg-[#e0e0e0]
-          shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]
-          overflow-y-auto max-h-[80vh] flex flex-col">
-
+        {/* RIGHT PANEL (Chatbot) */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-h-[80vh] overflow-y-auto">
           <ChatBot />
         </div>
+
       </div>
     </div>
   );

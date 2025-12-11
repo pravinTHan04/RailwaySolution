@@ -11,7 +11,7 @@ export default function PassengerDetailsPage() {
 
   if (!bookingId || !seatCount || Number.isNaN(seatCount)) {
     return (
-      <div className="p-6 text-red-600">
+      <div className="p-6 text-red-600 text-lg">
         ❌ Missing booking information. Go back and select seats again.
       </div>
     );
@@ -28,20 +28,16 @@ export default function PassengerDetailsPage() {
   };
 
   async function submit() {
-    if (passengers.some(p => !p.FullName.trim() || !p.Email.trim())) {
+    if (passengers.some((p) => !p.FullName.trim() || !p.Email.trim())) {
       alert("Please enter name and email for all passengers.");
       return;
     }
 
     try {
-      const body = {
+      await api.post("/api/booking/passengers", {
         BookingId: bookingId,
         Passengers: passengers,
-      };
-
-      console.log("Sending:", body);
-
-      await api.post("/api/booking/passengers", body);
+      });
 
       navigate(`/payment?bookingId=${bookingId}&count=${seatCount}`);
     } catch (err) {
@@ -51,35 +47,59 @@ export default function PassengerDetailsPage() {
   }
 
   return (
-    <div className="p-6 space-y-5">
-      <h1 className="text-2xl font-bold">Passenger Details</h1>
+    <div className="max-w-3xl mx-auto p-6 space-y-8">
 
+      {/* PAGE HEADER */}
+      <div>
+        <h1 className="text-3xl font-semibold text-gray-900">Passenger Details</h1>
+        <p className="text-gray-500 mt-1">Enter information for each passenger.</p>
+      </div>
+
+      {/* PASSENGER CARDS */}
       {passengers.map((p, i) => (
-        <div key={i} className="border p-4 rounded">
-          <h2 className="font-semibold">Passenger {i + 1}</h2>
+        <div
+          key={i}
+          className="bg-white shadow-sm rounded-2xl border p-6 space-y-4"
+        >
+          <h2 className="text-lg font-semibold text-gray-900">
+            Passenger {i + 1}
+          </h2>
 
-          <input
-            placeholder="Full Name"
-            className="border p-2 w-full mt-2"
-            value={p.FullName}
-            onChange={(e) => handleChange(i, "FullName", e.target.value)}
-          />
+          {/* FULL NAME */}
+          <div className="space-y-1">
+            <label className="text-sm font-medium text-gray-700">Full Name</label>
+            <input
+              type="text"
+              value={p.FullName}
+              onChange={(e) => handleChange(i, "FullName", e.target.value)}
+              placeholder="Enter full name"
+              className="w-full p-3 rounded-xl border bg-gray-50 focus:ring-2 focus:ring-black/10 focus:bg-white transition"
+            />
+          </div>
 
-          <input
-            placeholder="Email"
-            className="border p-2 w-full mt-2"
-            value={p.Email}
-            onChange={(e) => handleChange(i, "Email", e.target.value)}
-          />
+          {/* EMAIL */}
+          <div className="space-y-1">
+            <label className="text-sm font-medium text-gray-700">Email</label>
+            <input
+              type="email"
+              value={p.Email}
+              onChange={(e) => handleChange(i, "Email", e.target.value)}
+              placeholder="Enter email"
+              className="w-full p-3 rounded-xl border bg-gray-50 focus:ring-2 focus:ring-black/10 focus:bg-white transition"
+            />
+          </div>
         </div>
       ))}
 
-      <button
-        onClick={submit}
-        className="bg-blue-600 text-white px-5 py-2 rounded"
-      >
-        Continue to Payment →
-      </button>
+      {/* CONTINUE BUTTON */}
+      <div className="flex justify-end">
+        <button
+          onClick={submit}
+          className="px-6 py-3 bg-black text-white rounded-xl text-sm font-semibold shadow hover:bg-gray-900 transition"
+        >
+          Continue to Payment →
+        </button>
+      </div>
     </div>
   );
 }

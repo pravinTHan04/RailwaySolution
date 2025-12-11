@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import SignupImage from "../images/Signup.jpg";
 import api from "../api/axios";
 
-
 export default function SignupPage() {
   const navigate = useNavigate();
 
@@ -38,14 +37,12 @@ export default function SignupPage() {
 
     try {
       await api.post("api/Auth/register", {
-  email: formData.email,
-  password: formData.password,
-  firstName: formData.firstName,
-  lastName: formData.lastName,
-  phoneNumber: formData.phone,
-  nicNumber: formData.nicNumber
+        email: formData.email,
+        password: formData.password,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phoneNumber: formData.phone,
       });
-
 
       alert("Account created successfully!");
       navigate("/");
@@ -57,10 +54,10 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-6">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-4xl bg-white border border-gray-200 rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
-        {/* LEFT IMAGE */}
+        {/* IMAGE SIDE (retained as requested) */}
         <div className="hidden md:block">
           <img
             src={SignupImage}
@@ -69,22 +66,24 @@ export default function SignupPage() {
           />
         </div>
 
-        {/* FORM */}
+        {/* FORM SIDE (Apple style) */}
         <div className="p-8 md:p-10">
-          <h1 className="text-3xl font-bold text-gray-800">Create an Account</h1>
-          <p className="text-gray-600 mt-1 text-sm">Join and start booking instantly.</p>
+          <h1 className="text-3xl font-semibold text-gray-900">Create Account</h1>
+          <p className="text-gray-500 text-sm mt-1">
+            Book train tickets effortlessly
+          </p>
 
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-6">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Input 
+            {/* FIRST + LAST NAME */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <AppleInput
                 name="firstName"
                 placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}
               />
-
-              <Input 
+              <AppleInput
                 name="lastName"
                 placeholder="Last Name"
                 value={formData.lastName}
@@ -92,23 +91,26 @@ export default function SignupPage() {
               />
             </div>
 
-            <Input 
+            {/* PHONE */}
+            <AppleInput
               name="phone"
-              placeholder="Phone"
+              placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
             />
 
-            <Input 
+            {/* EMAIL */}
+            <AppleInput
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Input 
+            {/* PASSWORD + CONFIRM */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <AppleInput
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -116,7 +118,7 @@ export default function SignupPage() {
                 onChange={handleChange}
               />
 
-              <Input 
+              <AppleInput
                 type="password"
                 name="confirmPassword"
                 placeholder="Confirm Password"
@@ -130,20 +132,22 @@ export default function SignupPage() {
               <p className="text-red-600 text-sm">❌ Passwords do not match.</p>
             )}
 
+            {/* Sign Up Button */}
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-3 rounded-lg text-white font-semibold transition ${
-                loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
-              }`}
+              className={`w-full py-3 rounded-2xl text-white font-medium text-[15px] transition
+                ${loading ? "bg-gray-400" : "bg-black hover:bg-gray-900"}
+              `}
             >
-              {loading ? "Creating Account..." : "Sign Up"}
+              {loading ? "Creating Account…" : "Sign Up"}
             </button>
           </form>
 
-          <p className="text-center text-gray-600 text-sm mt-6">
+          {/* Footer */}
+          <p className="text-center text-gray-600 text-sm mt-8">
             Already have an account?{" "}
-            <Link to="/" className="text-blue-600 font-semibold hover:underline">
+            <Link to="/" className="text-blue-600 font-medium hover:underline">
               Login
             </Link>
           </p>
@@ -153,12 +157,26 @@ export default function SignupPage() {
   );
 }
 
-// Reusable styled input
-function Input({ className = "", ...props }) {
+/* Apple-like input component */
+function AppleInput({ className = "", ...props }) {
   return (
     <input
       {...props}
-      className={`w-full border border-gray-300 p-3 rounded-lg text-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition placeholder-gray-400 ${className}`}
+      className={`
+        w-full 
+        rounded-xl
+        border border-gray-300
+        bg-[#fdfdfd]
+        px-4 py-3
+        text-gray-700
+        text-[15px]
+        focus:ring-2 focus:ring-black/10
+        focus:border-gray-400
+        outline-none
+        transition
+        placeholder-gray-400
+        ${className}
+      `}
       required
     />
   );

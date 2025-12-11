@@ -26,7 +26,6 @@ export default function Navbar() {
 
     loadUser();
 
-    // Listen for login/logout changes
     const handler = () => loadUser();
     window.addEventListener("auth-updated", handler);
     return () => window.removeEventListener("auth-updated", handler);
@@ -42,11 +41,10 @@ export default function Navbar() {
   const initials =
     (user?.firstname?.[0] || user?.email?.[0] || "U").toUpperCase();
 
-const handleProfileClick = () => {
-  setMenuOpen(false);
-  navigate("/profile");
-};
-
+  const handleProfileClick = () => {
+    setMenuOpen(false);
+    navigate("/profile");
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
@@ -57,33 +55,36 @@ const handleProfileClick = () => {
   };
 
   return (
-    <nav className="p-4 flex items-center justify-between border-b bg-white/80 backdrop-blur">
-      <div className="flex gap-4">
-        <Link to="/schedule" className="hover:underline">
+    <nav className="w-full px-4 py-3 border-b bg-white/80 backdrop-blur-md flex items-center justify-between shadow-sm">
+      
+      {/* Left Nav Items */}
+      <div className="flex gap-6 text-gray-700 text-sm">
+        <Link to="/schedule" className="hover:text-black transition">
           Schedule
-        </Link>
-        <Link to="/search" className="hover:underline">
-          Search
         </Link>
       </div>
 
+      {/* Profile */}
       <div className="relative">
         <button
           onClick={() => setMenuOpen((x) => !x)}
-          className="flex items-center gap-2 px-2 py-1 rounded-full hover:bg-gray-100"
+          className="flex items-center gap-2 px-2 py-1 rounded-full hover:bg-gray-100 transition"
         >
           <span className="text-sm text-gray-700 hidden sm:inline">
             {displayName}
           </span>
-          <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold">
+
+          <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center text-sm font-medium shadow-sm">
             {initials}
           </div>
         </button>
 
+        {/* Dropdown */}
         {menuOpen && (
-          <div className="absolute right-0 mt-2 w-52 bg-white border rounded-lg shadow-lg text-sm z-20">
-            <div className="px-3 py-2 border-b">
-              <div className="font-semibold">{displayName}</div>
+          <div className="absolute right-0 mt-3 w-56 bg-white border border-gray-200 rounded-xl shadow-lg z-30 py-2 animate-fade-in">
+            
+            <div className="px-4 py-2 border-b">
+              <div className="font-medium text-gray-900">{displayName}</div>
               <div className="text-xs text-gray-500">{user?.email}</div>
               <div className="text-[11px] text-gray-400">
                 Role: {user?.role ?? "N/A"}
@@ -92,17 +93,18 @@ const handleProfileClick = () => {
 
             <button
               onClick={handleProfileClick}
-              className="w-full text-left px-3 py-2 hover:bg-gray-100"
+              className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
-              View profile
+              View Profile
             </button>
 
             <button
               onClick={handleLogout}
-              className="w-full text-left px-3 py-2 text-red-600 hover:bg-red-50"
+              className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition"
             >
-              Sign out
+              Sign Out
             </button>
+
           </div>
         )}
       </div>
